@@ -1,0 +1,3740 @@
+[
+  {
+    "_id": "product-instant-chicory-powder",
+    "_type": "product",
+    "name": {
+      "_type": "localeString",
+      "ru": "Цикорий растворимый порошок",
+      "en": "Instant chicory powder"
+    },
+    "slug": {
+      "_type": "slug",
+      "current": "instant-chicory-powder"
+    },
+    "category": "chicory",
+    "featured": true,
+    "vegetarian": true,
+    "orderRank": 10,
+    "summary": {
+      "_type": "localeText",
+      "ru": "Натуральный заменитель кофе из корней цикория — без кофеина, с содержанием инулина более 30 %.",
+      "en": "A natural, caffeine-free coffee substitute made from chicory root, with over 30% inulin."
+    },
+    "imageFile": "instant.jpg",
+    "specs": [
+      {
+        "_type": "spec",
+        "_key": "k00001",
+        "label": {
+          "_type": "localeString",
+          "ru": "Инулин",
+          "en": "Inulin"
+        },
+        "value": {
+          "_type": "localeString",
+          "ru": "более 30 %",
+          "en": "over 30%"
+        }
+      },
+      {
+        "_type": "spec",
+        "_key": "k00002",
+        "label": {
+          "_type": "localeString",
+          "ru": "Кофеин",
+          "en": "Caffeine"
+        },
+        "value": {
+          "_type": "localeString",
+          "ru": "не содержит",
+          "en": "none"
+        }
+      }
+    ],
+    "body": {
+      "_type": "localeBlockContent",
+      "ru": [
+        {
+          "_type": "block",
+          "_key": "k00003",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k00004",
+              "text": "Цикорий растворимый порошок представляет собой натуральный продукт, полученный путём переработки корней цикория. Это растение известно своими полезными свойствами и широко используется в качестве заменителя кофе. Продукт обладает приятным ароматом и вкусом, напоминающим кофейный напиток, но при этом не содержит кофеина.",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "_type": "block",
+          "_key": "k00005",
+          "style": "h3",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k00006",
+              "text": "Преимущества",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "_type": "block",
+          "_key": "k00007",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k00008",
+              "text": "содержание инулина — более 30 %;",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k00009",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0000a",
+              "text": "богат витаминами и минералами;",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k0000b",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0000c",
+              "text": "полезен для пищеварения.",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        }
+      ],
+      "en": [
+        {
+          "_type": "block",
+          "_key": "k0000d",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0000e",
+              "text": "Instant chicory powder is a natural product made by processing chicory roots. The plant is known for its beneficial properties and is widely used as a coffee substitute. The powder has a pleasant aroma and a taste reminiscent of coffee, yet contains no caffeine.",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "_type": "block",
+          "_key": "k0000f",
+          "style": "h3",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0000g",
+              "text": "Benefits",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "_type": "block",
+          "_key": "k0000h",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0000i",
+              "text": "inulin content over 30%;",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k0000j",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0000k",
+              "text": "rich in vitamins and minerals;",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k0000l",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0000m",
+              "text": "good for digestion.",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        }
+      ]
+    }
+  },
+  {
+    "_id": "product-liquid-chicory-extract",
+    "_type": "product",
+    "name": {
+      "_type": "localeString",
+      "ru": "Жидкий экстракт цикория",
+      "en": "Liquid chicory extract"
+    },
+    "slug": {
+      "_type": "slug",
+      "current": "liquid-chicory-extract"
+    },
+    "category": "chicory",
+    "featured": true,
+    "vegetarian": true,
+    "orderRank": 20,
+    "summary": {
+      "_type": "localeText",
+      "ru": "Концентрат из корня цикория, сохраняющий все ценные свойства натурального растения.",
+      "en": "A concentrate of chicory root that keeps all the valuable properties of the natural plant."
+    },
+    "imageFile": "liquid.jpg",
+    "specs": [],
+    "body": {
+      "_type": "localeBlockContent",
+      "ru": [
+        {
+          "_type": "block",
+          "_key": "k0000n",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0000o",
+              "text": "Жидкий экстракт цикория является концентрированным продуктом, приготовленным из корня растения цикория. Этот экстракт отличается высоким содержанием полезных веществ и сохраняет все ценные свойства натурального цикория.",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "_type": "block",
+          "_key": "k0000p",
+          "style": "h3",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0000q",
+              "text": "Полезные свойства",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "_type": "block",
+          "_key": "k0000r",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0000s",
+              "text": "Натуральный источник витаминов и минералов: экстракт богат витаминами группы B, витамином C, кальцием, магнием, железом и другими микроэлементами.",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k0000t",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0000u",
+              "text": "Способствует пищеварению: благодаря содержанию инулина стимулирует рост полезных бактерий в кишечнике, улучшая микрофлору и облегчая процесс переваривания пищи.",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k0000v",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0000w",
+              "text": "Поддерживает сердечно-сосудистую систему: помогает поддерживать нормальный уровень холестерина и улучшает кровообращение.",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k0000x",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0000y",
+              "text": "Повышает общий тонус организма: улучшает самочувствие, придаёт энергии и бодрости.",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k0000z",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k00010",
+              "text": "Гипоаллергенный продукт: подходит даже людям с повышенной чувствительностью к другим напиткам.",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k00011",
+          "style": "h3",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k00012",
+              "text": "Применение",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "_type": "block",
+          "_key": "k00013",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k00014",
+              "text": "Экстракт удобно использовать как самостоятельный напиток, разбавляя водой или молоком. Его также добавляют в каши, выпечку, десерты и коктейли, придавая блюдам приятный аромат и дополнительные полезные свойства.",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "_type": "block",
+          "_key": "k00015",
+          "style": "h3",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k00016",
+              "text": "Хранение",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "_type": "block",
+          "_key": "k00017",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k00018",
+              "text": "Рекомендуется хранить жидкий экстракт цикория в прохладном, защищённом от солнечного света месте.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "en": [
+        {
+          "_type": "block",
+          "_key": "k00019",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0001a",
+              "text": "Liquid chicory extract is a concentrated product made from the root of the chicory plant. It is high in beneficial substances and retains all the valuable properties of natural chicory.",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "_type": "block",
+          "_key": "k0001b",
+          "style": "h3",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0001c",
+              "text": "Benefits",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "_type": "block",
+          "_key": "k0001d",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0001e",
+              "text": "A natural source of vitamins and minerals: rich in B vitamins, vitamin C, calcium, magnesium, iron and other trace elements.",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k0001f",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0001g",
+              "text": "Supports digestion: its inulin stimulates the growth of beneficial gut bacteria, improving the microflora and easing digestion.",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k0001h",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0001i",
+              "text": "Supports the cardiovascular system: helps maintain normal cholesterol levels and improves circulation.",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k0001j",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0001k",
+              "text": "Boosts overall tone: improves well-being and adds energy.",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k0001l",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0001m",
+              "text": "Hypoallergenic: suitable even for people sensitive to other drinks.",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k0001n",
+          "style": "h3",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0001o",
+              "text": "How to use",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "_type": "block",
+          "_key": "k0001p",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0001q",
+              "text": "The extract is easy to enjoy as a drink on its own, diluted with water or milk. It is also added to porridge, baking, desserts and smoothies for a pleasant aroma and extra nutritional value.",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "_type": "block",
+          "_key": "k0001r",
+          "style": "h3",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0001s",
+              "text": "Storage",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "_type": "block",
+          "_key": "k0001t",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0001u",
+              "text": "Store liquid chicory extract in a cool place away from direct sunlight.",
+              "marks": []
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "_id": "product-roasted-chicory-cubes",
+    "_type": "product",
+    "name": {
+      "_type": "localeString",
+      "ru": "Жареные кубики цикория",
+      "en": "Roasted chicory cubes"
+    },
+    "slug": {
+      "_type": "slug",
+      "current": "roasted-chicory-cubes"
+    },
+    "category": "chicory",
+    "featured": true,
+    "vegetarian": true,
+    "orderRank": 30,
+    "summary": {
+      "_type": "localeText",
+      "ru": "Кубики цикория трёх видов: жареные, средней обжарки и сушёные — для напитков, кондитерской и пищевой промышленности.",
+      "en": "Chicory cubes in three types — roasted, medium roast and dried — for drinks, confectionery and the food industry."
+    },
+    "imageFile": "roasted.jpg",
+    "specs": [
+      {
+        "_type": "spec",
+        "_key": "k0001v",
+        "label": {
+          "_type": "localeString",
+          "ru": "Виды",
+          "en": "Types"
+        },
+        "value": {
+          "_type": "localeString",
+          "ru": "жареные, средней обжарки, сушёные",
+          "en": "roasted, medium roast, dried"
+        }
+      }
+    ],
+    "body": {
+      "_type": "localeBlockContent",
+      "ru": [
+        {
+          "_type": "block",
+          "_key": "k0001w",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0001x",
+              "text": "Кубики цикория трёх видов:",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "_type": "block",
+          "_key": "k0001y",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0001z",
+              "text": "Жареные — основа ароматных напитков, кофезаменителей, наполнителей кондитерских изделий.",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k00020",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k00021",
+              "text": "Средней обжарки — сырьё для изготовления напитков, десертов, пищевой промышленности.",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k00022",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k00023",
+              "text": "Сушёные (не жареные) — природный компонент лекарственных препаратов, БАД, добавок к пище, детского и диетического питания.",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        }
+      ],
+      "en": [
+        {
+          "_type": "block",
+          "_key": "k00024",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k00025",
+              "text": "Chicory cubes in three types:",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "_type": "block",
+          "_key": "k00026",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k00027",
+              "text": "Roasted — the base for aromatic drinks, coffee substitutes and confectionery fillings.",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k00028",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k00029",
+              "text": "Medium roast — raw material for drinks, desserts and the food industry.",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k0002a",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0002b",
+              "text": "Dried (unroasted) — a natural component of medicines, dietary supplements, food additives, baby and diet food.",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        }
+      ]
+    }
+  },
+  {
+    "_id": "product-basmati-1121-steam-rice",
+    "_type": "product",
+    "name": {
+      "_type": "localeString",
+      "ru": "Рис басмати 1121 Steam",
+      "en": "1121 Basmati Steam rice"
+    },
+    "slug": {
+      "_type": "slug",
+      "current": "basmati-1121-steam-rice"
+    },
+    "category": "rice",
+    "featured": true,
+    "vegetarian": true,
+    "orderRank": 40,
+    "summary": {
+      "_type": "localeText",
+      "ru": "Индийский рис премиум-класса с тонким ароматом: длинные зёрна сохраняют форму и остаются рассыпчатыми.",
+      "en": "Premium Indian rice with a delicate aroma: long grains that hold their shape and stay fluffy."
+    },
+    "imageFile": "1121_steam.jpg",
+    "specs": [
+      {
+        "_type": "spec",
+        "_key": "k0002c",
+        "label": {
+          "_type": "localeString",
+          "ru": "Сорт",
+          "en": "Variety"
+        },
+        "value": {
+          "_type": "localeString",
+          "ru": "1121",
+          "en": "1121"
+        }
+      },
+      {
+        "_type": "spec",
+        "_key": "k0002d",
+        "label": {
+          "_type": "localeString",
+          "ru": "Длина зерна",
+          "en": "Grain length"
+        },
+        "value": {
+          "_type": "localeString",
+          "ru": "8,4 мм",
+          "en": "8.4 mm"
+        }
+      },
+      {
+        "_type": "spec",
+        "_key": "k0002e",
+        "label": {
+          "_type": "localeString",
+          "ru": "Обработка",
+          "en": "Processing"
+        },
+        "value": {
+          "_type": "localeString",
+          "ru": "Steam",
+          "en": "Steam"
+        }
+      },
+      {
+        "_type": "spec",
+        "_key": "k0002f",
+        "label": {
+          "_type": "localeString",
+          "ru": "Происхождение",
+          "en": "Origin"
+        },
+        "value": {
+          "_type": "localeString",
+          "ru": "Индия",
+          "en": "India"
+        }
+      }
+    ],
+    "body": {
+      "_type": "localeBlockContent",
+      "ru": [
+        {
+          "_type": "block",
+          "_key": "k0002g",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0002h",
+              "text": "«Басмати Steam» — высококачественный индийский рис премиум-класса. Отличается тонким ароматом, нежностью зёрен и превосходными кулинарными качествами. Идеален для блюд восточной кухни, гарниров, плова и салатов.",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "_type": "block",
+          "_key": "k0002i",
+          "style": "h3",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0002j",
+              "text": "Ключевые особенности",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "_type": "block",
+          "_key": "k0002k",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0002l",
+              "text": "натуральное выращивание — без химикатов и ГМО;",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k0002m",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0002n",
+              "text": "длинные тонкие зёрна — сохраняют форму при варке;",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k0002o",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0002p",
+              "text": "нежная, воздушная консистенция готового блюда;",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k0002q",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0002r",
+              "text": "богатый состав — аминокислоты, микроэлементы, витамины (в том числе группы B).",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k0002s",
+          "style": "h3",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0002t",
+              "text": "Преимущества в приготовлении",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "_type": "block",
+          "_key": "k0002u",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0002v",
+              "text": "зёрна не слипаются, остаются рассыпчатыми;",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k0002w",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0002x",
+              "text": "при варке увеличиваются преимущественно в длину.",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        }
+      ],
+      "en": [
+        {
+          "_type": "block",
+          "_key": "k0002y",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0002z",
+              "text": "Basmati Steam is a high-quality, premium-grade Indian rice. It stands out for its delicate aroma, tender grains and excellent cooking qualities. Ideal for oriental dishes, side dishes, pilaf and salads.",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "_type": "block",
+          "_key": "k00030",
+          "style": "h3",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k00031",
+              "text": "Key features",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "_type": "block",
+          "_key": "k00032",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k00033",
+              "text": "naturally grown — no chemicals or GMOs;",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k00034",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k00035",
+              "text": "long, slender grains that hold their shape when cooked;",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k00036",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k00037",
+              "text": "a tender, airy texture in the finished dish;",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k00038",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k00039",
+              "text": "rich composition — amino acids, trace elements and vitamins (including B vitamins).",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k0003a",
+          "style": "h3",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0003b",
+              "text": "In the kitchen",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "_type": "block",
+          "_key": "k0003c",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0003d",
+              "text": "grains do not stick together and stay fluffy;",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k0003e",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0003f",
+              "text": "they elongate mainly in length during cooking.",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        }
+      ]
+    }
+  },
+  {
+    "_id": "product-basmati-1121-sella-rice",
+    "_type": "product",
+    "name": {
+      "_type": "localeString",
+      "ru": "Рис басмати 1121 Sella",
+      "en": "1121 Basmati Sella rice"
+    },
+    "slug": {
+      "_type": "slug",
+      "current": "basmati-1121-sella-rice"
+    },
+    "category": "rice",
+    "featured": true,
+    "vegetarian": true,
+    "orderRank": 50,
+    "summary": {
+      "_type": "localeText",
+      "ru": "Длиннозёрный рис, обработанный паром: плотные зёрна не развариваются и готовятся быстрее обычного риса.",
+      "en": "Steam-processed long-grain rice: dense grains that keep their shape and cook faster than regular rice."
+    },
+    "imageFile": "1121_sella.jpg",
+    "specs": [
+      {
+        "_type": "spec",
+        "_key": "k0003g",
+        "label": {
+          "_type": "localeString",
+          "ru": "Сорт",
+          "en": "Variety"
+        },
+        "value": {
+          "_type": "localeString",
+          "ru": "1121",
+          "en": "1121"
+        }
+      },
+      {
+        "_type": "spec",
+        "_key": "k0003h",
+        "label": {
+          "_type": "localeString",
+          "ru": "Длина зерна",
+          "en": "Grain length"
+        },
+        "value": {
+          "_type": "localeString",
+          "ru": "8,4 мм",
+          "en": "8.4 mm"
+        }
+      },
+      {
+        "_type": "spec",
+        "_key": "k0003i",
+        "label": {
+          "_type": "localeString",
+          "ru": "Обработка",
+          "en": "Processing"
+        },
+        "value": {
+          "_type": "localeString",
+          "ru": "Sella",
+          "en": "Sella"
+        }
+      },
+      {
+        "_type": "spec",
+        "_key": "k0003j",
+        "label": {
+          "_type": "localeString",
+          "ru": "Происхождение",
+          "en": "Origin"
+        },
+        "value": {
+          "_type": "localeString",
+          "ru": "Индия",
+          "en": "India"
+        }
+      }
+    ],
+    "body": {
+      "_type": "localeBlockContent",
+      "ru": [
+        {
+          "_type": "block",
+          "_key": "k0003k",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0003l",
+              "text": "Рис Sella — высококачественный длиннозёрный рис, обработанный паром. Специальная технология обработки придаёт зёрнам ряд преимуществ:",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "_type": "block",
+          "_key": "k0003m",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0003n",
+              "text": "повышенная плотность (меньше ломаются при транспортировке и готовке);",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k0003o",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0003p",
+              "text": "устойчивость к развариванию;",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k0003q",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0003r",
+              "text": "более быстрое приготовление по сравнению с обычным рисом.",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k0003s",
+          "style": "h3",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0003t",
+              "text": "Характерные особенности",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "_type": "block",
+          "_key": "k0003u",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0003v",
+              "text": "лёгкий ореховый аромат;",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k0003w",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0003x",
+              "text": "приятная хрустящая структура после приготовления.",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k0003y",
+          "style": "h3",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0003z",
+              "text": "Идеально подходит для",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "_type": "block",
+          "_key": "k00040",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k00041",
+              "text": "гарниров;",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k00042",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k00043",
+              "text": "запеканок;",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k00044",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k00045",
+              "text": "овощных блюд;",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k00046",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k00047",
+              "text": "вегетарианских рецептов.",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k00048",
+          "style": "h3",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k00049",
+              "text": "Рекомендации по хранению",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "_type": "block",
+          "_key": "k0004a",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0004b",
+              "text": "в сухом, чистом месте без посторонних запахов;",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k0004c",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0004d",
+              "text": "при относительной влажности воздуха не выше 70 %;",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k0004e",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0004f",
+              "text": "в герметичной таре (для защиты от влаги и насекомых).",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        }
+      ],
+      "en": [
+        {
+          "_type": "block",
+          "_key": "k0004g",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0004h",
+              "text": "Sella is a high-quality long-grain rice processed with steam. This special treatment gives the grains several advantages:",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "_type": "block",
+          "_key": "k0004i",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0004j",
+              "text": "higher density (fewer broken grains in transport and cooking);",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k0004k",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0004l",
+              "text": "resistance to overcooking;",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k0004m",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0004n",
+              "text": "faster cooking than regular rice.",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k0004o",
+          "style": "h3",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0004p",
+              "text": "Characteristics",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "_type": "block",
+          "_key": "k0004q",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0004r",
+              "text": "a light nutty aroma;",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k0004s",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0004t",
+              "text": "a pleasant, firm bite once cooked.",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k0004u",
+          "style": "h3",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0004v",
+              "text": "Ideal for",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "_type": "block",
+          "_key": "k0004w",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0004x",
+              "text": "side dishes;",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k0004y",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0004z",
+              "text": "bakes and casseroles;",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k00050",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k00051",
+              "text": "vegetable dishes;",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k00052",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k00053",
+              "text": "vegetarian recipes.",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k00054",
+          "style": "h3",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k00055",
+              "text": "Storage",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "_type": "block",
+          "_key": "k00056",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k00057",
+              "text": "in a dry, clean place free from foreign odours;",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k00058",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k00059",
+              "text": "at relative humidity not above 70%;",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k0005a",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0005b",
+              "text": "in airtight containers (to protect from moisture and insects).",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        }
+      ]
+    }
+  },
+  {
+    "_id": "product-pusa-basmati-steam-rice",
+    "_type": "product",
+    "name": {
+      "_type": "localeString",
+      "ru": "Рис басмати Pusa Steam",
+      "en": "Pusa Basmati Steam rice"
+    },
+    "slug": {
+      "_type": "slug",
+      "current": "pusa-basmati-steam-rice"
+    },
+    "category": "rice",
+    "featured": false,
+    "vegetarian": true,
+    "orderRank": 60,
+    "summary": {
+      "_type": "localeText",
+      "ru": "Пропаренный басмати Pusa с длиной зерна 7,8 мм — для бирьяни, пулао и блюд высокой кухни.",
+      "en": "Pusa basmati, steam-processed, 7.8 mm grain — for biryani, pulao and gourmet cuisine."
+    },
+    "imageFile": "pusa_steam.jpg",
+    "specs": [
+      {
+        "_type": "spec",
+        "_key": "k0005c",
+        "label": {
+          "_type": "localeString",
+          "ru": "Сорт",
+          "en": "Variety"
+        },
+        "value": {
+          "_type": "localeString",
+          "ru": "Pusa",
+          "en": "Pusa"
+        }
+      },
+      {
+        "_type": "spec",
+        "_key": "k0005d",
+        "label": {
+          "_type": "localeString",
+          "ru": "Длина зерна",
+          "en": "Grain length"
+        },
+        "value": {
+          "_type": "localeString",
+          "ru": "7,8 мм",
+          "en": "7.8 mm"
+        }
+      },
+      {
+        "_type": "spec",
+        "_key": "k0005e",
+        "label": {
+          "_type": "localeString",
+          "ru": "Обработка",
+          "en": "Processing"
+        },
+        "value": {
+          "_type": "localeString",
+          "ru": "Steam",
+          "en": "Steam"
+        }
+      },
+      {
+        "_type": "spec",
+        "_key": "k0005f",
+        "label": {
+          "_type": "localeString",
+          "ru": "Происхождение",
+          "en": "Origin"
+        },
+        "value": {
+          "_type": "localeString",
+          "ru": "Индия",
+          "en": "India"
+        }
+      }
+    ],
+    "body": {
+      "_type": "localeBlockContent",
+      "ru": [
+        {
+          "_type": "block",
+          "_key": "k0005g",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0005h",
+              "text": "Рис басмати — премиальный сорт длиннозёрного риса, известный ярким ароматом, пушистой текстурой и исключительной длиной зерна после приготовления. Идеально подходит для бирьяни, пулао и блюд высокой кухни — элегантность и вкус в каждом зёрнышке.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "en": [
+        {
+          "_type": "block",
+          "_key": "k0005i",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0005j",
+              "text": "Basmati is a premium long-grain rice known for its vivid aroma, fluffy texture and exceptional grain length once cooked. Ideal for biryani, pulao and gourmet cuisine — elegance and flavour in every grain.",
+              "marks": []
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "_id": "product-pusa-basmati-sella-rice",
+    "_type": "product",
+    "name": {
+      "_type": "localeString",
+      "ru": "Рис басмати Pusa Sella",
+      "en": "Pusa Basmati Sella rice"
+    },
+    "slug": {
+      "_type": "slug",
+      "current": "pusa-basmati-sella-rice"
+    },
+    "category": "rice",
+    "featured": false,
+    "vegetarian": true,
+    "orderRank": 70,
+    "summary": {
+      "_type": "localeText",
+      "ru": "Басмати Pusa Sella с длиной зерна 7,55 мм — ароматный, рассыпчатый, с длинным зерном.",
+      "en": "Pusa Sella basmati, 7.55 mm grain — aromatic, fluffy and long once cooked."
+    },
+    "imageFile": "pusa_sella.jpg",
+    "specs": [
+      {
+        "_type": "spec",
+        "_key": "k0005k",
+        "label": {
+          "_type": "localeString",
+          "ru": "Сорт",
+          "en": "Variety"
+        },
+        "value": {
+          "_type": "localeString",
+          "ru": "Pusa",
+          "en": "Pusa"
+        }
+      },
+      {
+        "_type": "spec",
+        "_key": "k0005l",
+        "label": {
+          "_type": "localeString",
+          "ru": "Длина зерна",
+          "en": "Grain length"
+        },
+        "value": {
+          "_type": "localeString",
+          "ru": "7,55 мм",
+          "en": "7.55 mm"
+        }
+      },
+      {
+        "_type": "spec",
+        "_key": "k0005m",
+        "label": {
+          "_type": "localeString",
+          "ru": "Обработка",
+          "en": "Processing"
+        },
+        "value": {
+          "_type": "localeString",
+          "ru": "Sella",
+          "en": "Sella"
+        }
+      },
+      {
+        "_type": "spec",
+        "_key": "k0005n",
+        "label": {
+          "_type": "localeString",
+          "ru": "Происхождение",
+          "en": "Origin"
+        },
+        "value": {
+          "_type": "localeString",
+          "ru": "Индия",
+          "en": "India"
+        }
+      }
+    ],
+    "body": {
+      "_type": "localeBlockContent",
+      "ru": [
+        {
+          "_type": "block",
+          "_key": "k0005o",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0005p",
+              "text": "Рис басмати — премиальный сорт длиннозёрного риса, известный ярким ароматом, пушистой текстурой и исключительной длиной зерна после приготовления. Идеально подходит для бирьяни, пулао и блюд высокой кухни — элегантность и вкус в каждом зёрнышке.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "en": [
+        {
+          "_type": "block",
+          "_key": "k0005q",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0005r",
+              "text": "Basmati is a premium long-grain rice known for its vivid aroma, fluffy texture and exceptional grain length once cooked. Ideal for biryani, pulao and gourmet cuisine — elegance and flavour in every grain.",
+              "marks": []
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "_id": "product-pusa-basmati-raw-rice",
+    "_type": "product",
+    "name": {
+      "_type": "localeString",
+      "ru": "Рис басмати Pusa Raw (традиционный)",
+      "en": "Pusa Basmati Raw rice (traditional)"
+    },
+    "slug": {
+      "_type": "slug",
+      "current": "pusa-basmati-raw-rice"
+    },
+    "category": "rice",
+    "featured": false,
+    "vegetarian": true,
+    "orderRank": 80,
+    "summary": {
+      "_type": "localeText",
+      "ru": "Традиционный необработанный басмати Pusa, длина зерна 7,55 мм.",
+      "en": "Traditional raw Pusa basmati with a 7.55 mm grain."
+    },
+    "imageFile": "pusa_raw.jpg",
+    "specs": [
+      {
+        "_type": "spec",
+        "_key": "k0005s",
+        "label": {
+          "_type": "localeString",
+          "ru": "Сорт",
+          "en": "Variety"
+        },
+        "value": {
+          "_type": "localeString",
+          "ru": "Pusa",
+          "en": "Pusa"
+        }
+      },
+      {
+        "_type": "spec",
+        "_key": "k0005t",
+        "label": {
+          "_type": "localeString",
+          "ru": "Длина зерна",
+          "en": "Grain length"
+        },
+        "value": {
+          "_type": "localeString",
+          "ru": "7,55 мм",
+          "en": "7.55 mm"
+        }
+      },
+      {
+        "_type": "spec",
+        "_key": "k0005u",
+        "label": {
+          "_type": "localeString",
+          "ru": "Обработка",
+          "en": "Processing"
+        },
+        "value": {
+          "_type": "localeString",
+          "ru": "Raw",
+          "en": "Raw"
+        }
+      },
+      {
+        "_type": "spec",
+        "_key": "k0005v",
+        "label": {
+          "_type": "localeString",
+          "ru": "Происхождение",
+          "en": "Origin"
+        },
+        "value": {
+          "_type": "localeString",
+          "ru": "Индия",
+          "en": "India"
+        }
+      }
+    ],
+    "body": {
+      "_type": "localeBlockContent",
+      "ru": [
+        {
+          "_type": "block",
+          "_key": "k0005w",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0005x",
+              "text": "Рис басмати — премиальный сорт длиннозёрного риса, известный ярким ароматом, пушистой текстурой и исключительной длиной зерна после приготовления. Идеально подходит для бирьяни, пулао и блюд высокой кухни — элегантность и вкус в каждом зёрнышке.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "en": [
+        {
+          "_type": "block",
+          "_key": "k0005y",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0005z",
+              "text": "Basmati is a premium long-grain rice known for its vivid aroma, fluffy texture and exceptional grain length once cooked. Ideal for biryani, pulao and gourmet cuisine — elegance and flavour in every grain.",
+              "marks": []
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "_id": "product-turmeric-powder",
+    "_type": "product",
+    "name": {
+      "_type": "localeString",
+      "ru": "Порошок куркумы",
+      "en": "Turmeric powder"
+    },
+    "slug": {
+      "_type": "slug",
+      "current": "turmeric-powder"
+    },
+    "category": "spices",
+    "featured": true,
+    "vegetarian": true,
+    "orderRank": 90,
+    "summary": {
+      "_type": "localeText",
+      "ru": "Яркая золотая специя с земляным вкусом и тёплым ароматом.",
+      "en": "A bright golden spice with an earthy flavour and warm aroma."
+    },
+    "imageFile": "turmeric.jpg",
+    "specs": [],
+    "body": {
+      "_type": "localeBlockContent",
+      "ru": [
+        {
+          "_type": "block",
+          "_key": "k00060",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k00061",
+              "text": "Куркума — это яркая золотая специя, известная своим земляным вкусом, тёплым ароматом и мощными противовоспалительными свойствами. Широко используемая в кулинарии, уходе за кожей и традиционной медицине, она является основным компонентом здоровья и кулинарии по всему миру.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "en": [
+        {
+          "_type": "block",
+          "_key": "k00062",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k00063",
+              "text": "Turmeric is a bright golden spice known for its earthy flavour, warm aroma and powerful anti-inflammatory properties. Widely used in cooking, skincare and traditional medicine, it is a staple of health and cuisine around the world.",
+              "marks": []
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "_id": "product-ginger-powder",
+    "_type": "product",
+    "name": {
+      "_type": "localeString",
+      "ru": "Имбирь молотый",
+      "en": "Ginger powder"
+    },
+    "slug": {
+      "_type": "slug",
+      "current": "ginger-powder"
+    },
+    "category": "spices",
+    "featured": false,
+    "vegetarian": true,
+    "orderRank": 100,
+    "summary": {
+      "_type": "localeText",
+      "ru": "Тёплая пикантная специя из высушенного корня имбиря.",
+      "en": "A warm, zesty spice made from dried ginger root."
+    },
+    "imageFile": "ginger.jpg",
+    "specs": [],
+    "body": {
+      "_type": "localeBlockContent",
+      "ru": [
+        {
+          "_type": "block",
+          "_key": "k00064",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k00065",
+              "text": "Молотый имбирь — тёплая, пикантная специя из высушенного корня имбиря, ценимая за яркий вкус и пользу для пищеварения. Универсальный ингредиент для чая, выпечки, основных блюд и травяных сборов в кухнях разных народов.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "en": [
+        {
+          "_type": "block",
+          "_key": "k00066",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k00067",
+              "text": "Ginger powder is a warm, zesty spice made from dried ginger root, prized for its bold flavour and digestive benefits. It is a versatile ingredient used in teas, baking, savoury dishes and herbal remedies across cultures.",
+              "marks": []
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "_id": "product-red-chili",
+    "_type": "product",
+    "name": {
+      "_type": "localeString",
+      "ru": "Красный перец чили",
+      "en": "Red chili"
+    },
+    "slug": {
+      "_type": "slug",
+      "current": "red-chili"
+    },
+    "category": "spices",
+    "featured": false,
+    "vegetarian": true,
+    "orderRank": 110,
+    "summary": {
+      "_type": "localeText",
+      "ru": "Жгучая специя с интенсивной остротой и ярким цветом.",
+      "en": "A fiery spice with intense heat and vibrant colour."
+    },
+    "imageFile": "red.jpg",
+    "specs": [],
+    "body": {
+      "_type": "localeBlockContent",
+      "ru": [
+        {
+          "_type": "block",
+          "_key": "k00068",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k00069",
+              "text": "Красный перец чили — жгучая специя, известная интенсивной остротой и ярким цветом. Используется во множестве кухонь мира: придаёт блюдам насыщенный вкус и пикантность, а также ценится за антиоксидантные свойства и способность ускорять обмен веществ.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "en": [
+        {
+          "_type": "block",
+          "_key": "k0006a",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0006b",
+              "text": "Red chilli is a fiery spice celebrated for its intense heat and vibrant colour. Used across a wide range of global cuisines, it adds bold flavour and a spicy kick to dishes, and is also valued for its metabolism-boosting and antioxidant properties.",
+              "marks": []
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "_id": "product-paprika",
+    "_type": "product",
+    "name": {
+      "_type": "localeString",
+      "ru": "Паприка",
+      "en": "Paprika"
+    },
+    "slug": {
+      "_type": "slug",
+      "current": "paprika"
+    },
+    "category": "spices",
+    "featured": false,
+    "vegetarian": true,
+    "orderRank": 120,
+    "summary": {
+      "_type": "localeText",
+      "ru": "Мягкая сладковатая специя из молотого красного перца.",
+      "en": "A mild, sweet spice made from ground red peppers."
+    },
+    "imageFile": "paprika.jpg",
+    "specs": [],
+    "body": {
+      "_type": "localeBlockContent",
+      "ru": [
+        {
+          "_type": "block",
+          "_key": "k0006c",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0006d",
+              "text": "Паприка — мягкая, сладковатая специя из молотого красного перца, ценимая за насыщенный красный цвет и деликатную теплоту. Улучшает вкус и внешний вид блюд — от рагу до маринадов — и любима как в традиционной, так и в современной кухне.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "en": [
+        {
+          "_type": "block",
+          "_key": "k0006e",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0006f",
+              "text": "Paprika is a mild, sweet spice made from ground red peppers, prized for its rich red colour and gentle warmth. It enhances the flavour and look of dishes — from stews to marinades — and is a favourite in both traditional and modern cuisine.",
+              "marks": []
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "_id": "product-black-pepper",
+    "_type": "product",
+    "name": {
+      "_type": "localeString",
+      "ru": "Чёрный перец",
+      "en": "Black pepper"
+    },
+    "slug": {
+      "_type": "slug",
+      "current": "black-pepper"
+    },
+    "category": "spices",
+    "featured": false,
+    "vegetarian": true,
+    "orderRank": 130,
+    "summary": {
+      "_type": "localeText",
+      "ru": "«Король специй» — острый, ароматный, незаменимый в кухнях всего мира.",
+      "en": "The “king of spices” — sharp, aromatic and essential in kitchens worldwide."
+    },
+    "imageFile": "black.jpg",
+    "specs": [],
+    "body": {
+      "_type": "localeBlockContent",
+      "ru": [
+        {
+          "_type": "block",
+          "_key": "k0006g",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0006h",
+              "text": "Чёрный перец — яркая ароматная специя, которую называют «королём специй». Придаёт блюдам острый, пикантный вкус и ценится не только за универсальность в кулинарии, но и за пользу для пищеварения и антиоксидантные свойства. Основа кухонь и смесей специй по всему миру.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "en": [
+        {
+          "_type": "block",
+          "_key": "k0006i",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0006j",
+              "text": "Black pepper is a bold, aromatic spice known as the “king of spices”. It brings a sharp, pungent flavour to dishes and is prized not only for its culinary versatility but also for its digestive and antioxidant benefits. A staple in kitchens and spice blends worldwide.",
+              "marks": []
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "_id": "product-moringa-powder",
+    "_type": "product",
+    "name": {
+      "_type": "localeString",
+      "ru": "Порошок моринги",
+      "en": "Moringa powder"
+    },
+    "slug": {
+      "_type": "slug",
+      "current": "moringa-powder"
+    },
+    "category": "spices",
+    "featured": false,
+    "vegetarian": true,
+    "orderRank": 140,
+    "summary": {
+      "_type": "localeText",
+      "ru": "Питательный суперфуд из высушенных листьев моринги.",
+      "en": "A nutrient-dense superfood made from dried moringa leaves."
+    },
+    "imageFile": "morringa.jpg",
+    "specs": [],
+    "body": {
+      "_type": "localeBlockContent",
+      "ru": [
+        {
+          "_type": "block",
+          "_key": "k0006k",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0006l",
+              "text": "Порошок моринги — питательный суперфуд из высушенных листьев моринги. Богат антиоксидантами, витаминами и минералами; широко применяется в БАД, смузи и оздоровительных смесях благодаря тонизирующим и противовоспалительным свойствам.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "en": [
+        {
+          "_type": "block",
+          "_key": "k0006m",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0006n",
+              "text": "Moringa powder is a nutrient-dense superfood made from dried moringa leaves. Rich in antioxidants, vitamins and minerals, it is widely used in health supplements, smoothies and wellness blends for its energy-boosting and anti-inflammatory benefits.",
+              "marks": []
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "_id": "product-psyllium-husk",
+    "_type": "product",
+    "name": {
+      "_type": "localeString",
+      "ru": "Шелуха семян подорожника (псиллиум)",
+      "en": "Psyllium husk"
+    },
+    "slug": {
+      "_type": "slug",
+      "current": "psyllium-husk"
+    },
+    "category": "superfoods",
+    "featured": true,
+    "vegetarian": true,
+    "orderRank": 150,
+    "summary": {
+      "_type": "localeText",
+      "ru": "Натуральный источник водорастворимой клетчатки с нейтральным вкусом.",
+      "en": "A natural source of soluble dietary fibre with a neutral taste."
+    },
+    "imageFile": "psyllium.jpg",
+    "specs": [],
+    "body": {
+      "_type": "localeBlockContent",
+      "ru": [
+        {
+          "_type": "block",
+          "_key": "k0006o",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0006p",
+              "text": "Шелуха семян подорожника (псиллиум) — это натуральный источник водорастворимых пищевых волокон, обладающих уникальными абсорбирующими свойствами. Она эффективно очищает кишечник, улучшает перистальтику, снижает уровень сахара и холестерина в крови. Используется как биологически активная добавка к пище, применяется в производстве продуктов функционального питания и лечебных диет. Отличается нейтральным вкусом и лёгкостью включения в различные рецепты.",
+              "marks": []
+            }
+          ]
+        }
+      ],
+      "en": [
+        {
+          "_type": "block",
+          "_key": "k0006q",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0006r",
+              "text": "Psyllium husk is a natural source of water-soluble dietary fibre with unique absorbent properties. It effectively cleanses the gut, improves motility and lowers blood sugar and cholesterol levels. It is used as a dietary supplement and in the production of functional foods and therapeutic diets. It has a neutral taste and is easy to add to all kinds of recipes.",
+              "marks": []
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "_id": "product-chia-seeds",
+    "_type": "product",
+    "name": {
+      "_type": "localeString",
+      "ru": "Семена чиа (Индия)",
+      "en": "Chia seeds (India)"
+    },
+    "slug": {
+      "_type": "slug",
+      "current": "chia-seeds"
+    },
+    "category": "superfoods",
+    "featured": true,
+    "vegetarian": true,
+    "orderRank": 160,
+    "summary": {
+      "_type": "localeText",
+      "ru": "Семена Salvia hispanica, выращенные по стандартам органического земледелия: Омега-3, белок, клетчатка.",
+      "en": "Salvia hispanica seeds grown to organic farming standards: omega-3, protein and fibre."
+    },
+    "imageFile": "chia.jpg",
+    "specs": [
+      {
+        "_type": "spec",
+        "_key": "k0006s",
+        "label": {
+          "_type": "localeString",
+          "ru": "Ботаническое название",
+          "en": "Botanical name"
+        },
+        "value": {
+          "_type": "localeString",
+          "ru": "Salvia hispanica",
+          "en": "Salvia hispanica"
+        }
+      },
+      {
+        "_type": "spec",
+        "_key": "k0006t",
+        "label": {
+          "_type": "localeString",
+          "ru": "Происхождение",
+          "en": "Origin"
+        },
+        "value": {
+          "_type": "localeString",
+          "ru": "Индия",
+          "en": "India"
+        }
+      },
+      {
+        "_type": "spec",
+        "_key": "k0006u",
+        "label": {
+          "_type": "localeString",
+          "ru": "Дневная порция",
+          "en": "Daily serving"
+        },
+        "value": {
+          "_type": "localeString",
+          "ru": "15–20 г",
+          "en": "15–20 g"
+        }
+      },
+      {
+        "_type": "spec",
+        "_key": "k0006v",
+        "label": {
+          "_type": "localeString",
+          "ru": "ГМО",
+          "en": "GMO"
+        },
+        "value": {
+          "_type": "localeString",
+          "ru": "не содержат",
+          "en": "GMO-free"
+        }
+      }
+    ],
+    "body": {
+      "_type": "localeBlockContent",
+      "ru": [
+        {
+          "_type": "block",
+          "_key": "k0006w",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0006x",
+              "text": "Семена чиа (Salvia hispanica) из Индии — ценный натуральный продукт, выращенный по стандартам органического земледелия (без синтетических удобрений и химикатов).",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "_type": "block",
+          "_key": "k0006y",
+          "style": "h3",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0006z",
+              "text": "Ключевые преимущества",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "_type": "block",
+          "_key": "k00070",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k00071",
+              "text": "Богаты Омега-3 — поддерживают здоровье сердечно-сосудистой системы и работу мозга.",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k00072",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k00073",
+              "text": "Источник кальция и фосфора — способствуют укреплению костей, зубов и мышечной ткани.",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k00074",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k00075",
+              "text": "Содержат клетчатку — помогают нормализовать обмен веществ, регулировать уровень глюкозы и снижать чувство голода.",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k00076",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k00077",
+              "text": "Полноценный белок — включают все необходимые аминокислоты, важны для поддержания мышечной массы.",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k00078",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k00079",
+              "text": "Природные антиоксиданты — защищают клетки от повреждений, замедляют старение и снижают воспаления.",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k0007a",
+          "style": "h3",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0007b",
+              "text": "Безопасность и совместимость",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "_type": "block",
+          "_key": "k0007c",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0007d",
+              "text": "не содержат ГМО;",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k0007e",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0007f",
+              "text": "не включают распространённые аллергены;",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k0007g",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0007h",
+              "text": "подходят для веганов и людей с повышенной чувствительностью к продуктам.",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k0007i",
+          "style": "h3",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0007j",
+              "text": "Рекомендации по употреблению",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "_type": "block",
+          "_key": "k0007k",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0007l",
+              "text": "оптимальная дневная порция — 15–20 г (1–1,5 ст. л.);",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k0007m",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0007n",
+              "text": "перед употреблением желательно замочить в воде или другой жидкости (семена впитывают влагу и увеличиваются в объёме).",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        }
+      ],
+      "en": [
+        {
+          "_type": "block",
+          "_key": "k0007o",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0007p",
+              "text": "Chia seeds (Salvia hispanica) from India are a valuable natural product grown to organic farming standards — without synthetic fertilisers or chemicals.",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "_type": "block",
+          "_key": "k0007q",
+          "style": "h3",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0007r",
+              "text": "Key benefits",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "_type": "block",
+          "_key": "k0007s",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0007t",
+              "text": "Rich in omega-3 — supports heart health and brain function.",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k0007u",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0007v",
+              "text": "A source of calcium and phosphorus — helps strengthen bones, teeth and muscle tissue.",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k0007w",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0007x",
+              "text": "Contains fibre — helps normalise metabolism, regulate glucose levels and reduce hunger.",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k0007y",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0007z",
+              "text": "Complete protein — contains all essential amino acids, important for maintaining muscle mass.",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k00080",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k00081",
+              "text": "Natural antioxidants — protect cells from damage, slow ageing and reduce inflammation.",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k00082",
+          "style": "h3",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k00083",
+              "text": "Safety and compatibility",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "_type": "block",
+          "_key": "k00084",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k00085",
+              "text": "GMO-free;",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k00086",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k00087",
+              "text": "free from common allergens;",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k00088",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k00089",
+              "text": "suitable for vegans and people with food sensitivities.",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k0008a",
+          "style": "h3",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0008b",
+              "text": "How to use",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "_type": "block",
+          "_key": "k0008c",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0008d",
+              "text": "optimal daily serving — 15–20 g (1–1.5 tbsp);",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k0008e",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0008f",
+              "text": "soak in water or another liquid before eating — the seeds absorb moisture and swell.",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        }
+      ]
+    }
+  },
+  {
+    "_id": "product-quinoa",
+    "_type": "product",
+    "name": {
+      "_type": "localeString",
+      "ru": "Киноа (Индия)",
+      "en": "Quinoa (India)"
+    },
+    "slug": {
+      "_type": "slug",
+      "current": "quinoa"
+    },
+    "category": "superfoods",
+    "featured": false,
+    "vegetarian": true,
+    "orderRank": 170,
+    "summary": {
+      "_type": "localeText",
+      "ru": "Суперфуд без глютена из горных районов Индии: до 20 г белка на 100 г, низкий гликемический индекс.",
+      "en": "A gluten-free superfood from India’s highlands: up to 20 g protein per 100 g and a low glycaemic index."
+    },
+    "imageFile": "super4.jpg",
+    "specs": [
+      {
+        "_type": "spec",
+        "_key": "k0008g",
+        "label": {
+          "_type": "localeString",
+          "ru": "Белок",
+          "en": "Protein"
+        },
+        "value": {
+          "_type": "localeString",
+          "ru": "до 20 г / 100 г",
+          "en": "up to 20 g / 100 g"
+        }
+      },
+      {
+        "_type": "spec",
+        "_key": "k0008h",
+        "label": {
+          "_type": "localeString",
+          "ru": "Клетчатка",
+          "en": "Fibre"
+        },
+        "value": {
+          "_type": "localeString",
+          "ru": "7–14 г / 100 г",
+          "en": "7–14 g / 100 g"
+        }
+      },
+      {
+        "_type": "spec",
+        "_key": "k0008i",
+        "label": {
+          "_type": "localeString",
+          "ru": "Гликемический индекс",
+          "en": "Glycaemic index"
+        },
+        "value": {
+          "_type": "localeString",
+          "ru": "40–50",
+          "en": "40–50"
+        }
+      },
+      {
+        "_type": "spec",
+        "_key": "k0008j",
+        "label": {
+          "_type": "localeString",
+          "ru": "Глютен",
+          "en": "Gluten"
+        },
+        "value": {
+          "_type": "localeString",
+          "ru": "не содержит",
+          "en": "gluten-free"
+        }
+      }
+    ],
+    "body": {
+      "_type": "localeBlockContent",
+      "ru": [
+        {
+          "_type": "block",
+          "_key": "k0008k",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0008l",
+              "text": "Киноа — культура семейства амарантовых, выращиваемая в горных районах Индии. Признана диетологами ценным «суперфудом».",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "_type": "block",
+          "_key": "k0008m",
+          "style": "h3",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0008n",
+              "text": "Основные характеристики",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "_type": "block",
+          "_key": "k0008o",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0008p",
+              "text": "не содержит глютена — подходит для людей с непереносимостью глютена;",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k0008q",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0008r",
+              "text": "богата полноценным белком (до 20 г на 100 г продукта) с полным набором незаменимых аминокислот;",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k0008s",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0008t",
+              "text": "содержит клетчатку (7–14 г на 100 г), витамины (группы B, C, E), минералы (кальций, железо, медь, фосфор, магний);",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k0008u",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0008v",
+              "text": "имеет низкий гликемический индекс (40–50) — не вызывает резких скачков сахара в крови.",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k0008w",
+          "style": "h3",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0008x",
+              "text": "Польза для здоровья",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "_type": "block",
+          "_key": "k0008y",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0008z",
+              "text": "поддерживает работу иммунной системы (благодаря меди и железу);",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k00090",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k00091",
+              "text": "способствует здоровью кишечника (за счёт клетчатки);",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k00092",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k00093",
+              "text": "помогает контролировать вес (даёт длительное чувство сытости);",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k00094",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k00095",
+              "text": "улучшает работу сердечно-сосудистой системы (снижает уровень «плохого» холестерина);",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k00096",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k00097",
+              "text": "поддерживает здоровье костей (благодаря кальцию и лизину);",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k00098",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k00099",
+              "text": "оказывает антиоксидантное и противовоспалительное действие (за счёт полифенолов и биофлавоноидов).",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        }
+      ],
+      "en": [
+        {
+          "_type": "block",
+          "_key": "k0009a",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0009b",
+              "text": "Quinoa is a crop of the amaranth family grown in the mountain regions of India. Nutritionists recognise it as a valuable “superfood”.",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "_type": "block",
+          "_key": "k0009c",
+          "style": "h3",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0009d",
+              "text": "Key characteristics",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "_type": "block",
+          "_key": "k0009e",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0009f",
+              "text": "gluten-free — suitable for people with gluten intolerance;",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k0009g",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0009h",
+              "text": "rich in complete protein (up to 20 g per 100 g) with the full set of essential amino acids;",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k0009i",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0009j",
+              "text": "contains fibre (7–14 g per 100 g), vitamins (B group, C, E) and minerals (calcium, iron, copper, phosphorus, magnesium);",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k0009k",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0009l",
+              "text": "a low glycaemic index (40–50) — no sharp spikes in blood sugar.",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k0009m",
+          "style": "h3",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0009n",
+              "text": "Health benefits",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "_type": "block",
+          "_key": "k0009o",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0009p",
+              "text": "supports the immune system (thanks to copper and iron);",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k0009q",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0009r",
+              "text": "promotes gut health (thanks to fibre);",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k0009s",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0009t",
+              "text": "helps with weight control (long-lasting satiety);",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k0009u",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0009v",
+              "text": "supports the cardiovascular system (lowers “bad” cholesterol);",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k0009w",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0009x",
+              "text": "supports bone health (thanks to calcium and lysine);",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k0009y",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k0009z",
+              "text": "has antioxidant and anti-inflammatory effects (thanks to polyphenols and bioflavonoids).",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        }
+      ]
+    }
+  },
+  {
+    "_id": "product-assam-black-tea",
+    "_type": "product",
+    "name": {
+      "_type": "localeString",
+      "ru": "Индийский чёрный чай «Ассам»",
+      "en": "Assam Indian black tea"
+    },
+    "slug": {
+      "_type": "slug",
+      "current": "assam-black-tea"
+    },
+    "category": "superfoods",
+    "featured": false,
+    "vegetarian": true,
+    "orderRank": 180,
+    "summary": {
+      "_type": "localeText",
+      "ru": "Классический чёрный чай из долины Брахмапутры: насыщенный тёмно-янтарный настой с солодовой нотой.",
+      "en": "Classic black tea from the Brahmaputra valley: a rich dark-amber liquor with a malty note."
+    },
+    "imageFile": "super5.jpg",
+    "specs": [
+      {
+        "_type": "spec",
+        "_key": "k000a0",
+        "label": {
+          "_type": "localeString",
+          "ru": "Регион",
+          "en": "Region"
+        },
+        "value": {
+          "_type": "localeString",
+          "ru": "Ассам, Индия",
+          "en": "Assam, India"
+        }
+      },
+      {
+        "_type": "spec",
+        "_key": "k000a1",
+        "label": {
+          "_type": "localeString",
+          "ru": "Растение",
+          "en": "Plant"
+        },
+        "value": {
+          "_type": "localeString",
+          "ru": "Camellia sinensis var. assamica",
+          "en": "Camellia sinensis var. assamica"
+        }
+      }
+    ],
+    "body": {
+      "_type": "localeBlockContent",
+      "ru": [
+        {
+          "_type": "block",
+          "_key": "k000a2",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k000a3",
+              "text": "Ассам — классический сорт индийского чёрного чая, выращиваемого в одноимённом регионе на северо-востоке Индии (в долине реки Брахмапутры).",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "_type": "block",
+          "_key": "k000a4",
+          "style": "h3",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k000a5",
+              "text": "Ключевые особенности",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "_type": "block",
+          "_key": "k000a6",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k000a7",
+              "text": "изготавливается из листьев растения Camellia sinensis var. assamica;",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k000a8",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k000a9",
+              "text": "отличается насыщенным тёмно-янтарным настоем;",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k000aa",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k000ab",
+              "text": "обладает глубоким, богатым вкусом с характерной солодовой нотой;",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k000ac",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k000ad",
+              "text": "умеренно терпкий, с бодрящим эффектом;",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k000ae",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k000af",
+              "text": "богат антиоксидантами, полезными для сердца и концентрации внимания.",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        }
+      ],
+      "en": [
+        {
+          "_type": "block",
+          "_key": "k000ag",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k000ah",
+              "text": "Assam is a classic Indian black tea grown in the region of the same name in north-east India, in the Brahmaputra river valley.",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "_type": "block",
+          "_key": "k000ai",
+          "style": "h3",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k000aj",
+              "text": "Key features",
+              "marks": []
+            }
+          ]
+        },
+        {
+          "_type": "block",
+          "_key": "k000ak",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k000al",
+              "text": "made from the leaves of Camellia sinensis var. assamica;",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k000am",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k000an",
+              "text": "a rich, dark-amber liquor;",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k000ao",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k000ap",
+              "text": "a deep, full flavour with a characteristic malty note;",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k000aq",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k000ar",
+              "text": "moderately brisk with an invigorating effect;",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        },
+        {
+          "_type": "block",
+          "_key": "k000as",
+          "style": "normal",
+          "markDefs": [],
+          "children": [
+            {
+              "_type": "span",
+              "_key": "k000at",
+              "text": "rich in antioxidants that benefit the heart and concentration.",
+              "marks": []
+            }
+          ],
+          "listItem": "bullet",
+          "level": 1
+        }
+      ]
+    }
+  }
+]

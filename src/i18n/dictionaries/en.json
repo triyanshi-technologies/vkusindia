@@ -1,0 +1,195 @@
+{
+  "meta": {
+    "siteName": "VKUS India",
+    "titleTemplate": "%s — VKUS India",
+    "home": {
+      "title": "VKUS India — chicory, basmati rice, spices and superfoods from India",
+      "description": "Indo Russian Trade supplies chicory, 1121 and Pusa basmati rice, Indian spices, chia, quinoa, psyllium and Assam tea. Moscow office. Send an enquiry for your volume in kilograms."
+    },
+    "about": {
+      "title": "About the company",
+      "description": "Indo Russian Trade connects producers and buyers across continents: sourcing in India, quality to global standards, logistics and documentation for cross-border trade."
+    },
+    "products": {
+      "title": "Product catalogue",
+      "description": "Chicory, basmati rice, spices, superfoods and tea from India — 18 products in 4 categories. Specifications and enquiries for each item."
+    },
+    "contact": {
+      "title": "Contacts",
+      "description": "Moscow, 17B Butlerova St. Phone and WhatsApp +7 925 500 12 54, email info@vkusindia.ru. Send a product enquiry or message."
+    },
+    "privacy": {
+      "title": "Privacy and cookie policy",
+      "description": "How VKUS India processes personal data and cookies in accordance with Federal Law No. 152-FZ."
+    },
+    "submitted": {
+      "title": "Enquiry status"
+    }
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "products": "Products",
+    "contact": "Contacts",
+    "privacy": "Privacy policy",
+    "menu": "Menu",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "skipToContent": "Skip to content",
+    "primary": "Main navigation",
+    "breadcrumbs": "Breadcrumbs",
+    "allProducts": "All products",
+    "language": "Language",
+    "switchTo": "Switch to {language}"
+  },
+  "common": {
+    "enquire": "Send enquiry",
+    "viewCatalogue": "View catalogue",
+    "readMore": "More about us",
+    "details": "Details",
+    "callUs": "Call us",
+    "whatsapp": "WhatsApp",
+    "writeWhatsapp": "Message on WhatsApp",
+    "email": "Email",
+    "phone": "Phone",
+    "address": "Address",
+    "yandexMaps": "Yandex Maps",
+    "googleMaps": "Google Maps",
+    "vegetarian": "Vegetarian product",
+    "backHome": "Back to home",
+    "productCount": { "one": "product", "other": "products" },
+    "whatsappGreeting": "Hello! I am interested in: {product}"
+  },
+  "topBar": {
+    "welcome": "Welcome to Indo-Russian trade!"
+  },
+  "home": {
+    "eyebrow": "Indo Russian Trade · Moscow",
+    "titleLead": "Chicory, basmati, spices and superfoods",
+    "titleAccent": "from India",
+    "stats": {
+      "products": "products in the catalogue",
+      "categories": "product categories",
+      "route": "India — Russia"
+    },
+    "taglineCard": "The best for you",
+    "categoriesEyebrow": "Range",
+    "categoriesTitle": "Four categories, one supplier",
+    "featuredEyebrow": "Catalogue",
+    "featuredTitle": "Our products",
+    "featuredAll": "Full catalogue",
+    "aboutEyebrow": "About us",
+    "aboutTitle": "A reliable name in food import and export",
+    "approachEyebrow": "How we work",
+    "approachTitle": "What we stand for",
+    "processEyebrow": "Ordering",
+    "processTitle": "How to place an order",
+    "processSteps": [
+      {
+        "title": "Choose a product",
+        "text": "Browse the catalogue — every item has a description and specifications."
+      },
+      {
+        "title": "Send an enquiry",
+        "text": "State the quantity in kilograms and your country. The form takes a minute."
+      },
+      {
+        "title": "Get in touch",
+        "text": "We contact you by phone or email to discuss terms and delivery."
+      }
+    ],
+    "ctaTitle": "Need a volume quote?",
+    "ctaText": "Call, message us on WhatsApp or send an enquiry — we will reply with the details."
+  },
+  "about": {
+    "eyebrow": "About the company",
+    "title": "Indo Russian Trade",
+    "rangeTitle": "Our range includes",
+    "teamTitle": "Contact persons",
+    "legalTitle": "Company details"
+  },
+  "products": {
+    "eyebrow": "Catalogue",
+    "title": "Products from India",
+    "intro": "Chicory, basmati rice, spices, superfoods and tea. Open any product for its description and send an enquiry for the volume you need.",
+    "jumpTo": "Categories"
+  },
+  "product": {
+    "specs": "Specifications",
+    "category": "Category",
+    "description": "Description",
+    "enquiryTitle": "Enquire about this product",
+    "enquiryText": "Tell us the quantity and destination country — we will get back to you with an offer.",
+    "related": "More from this category",
+    "imageAlt": "{product} — photo"
+  },
+  "contact": {
+    "eyebrow": "Contacts",
+    "title": "Get in touch",
+    "intro": "Call, write on WhatsApp or email us. For product enquiries, use the form on the product page or below.",
+    "office": "Office",
+    "people": "Contact persons",
+    "orders": "Order enquiries",
+    "formTitle": "Write to us"
+  },
+  "form": {
+    "name": "Name",
+    "phone": "Mobile",
+    "email": "Email",
+    "country": "Country",
+    "quantity": "Quantity, kg",
+    "product": "Product",
+    "subject": "Subject",
+    "message": "Message",
+    "comment": "Comment",
+    "optional": "optional",
+    "consent": "I agree to the processing of my personal data in accordance with the",
+    "consentLink": "privacy policy",
+    "submit": "Send",
+    "submitting": "Sending…",
+    "placeholders": {
+      "name": "Your name",
+      "phone": "+7 900 000 00 00",
+      "email": "name@company.com",
+      "country": "Russia",
+      "quantity": "1000",
+      "subject": "Partnership",
+      "message": "How can we help?",
+      "comment": "Packaging, delivery terms, timing…"
+    },
+    "errors": {
+      "required": "This field is required",
+      "invalid": "Please check this value",
+      "tooShort": "Too short",
+      "tooLong": "Too long",
+      "consent": "Please confirm consent to process your data"
+    },
+    "status": {
+      "success": "Thank you! Your enquiry has been sent — we will contact you shortly.",
+      "invalid": "Please correct the highlighted fields.",
+      "network": "No connection. Check your internet and try again."
+    }
+  },
+  "cookie": {
+    "text": "vkusindia.ru may use cookies to improve the website. By continuing to use the site, you consent to the processing of personal data in accordance with the",
+    "link": "privacy policy",
+    "accept": "Accept and close"
+  },
+  "footer": {
+    "about": "Supplying chicory, basmati rice, spices and superfoods from India. Office in Moscow.",
+    "products": "Products",
+    "company": "Company",
+    "contacts": "Contacts",
+    "rights": "All rights reserved."
+  },
+  "notFound": {
+    "title": "Page not found",
+    "text": "The page may have been moved or no longer exists. Try the catalogue or the home page."
+  },
+  "submitted": {
+    "successTitle": "Enquiry sent",
+    "successText": "Thank you! We have received your message and will contact you shortly.",
+    "errorTitle": "Something went wrong",
+    "errorText": "The form could not be sent. Please check the details and try again, or contact us by phone or email."
+  }
+}

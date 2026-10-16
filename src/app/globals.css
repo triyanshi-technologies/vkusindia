@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+/*
+ * Brand palette
+ *   ink    #222222  charcoal black — headings, navigation, body text, footer
+ *   leaf   #A5C83B  leaf green     — brand accent, highlights, icons, promo
+ *   olive  #6F9228  deep olive     — secondary actions, hover states
+ *   paper  #FFFFFF  pure white     — backgrounds, cards
+ *   muted  #77796F  muted grey     — descriptions, supporting text
+ *
+ * Derived (not new colours, tints of the above):
+ *   muted-strong — muted grey darkened just enough to pass WCAG AA (4.5:1) at small sizes
+ *   line / mist  — hairlines and a faint leaf-tinted surface
+ */
+@theme {
+  --color-ink: #222222;
+  --color-leaf: #a5c83b;
+  --color-olive: #6f9228;
+  --color-paper: #ffffff;
+  --color-muted: #77796f;
+  --color-muted-strong: #62645b;
+  --color-line: #e6e7e0;
+  --color-mist: #f6f8ef;
+  --color-danger: #b42318;
+
+  --font-sans: var(--font-golos), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-lora), ui-serif, Georgia, serif;
+
+  --breakpoint-xs: 26rem;
+
+  --ease-soft: cubic-bezier(0.22, 0.7, 0.2, 1);
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+    scroll-padding-top: 6.5rem;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
+  body {
+    @apply bg-paper font-sans text-[1.0625rem] leading-relaxed text-ink antialiased;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  p,
+  li {
+    text-wrap: pretty;
+  }
+
+  ::selection {
+    @apply bg-leaf text-ink;
+  }
+
+  :focus-visible {
+    @apply rounded-sm outline-2 outline-offset-2 outline-olive;
+  }
+}
+
+@layer components {
+  /* Small uppercase label above section titles, with a short leaf rule. */
+  .eyebrow {
+    @apply inline-flex items-center gap-3 text-[0.8125rem] font-medium tracking-[0.14em] text-muted-strong uppercase;
+  }
+  .eyebrow::before {
+    content: "";
+    @apply h-px w-8 bg-leaf;
+  }
+
+  /* Long-form text from the CMS (product descriptions, policy). */
+  .prose-content {
+    @apply max-w-[68ch] text-ink/90;
+  }
+  .prose-content > * + * {
+    @apply mt-4;
+  }
+  .prose-content h2,
+  .prose-content h3 {
+    @apply mt-10 font-serif text-2xl leading-snug text-ink;
+  }
+  .prose-content ul {
+    @apply space-y-2.5;
+  }
+  .prose-content li {
+    @apply relative pl-6;
+  }
+  .prose-content li::before {
+    content: "";
+    @apply absolute top-[0.7em] left-0 size-2 rounded-full bg-leaf;
+  }
+}
+
+@utility scrollbar-none {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
