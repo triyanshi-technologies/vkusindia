@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-import { SITE_URL } from "@/content/company";
+import { SITE_URL } from "@/config/site";
 
 export default function robots(): MetadataRoute.Robots {
   return {

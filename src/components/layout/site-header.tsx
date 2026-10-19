@@ -72,7 +72,7 @@ export async function SiteHeader({ locale, dict }: SiteHeaderProps) {
 
                     {/* Mega menu: pure CSS (hover + focus-within), no client JS. */}
                     <div className="invisible absolute inset-x-0 top-full border-b border-line bg-paper opacity-0 shadow-[0_24px_40px_-24px_rgb(34_34_34/0.18)] transition-[opacity,visibility] duration-200 group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100">
-                      <Container className="grid grid-cols-4 gap-10 py-10">
+                      <Container className="grid grid-cols-3 gap-10 py-10">
                         {categories.map((category) => (
                           <div key={category.id}>
                             <Link

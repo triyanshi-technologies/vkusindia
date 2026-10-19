@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-import { CONTENT_UPDATED_AT } from "@/content/company";
+import { CONTENT_UPDATED_AT } from "@/config/site";
 import { LOCALES } from "@/i18n/config";
 import { href } from "@/i18n/routing";
 import { getProductSlugs } from "@/lib/content";

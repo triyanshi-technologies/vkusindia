@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
-import { ContactBand } from "@/components/home/contact-band";
-import { Principles } from "@/components/home/principles";
+import { ContactBand } from "@/components/sections/contact-band";
+import { Principles } from "@/components/sections/principles";
 import { Container } from "@/components/ui/container";
 import { IconCheck, IconUser } from "@/components/ui/icons";
 import { PageHeader } from "@/components/ui/page-header";

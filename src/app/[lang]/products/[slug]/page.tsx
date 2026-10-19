@@ -4,11 +4,11 @@ import { notFound } from "next/navigation";
 
 import { EnquiryForm } from "@/components/forms/enquiry-form";
 import { ProductCard, ProductGrid } from "@/components/product/product-card";
+import { ProductGallery } from "@/components/product/product-gallery";
 import { RichText } from "@/components/product/rich-text";
 import { JsonLd } from "@/components/seo/json-ld";
 import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 import { buttonClass } from "@/components/ui/button";
-import { CmsImage } from "@/components/ui/cms-image";
 import { Container } from "@/components/ui/container";
 import { IconArrowRight, IconMail, IconPhone, IconWhatsApp } from "@/components/ui/icons";
 import { company, whatsappLink } from "@/content/company";
@@ -25,8 +25,8 @@ type Props = PageProps<"/[lang]/products/[slug]">;
 const OG_WIDTH = 1200;
 
 /**
- * Pre-builds every product published at build time. Products published later
- * render on their first request and are cached from then on.
+ * Pre-builds every product published at build time (listed or not). Products
+ * published later render on their first request and are cached from then on.
  */
 export async function generateStaticParams() {
   const slugs = await getProductSlugs();
@@ -40,17 +40,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const product = await getProduct(lang, slug);
   if (!product) return {};
 
+  const ogWidth = Math.min(OG_WIDTH, product.image.width);
   return pageMetadata({
     locale: lang,
     path: `/products/${slug}`,
     title: `${product.name} — ${product.categoryName}`,
-    description: product.summary,
+    description: product.excerpt,
     image: {
       url: cmsImageUrl(product.image, OG_WIDTH),
-      width: Math.min(OG_WIDTH, product.image.width),
-      height: Math.round(
-        (Math.min(OG_WIDTH, product.image.width) * product.image.height) / product.image.width,
-      ),
+      width: ogWidth,
+      height: Math.round((ogWidth * product.image.height) / product.image.width),
       alt: product.name,
     },
   });
@@ -83,24 +82,12 @@ export default async function ProductPage({ params }: Props) {
           />
 
           <div className="mt-10 grid items-start gap-10 lg:mt-14 lg:grid-cols-12 lg:gap-16">
-            <div className="lg:col-span-5">
-              <div className="rounded-[2rem] bg-paper p-3 ring-1 ring-line">
-                <div className="relative aspect-[3/2] overflow-hidden rounded-[1.5rem] bg-mist">
-                  <CmsImage
-                    image={product.image}
-                    alt={interpolate(dict.product.imageAlt, { product: product.name })}
-                    fill
-                    preload
-                    sizes="(min-width: 1024px) 440px, 92vw"
-                    className="object-cover"
-                  />
-                </div>
-              </div>
-              {product.vegetarian && (
-                <p className="mt-4 flex items-center gap-2.5 text-sm text-muted-strong">
-                  <VegMark /> {dict.common.vegetarian}
-                </p>
-              )}
+            <div className="lg:sticky lg:top-28 lg:col-span-5">
+              <ProductGallery
+                images={product.images}
+                alt={interpolate(dict.product.imageAlt, { product: product.name })}
+                thumbLabel={dict.product.photoLabel}
+              />
             </div>
 
             <div className="lg:col-span-7">
@@ -113,26 +100,8 @@ export default async function ProductPage({ params }: Props) {
               <h1 className="mt-4 font-serif text-[2.25rem] leading-[1.1] tracking-tight text-ink sm:text-5xl">
                 {product.name}
               </h1>
-              <p className="mt-5 max-w-2xl text-lg text-muted-strong">{product.summary}</p>
 
-              {product.specs.length > 0 && (
-                <section aria-labelledby="specs-title" className="mt-10">
-                  <h2 id="specs-title" className="sr-only">
-                    {dict.product.specs}
-                  </h2>
-                  <dl className="grid border-t border-line sm:grid-cols-2 sm:gap-x-10">
-                    {product.specs.map((spec) => (
-                      <div
-                        key={spec.label}
-                        className="flex items-baseline justify-between gap-4 border-b border-line py-3.5"
-                      >
-                        <dt className="text-[0.9375rem] text-muted-strong">{spec.label}</dt>
-                        <dd className="text-right font-medium text-ink">{spec.value}</dd>
-                      </div>
-                    ))}
-                  </dl>
-                </section>
-              )}
+              <RichText value={product.description} className="mt-8 text-lg" />
 
               <div className="mt-10 flex flex-wrap gap-3">
                 <a href="#enquiry" className={buttonClass({ size: "lg" })}>
@@ -156,20 +125,7 @@ export default async function ProductPage({ params }: Props) {
         </Container>
       </div>
 
-      {product.body.length > 0 ? (
-        <section aria-labelledby="description-title" className="py-16 lg:py-24">
-          <Container className="grid gap-10 lg:grid-cols-12 lg:gap-16">
-            <h2 id="description-title" className="font-serif text-3xl text-ink lg:col-span-4">
-              {dict.product.description}
-            </h2>
-            <RichText value={product.body} className="text-lg lg:col-span-8" />
-          </Container>
-        </section>
-      ) : (
-        <div className="pt-16 lg:pt-24" />
-      )}
-
-      <section id="enquiry" aria-labelledby="enquiry-title" className="pb-16 lg:pb-24">
+      <section id="enquiry" aria-labelledby="enquiry-title" className="py-16 lg:py-24">
         <Container>
           <div className="grid gap-10 rounded-[2rem] border border-line p-6 sm:p-10 lg:grid-cols-12 lg:gap-16 lg:p-14">
             <div className="lg:col-span-4">
@@ -230,25 +186,13 @@ export default async function ProductPage({ params }: Props) {
           "@context": "https://schema.org",
           "@type": "Product",
           name: product.name,
-          description: product.summary,
-          image: cmsImageUrl(product.image),
+          description: product.excerpt,
+          image: product.images.map((image) => cmsImageUrl(image)),
           url: absoluteUrl(productHref),
           category: product.categoryName,
           brand: { "@type": "Brand", name: company.brand[lang] },
         }}
       />
     </>
-  );
-}
-
-/** Indian FSSAI vegetarian mark — a green square with a dot. */
-function VegMark() {
-  return (
-    <span
-      aria-hidden="true"
-      className="grid size-4 place-items-center rounded-[3px] border-[1.5px] border-olive"
-    >
-      <span className="size-1.5 rounded-full bg-olive" />
-    </span>
   );
 }

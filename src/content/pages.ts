@@ -14,14 +14,14 @@ export const heroLead: Localized = {
 
 export const heroImages = {
   main: {
-    src: "/images/products/about2.jpg",
+    src: "/images/hero/about2.jpg",
     alt: {
       ru: "Длиннозёрный рис басмати на ладони",
       en: "Long-grain basmati rice in a palm",
     } satisfies Localized,
   },
   inset: {
-    src: "/images/products/about.jpg",
+    src: "/images/hero/about.jpg",
     alt: {
       ru: "Цветы цикория и молотый цикорий в чаше",
       en: "Chicory flowers and ground chicory in a bowl",

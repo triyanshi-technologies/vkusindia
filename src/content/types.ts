@@ -5,8 +5,8 @@ import type { Locale } from "@/i18n/config";
 /** Every translatable content field is a `Localized` object ({ ru, en }). */
 export type Localized<T = string> = Record<Locale, T>;
 
-/** Must match the category list in the Sanity product schema (studio/schemaTypes/product.ts). */
-export type CategoryId = "chicory" | "rice" | "spices" | "superfoods";
+/** The three categories of the live site. Must match studio/schemaTypes/product.ts. */
+export type CategoryId = "chicory" | "rice" | "superfood";
 
 /** Image shipped with the site in /public (layout imagery, category tiles). */
 export interface ImageAsset {
@@ -46,14 +46,15 @@ export interface ProductSummary {
   category: CategoryId;
   categoryName: string;
   name: string;
-  summary: string;
+  /** Main photo (first of `images`). */
   image: CmsImage;
 }
 
 export interface Product extends ProductSummary {
-  vegetarian: boolean;
-  specs: { label: string; value: string }[];
-  body: PortableTextBlock[];
+  images: CmsImage[];
+  description: PortableTextBlock[];
+  /** Plain-text start of the description — used for meta description and structured data. */
+  excerpt: string;
 }
 
 export interface CategoryWithProducts extends Category {

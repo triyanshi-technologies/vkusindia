@@ -40,7 +40,6 @@ const nextConfig: NextConfig = {
   cacheComponents: true,
   partialPrefetching: true,
   experimental: {
-    agentFeedback: true,
     globalNotFound: true,
   },
   images: {

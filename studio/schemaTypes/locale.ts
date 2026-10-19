@@ -2,7 +2,7 @@ import { defineArrayMember, defineField, defineType } from "sanity";
 
 /**
  * Every translatable field stores both languages side by side: { ru, en }.
- * Russian is the primary language of the site, so it comes first and is required.
+ * Russian is the primary language of the site, so it comes first.
  */
 const languages = [
   { id: "ru", title: "Русский" },
@@ -23,29 +23,17 @@ export const localeString = defineType({
   ),
 });
 
-export const localeText = defineType({
-  name: "localeText",
-  title: "Localized text",
-  type: "object",
-  fields: languages.map((lang) =>
-    defineField({
-      name: lang.id,
-      title: lang.title,
-      type: "text",
-      rows: 3,
-      validation: (rule) => rule.required().max(400),
-    }),
-  ),
-});
-
-/** Rich text limited to what the product page renders: paragraphs, subheadings, bullet lists. */
+/**
+ * Rich text limited to what the live descriptions use: paragraphs and subheadings.
+ * Shift+Enter inside a paragraph adds a line break, exactly like <br> on the old site.
+ */
 const blockContent = defineArrayMember({
   type: "block",
   styles: [
     { title: "Normal", value: "normal" },
     { title: "Subheading", value: "h3" },
   ],
-  lists: [{ title: "Bullet", value: "bullet" }],
+  lists: [],
   marks: {
     decorators: [
       { title: "Bold", value: "strong" },
@@ -67,18 +55,4 @@ export const localeBlockContent = defineType({
       of: [blockContent],
     }),
   ),
-});
-
-export const spec = defineType({
-  name: "spec",
-  title: "Specification",
-  type: "object",
-  fields: [
-    defineField({ name: "label", title: "Label", type: "localeString" }),
-    defineField({ name: "value", title: "Value", type: "localeString" }),
-  ],
-  preview: {
-    select: { label: "label.ru", value: "value.ru" },
-    prepare: ({ label, value }) => ({ title: `${label ?? "—"}: ${value ?? "—"}` }),
-  },
 });

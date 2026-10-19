@@ -3,10 +3,10 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { CategoryList } from "@/components/home/category-list";
-import { ContactBand } from "@/components/home/contact-band";
+import { ContactBand } from "@/components/sections/contact-band";
 import { Hero } from "@/components/home/hero";
 import { PhotoMosaic } from "@/components/home/photo-mosaic";
-import { Principles } from "@/components/home/principles";
+import { Principles } from "@/components/sections/principles";
 import { ProcessSteps } from "@/components/home/process-steps";
 import { ProductCard, ProductGrid } from "@/components/product/product-card";
 import { buttonArrowClass, buttonClass } from "@/components/ui/button";
@@ -17,7 +17,7 @@ import { about, welcome } from "@/content/pages";
 import { isLocale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/get-dictionary";
 import { href } from "@/i18n/routing";
-import { getCatalogStats, getCategoriesWithProducts, getFeaturedProducts } from "@/lib/content";
+import { getCatalogStats, getCategoriesWithProducts } from "@/lib/content";
 import { pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata({ params }: PageProps<"/[lang]">): Promise<Metadata> {
@@ -37,17 +37,20 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
   const { lang } = await params;
   if (!isLocale(lang)) notFound();
 
-  const [dict, categories, featured, stats] = await Promise.all([
+  const [dict, categories, stats] = await Promise.all([
     getDictionary(lang),
     getCategoriesWithProducts(lang),
-    getFeaturedProducts(lang),
     getCatalogStats(),
   ]);
   const t = dict.home;
   const productsHref = href(lang, "/products");
 
-  const mosaic = categories
-    .flatMap((c) => c.products.slice(0, 1))
+  // Up to four photos, taken round-robin across categories for variety.
+  const longest = Math.max(0, ...categories.map((c) => c.products.length));
+  const mosaic = Array.from({ length: longest }, (_, i) => categories.map((c) => c.products[i]))
+    .flat()
+    .filter((p) => p !== undefined)
+    .slice(0, 4)
     .map((p) => ({ image: p.image, alt: p.name }));
 
   return (
@@ -75,29 +78,29 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
         </Container>
       </section>
 
+      {/* Same as the live home page: listed products grouped under their category. */}
       <section aria-labelledby="featured-title" className="py-20 lg:py-28">
         <Container>
-          <div className="flex flex-wrap items-end justify-between gap-6">
-            <SectionHeading
-              eyebrow={t.featuredEyebrow}
-              title={t.featuredTitle}
-              id="featured-title"
-            />
-            <Link href={productsHref} className={buttonClass({ variant: "outline" })}>
-              {t.featuredAll} ({stats.products})
-              <IconArrowRight className={buttonArrowClass} />
-            </Link>
-          </div>
-          <ProductGrid className="mt-12">
-            {featured.map((product) => (
-              <ProductCard
-                key={product.slug}
-                product={product}
-                href={href(lang, `/products/${product.slug}`)}
-                detailsLabel={dict.common.details}
-              />
+          <SectionHeading eyebrow={t.featuredEyebrow} title={t.featuredTitle} id="featured-title" />
+          {categories
+            .filter((category) => category.products.length > 0)
+            .map((category) => (
+              <div key={category.id} className="mt-12 lg:mt-14">
+                <h3 className="border-b border-line pb-4 font-serif text-2xl text-ink">
+                  {category.name}
+                </h3>
+                <ProductGrid className="mt-8">
+                  {category.products.map((product) => (
+                    <ProductCard
+                      key={product.slug}
+                      product={product}
+                      href={href(lang, `/products/${product.slug}`)}
+                      detailsLabel={dict.common.details}
+                    />
+                  ))}
+                </ProductGrid>
+              </div>
             ))}
-          </ProductGrid>
         </Container>
       </section>
 

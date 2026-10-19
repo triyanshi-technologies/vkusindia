@@ -12,7 +12,7 @@
     },
     "products": {
       "title": "Product catalogue",
-      "description": "Chicory, basmati rice, spices, superfoods and tea from India — 18 products in 4 categories. Specifications and enquiries for each item."
+      "description": "Chicory, basmati rice, superfoods, spices and tea from India. Description and enquiry form for every product."
     },
     "contact": {
       "title": "Contacts",
@@ -55,7 +55,6 @@
     "address": "Address",
     "yandexMaps": "Yandex Maps",
     "googleMaps": "Google Maps",
-    "vegetarian": "Vegetarian product",
     "backHome": "Back to home",
     "productCount": { "one": "product", "other": "products" },
     "whatsappGreeting": "Hello! I am interested in: {product}"
@@ -74,10 +73,9 @@
     },
     "taglineCard": "The best for you",
     "categoriesEyebrow": "Range",
-    "categoriesTitle": "Four categories, one supplier",
+    "categoriesTitle": "Three categories, one supplier",
     "featuredEyebrow": "Catalogue",
     "featuredTitle": "Our products",
-    "featuredAll": "Full catalogue",
     "aboutEyebrow": "About us",
     "aboutTitle": "A reliable name in food import and export",
     "approachEyebrow": "How we work",
@@ -115,13 +113,13 @@
     "jumpTo": "Categories"
   },
   "product": {
-    "specs": "Specifications",
     "category": "Category",
     "description": "Description",
     "enquiryTitle": "Enquire about this product",
     "enquiryText": "Tell us the quantity and destination country — we will get back to you with an offer.",
     "related": "More from this category",
-    "imageAlt": "{product} — photo"
+    "imageAlt": "{product} — photo",
+    "photoLabel": "Photo {n}"
   },
   "contact": {
     "eyebrow": "Contacts",

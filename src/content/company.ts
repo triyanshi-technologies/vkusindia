@@ -1,13 +1,5 @@
 import type { Localized } from "./types";
 
-export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://vkusindia.ru").replace(
-  /\/$/,
-  "",
-);
-
-/** Last content update — used for sitemap `lastModified`. */
-export const CONTENT_UPDATED_AT = "2026-10-15";
-
 const PRIMARY_PHONE = "+79255001254";
 
 export const company = {

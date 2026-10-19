@@ -1,6 +1,6 @@
 import { NextResponse, type NextRequest } from "next/server";
 
-import { resolveLegacyPath } from "@/content/legacy";
+import { resolveLegacyPath } from "@/config/redirects";
 import {
   DEFAULT_LOCALE,
   LOCALE_COOKIE,

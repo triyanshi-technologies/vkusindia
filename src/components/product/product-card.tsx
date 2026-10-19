@@ -42,12 +42,9 @@ export function ProductCard({
           {product.name}
         </Link>
       </Heading>
-      <p className="mt-2 line-clamp-2 text-[0.9375rem] leading-relaxed text-muted-strong">
-        {product.summary}
-      </p>
       <span
         aria-hidden="true"
-        className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-ink"
+        className="mt-3 inline-flex items-center gap-1.5 text-sm font-medium text-ink"
       >
         {detailsLabel}
         <IconArrowUpRight className="size-4 text-olive transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />

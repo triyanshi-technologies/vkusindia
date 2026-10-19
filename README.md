@@ -14,32 +14,45 @@ npm run lint && npm run typecheck
 ## Structure
 
 ```
+├─ public/images/
+│  ├─ brand/                 Logo
+│  ├─ hero/                  Home/about photography
+│  └─ categories/            Category tiles
 ├─ src/                      Website (Next.js)
 │  ├─ proxy.ts               Locale redirect (cookie → Vercel country → Accept-Language → ru), old-URL 301s
 │  ├─ actions/locale.ts      Server Action: language toggle
 │  ├─ app/[lang]/            All pages, prerendered for ru and en
 │  ├─ app/api/enquiry|contact  Form handlers (validate and log)
 │  ├─ app/api/revalidate     Sanity publish webhook → refreshes cached product data
-│  ├─ components/            layout/ home/ product/ forms/ ui/ seo/
+│  ├─ components/
+│  │  ├─ layout/             Header, mobile menu, footer, language switcher, cookie notice
+│  │  ├─ sections/           Page sections shared by several pages (contact band, principles)
+│  │  ├─ home/               Sections used only on the home page
+│  │  ├─ product/  forms/  seo/
+│  │  └─ ui/                 Primitives: container, buttons, icons, headings, CMS image
+│  ├─ config/                Site URL, old-URL redirect map
 │  ├─ content/               Non-product content in code: categories, page copy, company, privacy
 │  ├─ i18n/                  Locale config, routing helpers, en.json / ru.json UI strings
 │  └─ lib/
 │     ├─ content.ts          Data access layer — the only place pages get product data from
-│     └─ sanity/             Client, GROQ query, image URL helpers
+│     ├─ sanity/             Client, GROQ query, image URL helpers
+│     └─ forms/  seo.ts  utils.ts
 └─ studio/                   Sanity Studio (separate app, own package.json)
    ├─ schemaTypes/           Product schema + localized field types
-   ├─ scripts/seed.ts        Imports the 18 original products (with photos)
-   └─ seed/                  Seed data + photos
+   ├─ scripts/seed.ts        One-time import of the 18 products of the old site (with photos)
+   └─ seed/                  Data copied verbatim from the old site + photos for that import
 ```
 
 ## Content model
 
 | Lives in | What |
 |---|---|
-| **Sanity** | Products: name, slug, category, photo, short description, specs, full description (RU + EN), "show on home page", vegetarian flag, sort order |
-| **Code** | Categories (`src/content/categories.ts`), page copy, company details, privacy policy, UI strings |
+| **Sanity** | Products, mirroring the previous vkusindia.ru: name (RU + EN), slug, category, photos, description (RU + EN, paragraphs / subheadings / line breaks), "listed", sort order, old site ID |
+| **Code** | The 3 categories (`src/content/categories.ts`), page copy, company details, privacy policy, UI strings |
 
-Product `category` values must match `CategoryId` in `src/content/types.ts` and the list in `studio/schemaTypes/product.ts`.
+Product `category` values (`chicory`, `rice`, `superfood`) must match `CategoryId` in `src/content/types.ts` and the list in `studio/schemaTypes/product.ts`.
+
+**Listed vs unlisted:** listed products appear in the menu, on the home page and in the catalogue. Unlisted products keep a working page that is only reachable by its link (same as the 8 hidden products of the old site).
 
 ## How product data flows
 

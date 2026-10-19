@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 
-import { SITE_URL, company } from "@/content/company";
+import { SITE_URL } from "@/config/site";
+import { company } from "@/content/company";
 import { DEFAULT_LOCALE, LOCALES, OG_LOCALE, type Locale } from "@/i18n/config";
 import { href } from "@/i18n/routing";
 
-const DEFAULT_OG_IMAGE = { url: "/images/products/about2.jpg", width: 640, height: 426 };
+const DEFAULT_OG_IMAGE = { url: "/images/hero/about2.jpg", width: 640, height: 426 };
 
 export function absoluteUrl(path: string): string {
   return `${SITE_URL}${path}`;

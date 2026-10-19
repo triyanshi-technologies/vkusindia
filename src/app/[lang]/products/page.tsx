@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
-import { ContactBand } from "@/components/home/contact-band";
+import { ContactBand } from "@/components/sections/contact-band";
 import { ProductCard, ProductGrid } from "@/components/product/product-card";
 import { JsonLd } from "@/components/seo/json-ld";
 import { Container } from "@/components/ui/container";

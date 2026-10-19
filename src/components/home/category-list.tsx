@@ -15,7 +15,7 @@ interface CategoryListProps {
 
 export function CategoryList({ locale, categories, productsHref, countForms }: CategoryListProps) {
   return (
-    <ul className="grid gap-4 md:grid-cols-2">
+    <ul className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
       {categories.map((category, index) => (
         <li key={category.id}>
           <Link
