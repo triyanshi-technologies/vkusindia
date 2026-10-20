@@ -44,7 +44,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return pageMetadata({
     locale: lang,
     path: `/products/${slug}`,
-    title: `${product.name} — ${product.categoryName}`,
+    title: `${product.name} - ${product.categoryName}`,
     description: product.excerpt,
     image: {
       url: cmsImageUrl(product.image, OG_WIDTH),

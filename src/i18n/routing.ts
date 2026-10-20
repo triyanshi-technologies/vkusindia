@@ -18,7 +18,7 @@ export function switchLocalePath(pathname: string, locale: Locale): string {
   return href(locale, stripLocale(pathname));
 }
 
-/** Only same-origin, plain paths are allowed — guards redirects against open-redirect abuse. */
+/** Only same-origin, plain paths are allowed - guards redirects against open-redirect abuse. */
 export function isSafeInternalPath(path: unknown): path is string {
   return typeof path === "string" && /^\/(?!\/)[\w\-/]*$/.test(path) && path.length < 200;
 }

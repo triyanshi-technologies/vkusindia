@@ -29,7 +29,7 @@ export const PRODUCTS_TAG = "products";
 const EXCERPT_LENGTH = 160;
 const categoryById = new Map(categories.map((c) => [c.id, c]));
 
-/** The single Sanity request — cached until a publish webhook invalidates it. */
+/** The single Sanity request - cached until a publish webhook invalidates it. */
 async function fetchProducts(): Promise<ProductRow[]> {
   "use cache";
   cacheLife("max");
@@ -58,7 +58,7 @@ function toSummary(row: ProductRow, locale: Locale): ProductSummary {
 function toExcerpt(blocks: PortableTextBlock[]): string {
   const text = toPlainText(blocks).replace(/\s+/g, " ").trim();
   if (text.length <= EXCERPT_LENGTH) return text;
-  return `${text.slice(0, text.lastIndexOf(" ", EXCERPT_LENGTH)).replace(/[,.;:—-]+$/, "")}…`;
+  return `${text.slice(0, text.lastIndexOf(" ", EXCERPT_LENGTH)).replace(/[,.;:--]+$/, "")}…`;
 }
 
 export async function getCategoriesWithProducts(locale: Locale): Promise<CategoryWithProducts[]> {
@@ -76,7 +76,7 @@ export async function getListedProducts(locale: Locale): Promise<ProductSummary[
   return (await fetchListed()).map((r) => toSummary(r, locale));
 }
 
-/** Any product, listed or not — unlisted pages stay reachable by direct link. */
+/** Any product, listed or not - unlisted pages stay reachable by direct link. */
 export async function getProduct(locale: Locale, slug: string): Promise<Product | null> {
   const row = (await fetchProducts()).find((r) => r.slug === slug);
   if (!row) return null;
@@ -102,7 +102,7 @@ export async function getRelatedProducts(
     .map((r) => toSummary(r, locale));
 }
 
-/** Every product page (listed and unlisted) — for static params and the sitemap. */
+/** Every product page (listed and unlisted) - for static params and the sitemap. */
 export async function getProductSlugs(): Promise<string[]> {
   return (await fetchProducts()).map((r) => r.slug);
 }

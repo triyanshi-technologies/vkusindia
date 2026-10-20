@@ -11,7 +11,7 @@ import { getDictionary } from "@/i18n/get-dictionary";
 import { href } from "@/i18n/routing";
 
 /**
- * Landing page for form posts made without JavaScript — the API redirects here.
+ * Landing page for form posts made without JavaScript - the API redirects here.
  * With JS enabled, forms show inline feedback and never reach this page.
  */
 const STATUSES = ["success", "error"] as const;

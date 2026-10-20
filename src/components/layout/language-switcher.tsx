@@ -49,7 +49,7 @@ export function LanguageSwitcher({
         );
       }
     } catch {
-      /* storage unavailable — default scroll */
+      /* storage unavailable - default scroll */
     }
   }, [pathname]);
 

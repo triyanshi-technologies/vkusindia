@@ -3,13 +3,13 @@ import type { Localized } from "./types";
 /** Page copy for the home and about pages. */
 
 export const welcome: Localized = {
-  ru: "Добро пожаловать в Indo Russian Trade — надёжное имя в мировой индустрии импорта и экспорта продуктов питания. С твёрдой приверженностью качеству, надёжности и удовлетворённости клиентов мы специализируемся на поиске и поставке широкого ассортимента высококачественных продуктов питания на международных рынках.",
-  en: "Welcome to Indo Russian Trade — a trusted name in the global food import and export industry. With a firm commitment to quality, reliability and customer satisfaction, we specialise in sourcing and supplying a wide range of high-quality food products across international markets.",
+  ru: "Добро пожаловать в Indo Russian Trade - надёжное имя в мировой индустрии импорта и экспорта продуктов питания. С твёрдой приверженностью качеству, надёжности и удовлетворённости клиентов мы специализируемся на поиске и поставке широкого ассортимента высококачественных продуктов питания на международных рынках.",
+  en: "Welcome to Indo Russian Trade - a trusted name in the global food import and export industry. With a firm commitment to quality, reliability and customer satisfaction, we specialise in sourcing and supplying a wide range of high-quality food products across international markets.",
 };
 
 export const heroLead: Localized = {
-  ru: "Indo Russian Trade ищет и поставляет высококачественные продукты питания из Индии — с упором на качество, надёжность и долгосрочное партнёрство.",
-  en: "Indo Russian Trade sources and supplies high-quality food products from India — with a focus on quality, reliability and long-term partnership.",
+  ru: "Indo Russian Trade ищет и поставляет высококачественные продукты питания из Индии - с упором на качество, надёжность и долгосрочное партнёрство.",
+  en: "Indo Russian Trade sources and supplies high-quality food products from India - with a focus on quality, reliability and long-term partnership.",
 };
 
 export const heroImages = {

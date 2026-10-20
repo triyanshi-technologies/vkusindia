@@ -15,7 +15,7 @@ export interface ImageAsset {
   height: number;
 }
 
-/** Image hosted on the Sanity CDN — `url` is the base URL, sized per request by the loader. */
+/** Image hosted on the Sanity CDN - `url` is the base URL, sized per request by the loader. */
 export interface CmsImage {
   url: string;
   width: number;
@@ -53,7 +53,7 @@ export interface ProductSummary {
 export interface Product extends ProductSummary {
   images: CmsImage[];
   description: PortableTextBlock[];
-  /** Plain-text start of the description — used for meta description and structured data. */
+  /** Plain-text start of the description - used for meta description and structured data. */
   excerpt: string;
 }
 

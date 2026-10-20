@@ -25,7 +25,7 @@ interface PageMetadataInput {
   path: string;
   title: string;
   description: string;
-  /** Use the title as-is instead of applying the "%s — Brand" template. */
+  /** Use the title as-is instead of applying the "%s - Brand" template. */
   absoluteTitle?: boolean;
   image?: { url: string; width: number; height: number; alt?: string };
   noIndex?: boolean;

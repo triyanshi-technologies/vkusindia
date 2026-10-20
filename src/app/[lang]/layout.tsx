@@ -16,7 +16,7 @@ import { getDictionary } from "@/i18n/get-dictionary";
 import { href } from "@/i18n/routing";
 import { absoluteUrl } from "@/lib/seo";
 
-// Self-hosted at build time by next/font — no requests to Google from the browser.
+// Self-hosted at build time by next/font - no requests to Google from the browser.
 const sans = Golos_Text({
   subsets: ["latin", "cyrillic"],
   variable: "--font-golos",

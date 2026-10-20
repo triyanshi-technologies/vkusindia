@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
 interface ProductGalleryProps {
   images: CmsImageData[];
   alt: string;
-  /** e.g. "Photo {n}" — label for the thumbnail buttons. */
+  /** e.g. "Photo {n}" - label for the thumbnail buttons. */
   thumbLabel: string;
 }
 

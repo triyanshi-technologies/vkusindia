@@ -28,7 +28,7 @@ export function toCmsImage(image: SanityImageField): CmsImage {
   };
 }
 
-/** Absolute URL at a fixed width — for Open Graph and structured data. */
+/** Absolute URL at a fixed width - for Open Graph and structured data. */
 export function cmsImageUrl(image: CmsImage, width = 1200): string {
   return withParams(image.url, { w: width, fit: "max", auto: "format" });
 }

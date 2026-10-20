@@ -1,9 +1,9 @@
 {
   "meta": {
     "siteName": "VKUS India",
-    "titleTemplate": "%s — VKUS India",
+    "titleTemplate": "%s - VKUS India",
     "home": {
-      "title": "VKUS India — chicory, basmati rice, spices and superfoods from India",
+      "title": "VKUS India - chicory, basmati rice, spices and superfoods from India",
       "description": "Indo Russian Trade supplies chicory, 1121 and Pusa basmati rice, Indian spices, chia, quinoa, psyllium and Assam tea. Moscow office. Send an enquiry for your volume in kilograms."
     },
     "about": {
@@ -69,7 +69,7 @@
     "stats": {
       "products": "products in the catalogue",
       "categories": "product categories",
-      "route": "India — Russia"
+      "route": "India - Russia"
     },
     "taglineCard": "The best for you",
     "categoriesEyebrow": "Range",
@@ -85,7 +85,7 @@
     "processSteps": [
       {
         "title": "Choose a product",
-        "text": "Browse the catalogue — every item has a description and specifications."
+        "text": "Browse the catalogue - every item has a description and specifications."
       },
       {
         "title": "Send an enquiry",
@@ -97,7 +97,7 @@
       }
     ],
     "ctaTitle": "Need a volume quote?",
-    "ctaText": "Call, message us on WhatsApp or send an enquiry — we will reply with the details."
+    "ctaText": "Call, message us on WhatsApp or send an enquiry - we will reply with the details."
   },
   "about": {
     "eyebrow": "About the company",
@@ -116,9 +116,9 @@
     "category": "Category",
     "description": "Description",
     "enquiryTitle": "Enquire about this product",
-    "enquiryText": "Tell us the quantity and destination country — we will get back to you with an offer.",
+    "enquiryText": "Tell us the quantity and destination country - we will get back to you with an offer.",
     "related": "More from this category",
-    "imageAlt": "{product} — photo",
+    "imageAlt": "{product} - photo",
     "photoLabel": "Photo {n}"
   },
   "contact": {
@@ -163,7 +163,7 @@
       "consent": "Please confirm consent to process your data"
     },
     "status": {
-      "success": "Thank you! Your enquiry has been sent — we will contact you shortly.",
+      "success": "Thank you! Your enquiry has been sent - we will contact you shortly.",
       "invalid": "Please correct the highlighted fields.",
       "network": "No connection. Check your internet and try again."
     }

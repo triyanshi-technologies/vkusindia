@@ -11,7 +11,7 @@ const sans = Golos_Text({
 });
 
 export const metadata: Metadata = {
-  title: "404 — Вкусы Индии / VKUS India",
+  title: "404 - Вкусы Индии / VKUS India",
   robots: { index: false },
 };
 

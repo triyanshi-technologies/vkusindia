@@ -7,7 +7,7 @@ const rules: Record<Locale, Intl.PluralRules> = {
   en: new Intl.PluralRules("en"),
 };
 
-/** plural("ru", 3, forms) → "позиции" — handles Russian one/few/many correctly. */
+/** plural("ru", 3, forms) → "позиции" - handles Russian one/few/many correctly. */
 export function plural(locale: Locale, count: number, forms: PluralForms): string {
   return forms[rules[locale].select(count)] ?? forms.other;
 }

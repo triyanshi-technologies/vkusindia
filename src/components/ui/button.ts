@@ -20,7 +20,7 @@ const sizes: Record<Size, string> = {
 
 /**
  * Class builder shared by <Link>, <a> and <button> so every CTA looks identical.
- * `className` must not change `display` (the base is `inline-flex`) — toggle visibility on a wrapper.
+ * `className` must not change `display` (the base is `inline-flex`) - toggle visibility on a wrapper.
  */
 export function buttonClass({
   variant = "primary",
@@ -30,6 +30,6 @@ export function buttonClass({
   return cn(base, variants[variant], sizes[size], className);
 }
 
-/** Arrow that nudges right on hover — pair with an icon inside a buttonClass element. */
+/** Arrow that nudges right on hover - pair with an icon inside a buttonClass element. */
 export const buttonArrowClass =
   "size-4 transition-transform duration-200 group-hover/btn:translate-x-0.5";

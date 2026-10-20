@@ -7,7 +7,7 @@ import { DEFAULT_LOCALE, isLocale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/get-dictionary";
 import { href } from "@/i18n/routing";
 
-/** Shown when a page calls notFound() (e.g. unknown product slug) — inside the localized layout. */
+/** Shown when a page calls notFound() (e.g. unknown product slug) - inside the localized layout. */
 export default async function NotFound() {
   const value = await lang();
   const locale = isLocale(value) ? value : DEFAULT_LOCALE;

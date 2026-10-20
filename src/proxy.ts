@@ -31,7 +31,7 @@ const SUBMITTED_PATH = /^\/(?:ru|en)\/submitted\/([^/]+)\/?$/;
 
 /**
  * Dynamic segments with a closed set of values: answer anything else with a real 404.
- * Product slugs are not checked here — they come from the CMS, so an unknown slug is
+ * Product slugs are not checked here - they come from the CMS, so an unknown slug is
  * handled by the page (404 page, marked noindex).
  */
 function isUnknownDynamicPath(pathname: string): boolean {
@@ -53,7 +53,7 @@ export function proxy(request: NextRequest) {
 
   const url = request.nextUrl.clone();
 
-  // Old vkusindia.ru URLs — the old site was Russian-only, so they map to /ru permanently.
+  // Old vkusindia.ru URLs - the old site was Russian-only, so they map to /ru permanently.
   const legacyPath = resolveLegacyPath(pathname, searchParams);
   if (legacyPath) {
     url.pathname = href("ru", legacyPath);

@@ -16,7 +16,7 @@ function readConsent(): string | null {
   try {
     return window.localStorage.getItem(STORAGE_KEY);
   } catch {
-    return "unavailable"; // storage blocked — don't nag on every page
+    return "unavailable"; // storage blocked - don't nag on every page
   }
 }
 
@@ -38,7 +38,7 @@ export function CookieNotice({ text, linkLabel, linkHref, acceptLabel }: CookieN
     try {
       window.localStorage.setItem(STORAGE_KEY, `accepted:${new Date().toISOString().slice(0, 10)}`);
     } catch {
-      /* storage unavailable — dismiss for this page view only */
+      /* storage unavailable - dismiss for this page view only */
     }
     setDismissed(true);
   };

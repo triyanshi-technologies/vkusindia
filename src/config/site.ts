@@ -4,5 +4,5 @@ export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://vkusindia.
   "",
 );
 
-/** Last update of the content kept in code — used for sitemap `lastModified`. */
+/** Last update of the content kept in code - used for sitemap `lastModified`. */
 export const CONTENT_UPDATED_AT = "2026-10-15";

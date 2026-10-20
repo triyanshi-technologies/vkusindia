@@ -3,5 +3,5 @@ export const projectId = process.env.SANITY_STUDIO_PROJECT_ID ?? "";
 export const dataset = process.env.SANITY_STUDIO_DATASET ?? "production";
 
 if (!projectId) {
-  throw new Error("Missing SANITY_STUDIO_PROJECT_ID — copy studio/.env.example to studio/.env");
+  throw new Error("Missing SANITY_STUDIO_PROJECT_ID - copy studio/.env.example to studio/.env");
 }

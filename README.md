@@ -1,4 +1,4 @@
-# VKUS India — vkusindia.ru
+# VKUS India - vkusindia.ru
 
 Bilingual (RU/EN) B2B catalogue for Indo Russian Trade: chicory, basmati rice, spices, superfoods and tea from India.
 
@@ -6,7 +6,7 @@ Next.js 16 (App Router, Cache Components) · TypeScript · Tailwind CSS v4 · Sa
 
 ```bash
 npm install
-npm run dev          # http://localhost:3000  (needs .env.local — see below)
+npm run dev          # http://localhost:3000  (needs .env.local - see below)
 npm run build
 npm run lint && npm run typecheck
 ```
@@ -34,7 +34,7 @@ npm run lint && npm run typecheck
 │  ├─ content/               Non-product content in code: categories, page copy, company, privacy
 │  ├─ i18n/                  Locale config, routing helpers, en.json / ru.json UI strings
 │  └─ lib/
-│     ├─ content.ts          Data access layer — the only place pages get product data from
+│     ├─ content.ts          Data access layer - the only place pages get product data from
 │     ├─ sanity/             Client, GROQ query, image URL helpers
 │     └─ forms/  seo.ts  utils.ts
 └─ studio/                   Sanity Studio (separate app, own package.json)
@@ -43,10 +43,10 @@ npm run lint && npm run typecheck
 
 ## Content model
 
-| Lives in | What |
-|---|---|
+| Lives in   | What                                                                                                                                                                                    |
+| ---------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Sanity** | Products, mirroring the previous vkusindia.ru: name (RU + EN), slug, category, photos, description (RU + EN, paragraphs / subheadings / line breaks), "listed", sort order, old site ID |
-| **Code** | The 3 categories (`src/content/categories.ts`), page copy, company details, privacy policy, UI strings |
+| **Code**   | The 3 categories (`src/content/categories.ts`), page copy, company details, privacy policy, UI strings                                                                                  |
 
 Product `category` values (`chicory`, `rice`, `superfood`) must match `CategoryId` in `src/content/types.ts` and the list in `studio/schemaTypes/product.ts`.
 
@@ -64,13 +64,13 @@ Product `category` values (`chicory`, `rice`, `superfood`) must match `CategoryI
 
 Website (`.env.local`, and Vercel → Settings → Environment Variables):
 
-| Variable | Required | Notes |
-|---|---|---|
-| `SANITY_PROJECT_ID` | yes | sanity.io/manage → project |
-| `SANITY_DATASET` | yes | usually `production` |
-| `SANITY_REVALIDATE_SECRET` | yes (prod) | same value as the webhook secret |
-| `SANITY_API_READ_TOKEN` | only for private datasets | Viewer token |
-| `NEXT_PUBLIC_SITE_URL` | no | defaults to `https://vkusindia.ru` |
+| Variable                   | Required                  | Notes                              |
+| -------------------------- | ------------------------- | ---------------------------------- |
+| `SANITY_PROJECT_ID`        | yes                       | sanity.io/manage → project         |
+| `SANITY_DATASET`           | yes                       | usually `production`               |
+| `SANITY_REVALIDATE_SECRET` | yes (prod)                | same value as the webhook secret   |
+| `SANITY_API_READ_TOKEN`    | only for private datasets | Viewer token                       |
+| `NEXT_PUBLIC_SITE_URL`     | no                        | defaults to `https://vkusindia.ru` |
 
 Studio (`studio/.env`): `SANITY_STUDIO_PROJECT_ID`, `SANITY_STUDIO_DATASET`.
 

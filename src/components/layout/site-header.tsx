@@ -52,7 +52,7 @@ export async function SiteHeader({ locale, dict }: SiteHeaderProps) {
           <Link href={href(locale)} className="shrink-0" aria-label={company.brand[locale]}>
             <Image
               src="/images/brand/logo.jpeg"
-              alt={`${company.brand[locale]} — ${company.tagline[locale]}`}
+              alt={`${company.brand[locale]} - ${company.tagline[locale]}`}
               width={236}
               height={105}
               preload

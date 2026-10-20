@@ -50,7 +50,7 @@ export default async function ProductsPage({ params }: PageProps<"/[lang]/produc
         <p>{dict.products.intro}</p>
       </PageHeader>
 
-      {/* Category jump links — sticks under the header while scrolling the catalogue. */}
+      {/* Category jump links - sticks under the header while scrolling the catalogue. */}
       <nav
         aria-label={dict.products.jumpTo}
         className="sticky top-[4.5rem] z-20 border-b border-line bg-paper/95 backdrop-blur-md lg:top-20"

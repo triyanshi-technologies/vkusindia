@@ -2,15 +2,15 @@
 
 /*
  * Brand palette
- *   ink    #222222  charcoal black — headings, navigation, body text, footer
- *   leaf   #A5C83B  leaf green     — brand accent, highlights, icons, promo
- *   olive  #6F9228  deep olive     — secondary actions, hover states
- *   paper  #FFFFFF  pure white     — backgrounds, cards
- *   muted  #77796F  muted grey     — descriptions, supporting text
+ *   ink    #222222  charcoal black - headings, navigation, body text, footer
+ *   leaf   #A5C83B  leaf green     - brand accent, highlights, icons, promo
+ *   olive  #6F9228  deep olive     - secondary actions, hover states
+ *   paper  #FFFFFF  pure white     - backgrounds, cards
+ *   muted  #77796F  muted grey     - descriptions, supporting text
  *
  * Derived (not new colours, tints of the above):
- *   muted-strong — muted grey darkened just enough to pass WCAG AA (4.5:1) at small sizes
- *   line / mist  — hairlines and a faint leaf-tinted surface
+ *   muted-strong - muted grey darkened just enough to pass WCAG AA (4.5:1) at small sizes
+ *   line / mist  - hairlines and a faint leaf-tinted surface
  */
 @theme {
   --color-ink: #222222;
