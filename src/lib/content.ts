@@ -58,7 +58,7 @@ function toSummary(row: ProductRow, locale: Locale): ProductSummary {
 function toExcerpt(blocks: PortableTextBlock[]): string {
   const text = toPlainText(blocks).replace(/\s+/g, " ").trim();
   if (text.length <= EXCERPT_LENGTH) return text;
-  return `${text.slice(0, text.lastIndexOf(" ", EXCERPT_LENGTH)).replace(/[,.;:--]+$/, "")}…`;
+  return `${text.slice(0, text.lastIndexOf(" ", EXCERPT_LENGTH)).replace(/[,.;:-]+$/, "")}…`;
 }
 
 export async function getCategoriesWithProducts(locale: Locale): Promise<CategoryWithProducts[]> {

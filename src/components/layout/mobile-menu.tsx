@@ -128,7 +128,7 @@ export function MobileMenu({
             </ul>
           </nav>
 
-          <div className="mt-auto space-y-3 pt-10 text-[0.9375rem]">
+          <div className="space-y-3 text-[0.9375rem]">
             <a href={contact.phoneHref} className="flex items-center gap-3">
               <IconPhone className="text-olive" /> {contact.phone}
             </a>

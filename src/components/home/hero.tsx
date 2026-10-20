@@ -49,8 +49,8 @@ export function Hero({ locale, dict, stats: counts }: HeroProps) {
 
           <dl className="mt-14 grid max-w-lg grid-cols-3 gap-4 border-t border-line pt-6 sm:gap-8">
             {stats.map((stat) => (
-              <div key={stat.label} className="flex flex-col-reverse gap-1">
-                <dt className="text-sm leading-snug text-muted-strong">{stat.label}</dt>
+              <div key={stat.label} className="flex flex-col gap-1">
+                <dt className="order-last text-sm leading-snug text-muted-strong">{stat.label}</dt>
                 <dd className="font-serif text-2xl text-ink sm:text-3xl">{stat.value}</dd>
               </div>
             ))}
