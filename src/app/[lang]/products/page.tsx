@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import { ContactBand } from "@/components/sections/contact-band";
+import { CategoryPills } from "@/components/product/category-pills";
 import { ProductCard, ProductGrid } from "@/components/product/product-card";
 import { JsonLd } from "@/components/seo/json-ld";
 import { Container } from "@/components/ui/container";
@@ -56,21 +57,9 @@ export default async function ProductsPage({ params }: PageProps<"/[lang]/produc
         className="sticky top-[4.5rem] z-20 border-b border-line bg-paper/95 backdrop-blur-md lg:top-20"
       >
         <Container>
-          <ul className="-mx-4 scrollbar-none flex gap-2 overflow-x-auto px-4 py-3 sm:mx-0 sm:px-0">
-            {categories.map((category) => (
-              <li key={category.id} className="shrink-0">
-                <a
-                  href={`#${category.id}`}
-                  className="inline-flex h-10 items-center gap-2 rounded-full border border-line px-4 text-[0.9375rem] text-ink transition-colors hover:border-ink"
-                >
-                  {category.name}
-                  <span className="text-sm text-muted-strong tabular-nums">
-                    {category.products.length}
-                  </span>
-                </a>
-              </li>
-            ))}
-          </ul>
+          <CategoryPills
+            items={categories.map((c) => ({ id: c.id, label: c.name, count: c.products.length }))}
+          />
         </Container>
       </nav>
 
@@ -80,7 +69,7 @@ export default async function ProductsPage({ params }: PageProps<"/[lang]/produc
             key={category.id}
             id={category.id}
             aria-labelledby={`${category.id}-title`}
-            className="scroll-mt-40 py-10 lg:py-14"
+            className="py-10 lg:py-14"
           >
             <Container>
               <div className="flex flex-wrap items-end justify-between gap-x-8 gap-y-3 border-b border-line pb-6">

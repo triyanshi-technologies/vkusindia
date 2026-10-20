@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 
 import { Container } from "@/components/ui/container";
 import { PageHeader } from "@/components/ui/page-header";
+import { TocNav } from "@/components/ui/toc-nav";
 import { privacyPolicy } from "@/content/privacy";
 import { isLocale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/get-dictionary";
@@ -44,18 +45,13 @@ export default async function PrivacyPage({ params }: PageProps<"/[lang]/privacy
 
       <Container className="grid gap-12 py-16 lg:grid-cols-12 lg:gap-16 lg:py-24">
         <nav aria-label={policy.title} className="hidden lg:col-span-4 lg:block">
-          <ol className="sticky top-28 space-y-2 border-l border-line text-[0.9375rem]">
-            {policy.sections.map((section, index) => (
-              <li key={section.heading}>
-                <a
-                  href={`#section-${index + 1}`}
-                  className="-ml-px block border-l border-transparent py-1 pl-5 text-muted-strong transition-colors hover:border-olive hover:text-ink"
-                >
-                  {section.heading}
-                </a>
-              </li>
-            ))}
-          </ol>
+          <TocNav
+            className="sticky top-28"
+            items={policy.sections.map((section, index) => ({
+              id: `section-${index + 1}`,
+              label: section.heading,
+            }))}
+          />
         </nav>
 
         <article className="lg:col-span-8">
