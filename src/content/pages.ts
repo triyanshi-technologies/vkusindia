@@ -41,9 +41,9 @@ export const about = {
       "Красный перец чили, чёрный перец и другие специи",
     ],
     en: [
-      "Chicory, coffee, rice, chia",
-      "Turmeric, ginger, psyllium, moringa",
-      "Red chili, black pepper and other spices",
+      "Chicory, Coffee, Rice, Chia",
+      "Turmeric, Ginger, Psyllium, Moringa",
+      "Red chili, Black pepper & Other Spices",
     ],
   } satisfies Localized<string[]>,
   partnership: {
