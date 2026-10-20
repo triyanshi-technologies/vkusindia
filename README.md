@@ -38,9 +38,7 @@ npm run lint && npm run typecheck
 │     ├─ sanity/             Client, GROQ query, image URL helpers
 │     └─ forms/  seo.ts  utils.ts
 └─ studio/                   Sanity Studio (separate app, own package.json)
-   ├─ schemaTypes/           Product schema + localized field types
-   ├─ scripts/seed.ts        One-time import of the 18 products of the old site (with photos)
-   └─ seed/                  Data copied verbatim from the old site + photos for that import
+   └─ schemaTypes/           Product schema + localized field types
 ```
 
 ## Content model
@@ -84,7 +82,6 @@ The build fails with a clear message if a required variable is missing.
 cd studio
 npm install
 npm run dev       # http://localhost:3333
-npm run seed      # one-time import of the original 18 products
 npm run deploy    # hosts the Studio at https://<name>.sanity.studio
 ```
 
@@ -94,6 +91,10 @@ npm run deploy    # hosts the Studio at https://<name>.sanity.studio
 - **URLs.** Every page is under `/ru` or `/en`. Build links with `href(locale, "/path")` from `@/i18n/routing`.
 - **Buttons.** Style links and buttons with `buttonClass()`. Don't pass `hidden`/`flex` through `className`; put visibility on a wrapper element.
 - **Product images.** Always render them with `<CmsImage>`, never `next/image` directly.
+
+## Search engines
+
+During the demo phase `src/app/robots.ts` disallows all crawling. At launch, switch it back to the rule noted in that file. The sitemap is generated either way.
 
 ## Security headers
 

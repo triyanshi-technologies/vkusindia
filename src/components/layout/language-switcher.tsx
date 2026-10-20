@@ -1,6 +1,7 @@
 "use client";
 
 import { usePathname } from "next/navigation";
+import { useEffect } from "react";
 import { useFormStatus } from "react-dom";
 
 import { switchLocale } from "@/actions/locale";
@@ -18,9 +19,14 @@ interface LanguageSwitcherProps {
   className?: string;
 }
 
+const SCROLL_KEY = "locale-switch-scroll";
+const scrollableHeight = () => document.documentElement.scrollHeight - window.innerHeight;
+
 /**
  * Plain form posting to a Server Action: works before hydration and without JS,
  * saves the choice in a cookie and redirects to the same page in the other language.
+ * The other language is a different root layout (full reload), so the scroll
+ * position is kept as a fraction of the page height and restored on arrival.
  */
 export function LanguageSwitcher({
   locale,
@@ -31,8 +37,33 @@ export function LanguageSwitcher({
 }: LanguageSwitcherProps) {
   const pathname = usePathname();
 
+  useEffect(() => {
+    try {
+      const saved = sessionStorage.getItem(SCROLL_KEY);
+      if (saved === null) return;
+      sessionStorage.removeItem(SCROLL_KEY);
+      const ratio = Number(saved);
+      if (ratio > 0) {
+        requestAnimationFrame(() =>
+          window.scrollTo({ top: ratio * scrollableHeight(), behavior: "instant" }),
+        );
+      }
+    } catch {
+      /* storage unavailable — default scroll */
+    }
+  }, [pathname]);
+
+  const saveScroll = () => {
+    try {
+      const height = scrollableHeight();
+      sessionStorage.setItem(SCROLL_KEY, String(height > 0 ? window.scrollY / height : 0));
+    } catch {
+      /* storage unavailable */
+    }
+  };
+
   return (
-    <form action={switchLocale} className={className}>
+    <form action={switchLocale} onSubmit={saveScroll} className={className}>
       <input type="hidden" name="path" value={pathname} />
       <Options locale={locale} groupLabel={groupLabel} switchLabel={switchLabel} tone={tone} />
     </form>

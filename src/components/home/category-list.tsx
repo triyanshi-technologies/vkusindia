@@ -15,23 +15,24 @@ interface CategoryListProps {
 
 export function CategoryList({ locale, categories, productsHref, countForms }: CategoryListProps) {
   return (
-    <ul className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+    <ul className="grid gap-4 md:grid-cols-3 lg:gap-6">
       {categories.map((category, index) => (
         <li key={category.id}>
+          {/* Horizontal card on phones, vertical (photo on top) from md up. */}
           <Link
             href={`${productsHref}#${category.id}`}
-            className="group grid grid-cols-[6.5rem_1fr_auto] items-center gap-4 rounded-3xl bg-paper p-3 pr-5 ring-1 ring-line transition-shadow duration-300 hover:ring-ink/25 sm:grid-cols-[10rem_1fr_auto] sm:gap-6 sm:pr-7"
+            className="group relative flex h-full items-center gap-4 rounded-3xl bg-paper p-3 pr-5 ring-1 ring-line transition-shadow duration-300 hover:ring-ink/25 sm:gap-6 md:flex-col md:items-stretch md:gap-0 md:pr-3"
           >
-            <div className="relative aspect-square overflow-hidden rounded-2xl bg-mist">
+            <div className="relative aspect-square w-[6.5rem] shrink-0 overflow-hidden rounded-2xl bg-mist sm:w-40 md:aspect-[3/2] md:w-full">
               <Image
                 src={category.image.src}
                 alt=""
                 fill
-                sizes="(min-width: 640px) 160px, 104px"
+                sizes="(min-width: 768px) 30vw, (min-width: 640px) 160px, 104px"
                 className="object-cover transition-transform duration-500 ease-soft group-hover:scale-105"
               />
             </div>
-            <div className="py-1">
+            <div className="min-w-0 flex-1 py-1 md:px-3 md:pt-5 md:pb-3">
               <p className="text-[0.8125rem] text-muted-strong tabular-nums">
                 {String(index + 1).padStart(2, "0")} · {category.products.length}{" "}
                 {plural(locale, category.products.length, countForms)}
@@ -43,7 +44,7 @@ export function CategoryList({ locale, categories, productsHref, countForms }: C
                 {category.description}
               </p>
             </div>
-            <span className="grid size-10 place-items-center rounded-full border border-line text-ink transition-colors group-hover:border-leaf group-hover:bg-leaf">
+            <span className="grid size-10 shrink-0 place-items-center rounded-full border border-line bg-paper text-ink transition-colors group-hover:border-leaf group-hover:bg-leaf md:absolute md:top-6 md:right-6">
               <IconArrowUpRight className="size-4" />
             </span>
           </Link>

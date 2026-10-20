@@ -8,87 +8,60 @@ import type { Dictionary } from "@/i18n/get-dictionary";
 import { href } from "@/i18n/routing";
 import { getCategoriesWithProducts } from "@/lib/content";
 import { Container } from "@/components/ui/container";
-import { IconMail, IconPhone, IconPin, IconWhatsApp } from "@/components/ui/icons";
+import {
+  IconChevronDown,
+  IconMail,
+  IconPhone,
+  IconPin,
+  IconWhatsApp,
+} from "@/components/ui/icons";
+import { cn } from "@/lib/utils";
 
 interface SiteFooterProps {
   locale: Locale;
   dict: Dictionary;
 }
 
+const headingClass = "text-sm font-medium tracking-[0.14em] text-paper/45 uppercase";
+
 export async function SiteFooter({ locale, dict }: SiteFooterProps) {
   const categories = await getCategoriesWithProducts(locale);
-  const linkClass = "text-paper/70 transition-colors hover:text-leaf";
+  const productsHref = href(locale, "/products");
+
+  const productLinks = categories.map((c) => ({ label: c.name, href: `${productsHref}#${c.id}` }));
+  const companyLinks = [
+    { label: dict.nav.about, href: href(locale, "/about") },
+    { label: dict.nav.allProducts, href: productsHref },
+    { label: dict.nav.contact, href: href(locale, "/contact") },
+    { label: dict.nav.privacy, href: href(locale, "/privacy") },
+  ];
 
   return (
     <footer className="bg-ink text-[0.9375rem] text-paper">
-      <Container className="grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-12 lg:gap-8 lg:py-20">
-        <div className="lg:col-span-4">
-          <Link href={href(locale)} className="inline-block rounded-2xl bg-paper px-4 py-3">
+      <Container className="grid py-16 md:grid-cols-2 md:gap-12 lg:grid-cols-12 lg:gap-8 lg:py-20">
+        <div className="pb-10 md:pb-0 lg:col-span-4">
+          <Link href={href(locale)} className="inline-block">
             <Image
               src="/images/brand/logo.jpeg"
               alt={company.brand[locale]}
               width={236}
               height={105}
-              className="h-12 w-auto"
+              className="h-14 w-auto rounded-xl"
             />
           </Link>
           <p className="mt-6 max-w-xs text-paper/70">{dict.footer.about}</p>
           <p className="mt-6 font-serif text-lg text-leaf italic">{company.tagline[locale]}</p>
         </div>
 
-        <nav aria-labelledby="footer-products" className="lg:col-span-3">
-          <h2
-            id="footer-products"
-            className="text-sm font-medium tracking-[0.14em] text-paper/45 uppercase"
-          >
-            {dict.footer.products}
-          </h2>
-          <ul className="mt-5 space-y-3">
-            {categories.map((category) => (
-              <li key={category.id}>
-                <Link href={`${href(locale, "/products")}#${category.id}`} className={linkClass}>
-                  {category.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
+        <FooterLinks title={dict.footer.products} links={productLinks} className="lg:col-span-3" />
+        <FooterLinks
+          title={dict.footer.company}
+          links={companyLinks}
+          className="max-md:border-b max-md:border-paper/10 lg:col-span-2"
+        />
 
-        <nav aria-labelledby="footer-company" className="lg:col-span-2">
-          <h2
-            id="footer-company"
-            className="text-sm font-medium tracking-[0.14em] text-paper/45 uppercase"
-          >
-            {dict.footer.company}
-          </h2>
-          <ul className="mt-5 space-y-3">
-            <li>
-              <Link href={href(locale, "/about")} className={linkClass}>
-                {dict.nav.about}
-              </Link>
-            </li>
-            <li>
-              <Link href={href(locale, "/products")} className={linkClass}>
-                {dict.nav.allProducts}
-              </Link>
-            </li>
-            <li>
-              <Link href={href(locale, "/contact")} className={linkClass}>
-                {dict.nav.contact}
-              </Link>
-            </li>
-            <li>
-              <Link href={href(locale, "/privacy")} className={linkClass}>
-                {dict.nav.privacy}
-              </Link>
-            </li>
-          </ul>
-        </nav>
-
-        <div className="lg:col-span-3">
-          <h2 className="text-sm font-medium tracking-[0.14em] text-paper/45 uppercase">
-            {dict.footer.contacts}
-          </h2>
+        <div className="pt-10 md:pt-0 lg:col-span-3">
+          <h2 className={headingClass}>{dict.footer.contacts}</h2>
           <address className="mt-5 space-y-3.5 not-italic">
             {company.phones.map((phone) => (
               <a
@@ -130,6 +103,43 @@ export async function SiteFooter({ locale, dict }: SiteFooterProps) {
         </Container>
       </div>
     </footer>
+  );
+}
+
+interface FooterLinksProps {
+  title: string;
+  links: { label: string; href: string }[];
+  className?: string;
+}
+
+/** Accordion on mobile, plain list from tablet up. */
+function FooterLinks({ title, links, className }: FooterLinksProps) {
+  const list = (
+    <ul className="space-y-3">
+      {links.map((link) => (
+        <li key={link.href}>
+          <Link href={link.href} className="text-paper/70 transition-colors hover:text-leaf">
+            {link.label}
+          </Link>
+        </li>
+      ))}
+    </ul>
+  );
+
+  return (
+    <nav aria-label={title} className={cn("max-md:border-t max-md:border-paper/10", className)}>
+      <details className="group md:hidden">
+        <summary className="flex cursor-pointer list-none items-center justify-between py-4 [&::-webkit-details-marker]:hidden">
+          <span className={headingClass}>{title}</span>
+          <IconChevronDown className="text-paper/45 transition-transform duration-200 group-open:rotate-180" />
+        </summary>
+        <div className="pb-5">{list}</div>
+      </details>
+      <div className="hidden md:block">
+        <h2 className={headingClass}>{title}</h2>
+        <div className="mt-5">{list}</div>
+      </div>
+    </nav>
   );
 }
 
