@@ -56,6 +56,7 @@ export async function SiteHeader({ locale, dict }: SiteHeaderProps) {
               alt={`${company.brand[locale]} - ${company.tagline[locale]}`}
               width={236}
               height={105}
+              unoptimized
               preload
               className="h-11 w-auto rounded-xl lg:h-[3.25rem]"
             />
@@ -87,7 +88,7 @@ export async function SiteHeader({ locale, dict }: SiteHeaderProps) {
           </nav>
 
           <div className="ml-auto flex items-center gap-3">
-            <LanguageSwitcher locale={locale} {...switcherLabels} className="hidden sm:block" />
+            <LanguageSwitcher locale={locale} {...switcherLabels} className="hidden sm:grid" />
             <div className="hidden md:block">
               <Link href={enquireHref} className={buttonClass()}>
                 {dict.common.enquire}

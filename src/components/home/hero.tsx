@@ -65,6 +65,7 @@ export function Hero({ locale, dict, stats: counts }: HeroProps) {
                 src={publicPath(heroImages.main.src)}
                 alt={heroImages.main.alt[locale]}
                 fill
+                unoptimized
                 preload
                 sizes="(min-width: 1024px) 560px, 92vw"
                 className="object-cover"
@@ -75,6 +76,7 @@ export function Hero({ locale, dict, stats: counts }: HeroProps) {
                 src={publicPath(heroImages.inset.src)}
                 alt={heroImages.inset.alt[locale]}
                 fill
+                unoptimized
                 sizes="(min-width: 1024px) 260px, 44vw"
                 className="object-cover"
               />

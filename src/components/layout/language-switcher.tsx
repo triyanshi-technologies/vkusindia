@@ -62,7 +62,7 @@ export function LanguageSwitcher({
       role="group"
       aria-label={groupLabel}
       className={cn(
-        "flex flex-row flex-nowrap items-center rounded-full border p-0.5 text-[0.8125rem] font-medium transition-opacity",
+        "grid grid-cols-2 items-center rounded-full border p-0.5 text-[0.8125rem] font-medium transition-opacity",
         tone === "light" ? "border-line" : "border-paper/25",
         className,
       )}
@@ -82,7 +82,7 @@ export function LanguageSwitcher({
                 : switchLabel.replace("{language}", LANGUAGE_NAMES[option])
             }
             className={cn(
-              "grid h-8 min-w-10 place-items-center rounded-full px-2.5 uppercase transition-colors",
+              "grid h-8 w-10 place-items-center rounded-full uppercase transition-colors",
               current
                 ? tone === "light"
                   ? "bg-ink text-paper"

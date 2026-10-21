@@ -77,6 +77,7 @@ export default async function AboutPage({ params }: PageProps<"/[lang]/about">) 
                 src={publicPath(heroImages.inset.src)}
                 alt={heroImages.inset.alt[lang]}
                 fill
+                unoptimized
                 sizes="(min-width: 1024px) 480px, 92vw"
                 className="object-cover"
               />

@@ -46,6 +46,7 @@ export async function SiteFooter({ locale, dict }: SiteFooterProps) {
               alt={company.brand[locale]}
               width={236}
               height={105}
+              unoptimized
               className="h-14 w-auto rounded-xl"
             />
           </Link>

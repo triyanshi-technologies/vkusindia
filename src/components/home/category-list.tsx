@@ -29,6 +29,7 @@ export function CategoryList({ locale, categories, productsHref, countForms }: C
                 src={publicPath(category.image.src)}
                 alt=""
                 fill
+                unoptimized
                 sizes="(min-width: 768px) 30vw, (min-width: 640px) 160px, 104px"
                 className="object-cover transition-transform duration-500 ease-soft group-hover:scale-105"
               />
