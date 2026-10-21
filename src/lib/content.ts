@@ -1,8 +1,6 @@
 import "server-only";
 
 import { toPlainText, type PortableTextBlock } from "@portabletext/react";
-import { cacheLife, cacheTag } from "next/cache";
-
 import { categories } from "@/content/categories";
 import type {
   CategoryId,
@@ -23,19 +21,17 @@ import { PRODUCTS_QUERY, type ProductRow } from "@/lib/sanity/queries";
  * (as on the old site) keep a working page that is only reachable by its link.
  */
 
-/** Cache tag refreshed by the Sanity publish webhook (`/api/revalidate`). */
-export const PRODUCTS_TAG = "products";
-
 const EXCERPT_LENGTH = 160;
 const categoryById = new Map(categories.map((c) => [c.id, c]));
 
-/** The single Sanity request - cached until a publish webhook invalidates it. */
-async function fetchProducts(): Promise<ProductRow[]> {
-  "use cache";
-  cacheLife("max");
-  cacheTag(PRODUCTS_TAG);
+// Static demo builds have no runtime cache, so share the single CMS request
+// while Next prerenders catalogue, product, metadata, and sitemap routes.
+let productRowsPromise: Promise<ProductRow[]> | undefined;
 
-  const rows = await sanityClient.fetch<ProductRow[]>(PRODUCTS_QUERY);
+/** The single Sanity request shared by prerendered routes during this build. */
+async function fetchProducts(): Promise<ProductRow[]> {
+  productRowsPromise ??= sanityClient.fetch<ProductRow[]>(PRODUCTS_QUERY);
+  const rows = await productRowsPromise;
   // Ignore documents whose category isn't one the site knows about.
   return rows.filter((row) => categoryById.has(row.category));
 }

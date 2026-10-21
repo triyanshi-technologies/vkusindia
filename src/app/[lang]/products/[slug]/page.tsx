@@ -25,12 +25,11 @@ type Props = PageProps<"/[lang]/products/[slug]">;
 const OG_WIDTH = 1200;
 
 /**
- * Pre-builds every product published at build time (listed or not). Products
- * published later render on their first request and are cached from then on.
+ * Pre-builds every product published at build time (listed or not).
  */
 export async function generateStaticParams() {
   const slugs = await getProductSlugs();
-  // Cache Components needs at least one param; an empty dataset yields a single 404 page.
+  // Keep the static export valid even when Sanity has no products yet.
   return (slugs.length ? slugs : ["__none"]).map((slug) => ({ slug }));
 }
 

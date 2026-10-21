@@ -145,6 +145,7 @@
     "consentLink": "privacy policy",
     "submit": "Send",
     "submitting": "Sending…",
+    "demoNotice": "Demo only: this form does not send or save your information.",
     "placeholders": {
       "name": "Your name",
       "phone": "+7 900 000 00 00",
@@ -163,7 +164,7 @@
       "consent": "Please confirm consent to process your data"
     },
     "status": {
-      "success": "Thank you! Your enquiry has been sent - we will contact you shortly.",
+      "success": "Demo only: no message was sent or saved.",
       "invalid": "Please correct the highlighted fields.",
       "network": "No connection. Check your internet and try again."
     }
@@ -185,8 +186,8 @@
     "text": "The page may have been moved or no longer exists. Try the catalogue or the home page."
   },
   "submitted": {
-    "successTitle": "Enquiry sent",
-    "successText": "Thank you! We have received your message and will contact you shortly.",
+    "successTitle": "Demo confirmation",
+    "successText": "This is a demo page. No message was sent or saved.",
     "errorTitle": "Something went wrong",
     "errorText": "The form could not be sent. Please check the details and try again, or contact us by phone or email."
   }

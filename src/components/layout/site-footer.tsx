@@ -1,4 +1,3 @@
-import { cacheLife } from "next/cache";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -143,9 +142,7 @@ function FooterLinks({ title, links, className }: FooterLinksProps) {
   );
 }
 
-/** Cached so the footer stays part of the static shell while the year still rolls over. */
+/** The demo export captures the current year at build time. */
 async function CopyrightYear() {
-  "use cache";
-  cacheLife("days");
   return <>{new Date().getFullYear()}</>;
 }

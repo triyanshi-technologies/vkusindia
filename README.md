@@ -2,7 +2,7 @@
 
 Bilingual (RU/EN) B2B catalogue for Indo Russian Trade: chicory, basmati rice, spices, superfoods and tea from India.
 
-Next.js 16 (App Router, Cache Components) · TypeScript · Tailwind CSS v4 · Sanity (products) · Zod.
+Next.js 16 (App Router, static export on this branch) · TypeScript · Tailwind CSS v4 · Sanity (products) · Zod.
 
 ```bash
 npm install
@@ -19,18 +19,14 @@ npm run lint && npm run typecheck
 │  ├─ hero/                  Home/about photography
 │  └─ categories/            Category tiles
 ├─ src/                      Website (Next.js)
-│  ├─ proxy.ts               Locale redirect (cookie → Vercel country → Accept-Language → ru), old-URL 301s
-│  ├─ actions/locale.ts      Server Action: language toggle
 │  ├─ app/[lang]/            All pages, prerendered for ru and en
-│  ├─ app/api/enquiry|contact  Form handlers (validate and log)
-│  ├─ app/api/revalidate     Sanity publish webhook → refreshes cached product data
 │  ├─ components/
 │  │  ├─ layout/             Header, mobile menu, footer, language switcher, cookie notice
 │  │  ├─ sections/           Page sections shared by several pages (contact band, principles)
 │  │  ├─ home/               Sections used only on the home page
 │  │  ├─ product/  forms/  seo/
 │  │  └─ ui/                 Primitives: container, buttons, icons, headings, CMS image
-│  ├─ config/                Site URL, old-URL redirect map
+│  ├─ config/                Public site URL and metadata settings
 │  ├─ content/               Non-product content in code: categories, page copy, company, privacy
 │  ├─ i18n/                  Locale config, routing helpers, en.json / ru.json UI strings
 │  └─ lib/
@@ -54,23 +50,20 @@ Product `category` values (`chicory`, `rice`, `superfood`) must match `CategoryI
 
 ## How product data flows
 
-1. `src/lib/content.ts` fetches **all** products in one GROQ query, cached with `use cache` and tagged `products`.
-2. Every page derives what it needs from that single cached result. During a build, Sanity is queried only a handful of times.
-3. On publish, Sanity calls `POST /api/revalidate` with a signed payload. The route verifies the signature and marks the `products` tag stale: the next visitor still gets the cached page instantly, and fresh data is fetched in the background.
-4. Products published after a deploy render on their first visit and are cached from then on. No rebuild is needed.
-5. Images are served directly from Sanity's CDN (`src/components/ui/cms-image.tsx`), resized per screen, AVIF/WebP, never upscaled, with a blur placeholder.
-
+1. `src/lib/content.ts` fetches all products from Sanity in one GROQ query during the build.
+2. Catalogue, product pages and sitemap are generated from that build-time result.
+3. Re-run the GitHub Pages workflow after publishing product changes in Sanity.
+4. Images are served directly from Sanity's CDN (`src/components/ui/cms-image.tsx`), resized per screen, AVIF/WebP, never upscaled, with a blur placeholder.
 ## Environment variables
 
-Website (`.env.local`, and Vercel → Settings → Environment Variables):
+Website build (`.env.local` locally; GitHub Actions secrets/variables for Pages):
 
 | Variable                   | Required                  | Notes                              |
 | -------------------------- | ------------------------- | ---------------------------------- |
 | `SANITY_PROJECT_ID`        | yes                       | sanity.io/manage → project         |
 | `SANITY_DATASET`           | yes                       | usually `production`               |
-| `SANITY_REVALIDATE_SECRET` | yes (prod)                | same value as the webhook secret   |
 | `SANITY_API_READ_TOKEN`    | only for private datasets | Viewer token                       |
-| `NEXT_PUBLIC_SITE_URL`     | no                        | defaults to `https://vkusindia.ru` |
+| `NEXT_PUBLIC_SITE_URL`     | yes for Pages             | Set by the Pages workflow           |
 
 Studio (`studio/.env`): `SANITY_STUDIO_PROJECT_ID`, `SANITY_STUDIO_DATASET`.
 
@@ -94,8 +87,12 @@ npm run deploy    # hosts the Studio at https://<name>.sanity.studio
 
 ## Search engines
 
-During the demo phase `src/app/robots.ts` disallows all crawling. At launch, switch it back to the rule noted in that file. The sitemap is generated either way.
+The sitemap and `robots.txt` are generated at build time.
 
-## Security headers
+## GitHub Pages demo branch
 
-`next.config.ts` sets a static CSP (allows images from `cdn.sanity.io`), HSTS, `X-Frame-Options: DENY`, `nosniff`, `Referrer-Policy` and `Permissions-Policy`. The `X-Powered-By` header is disabled.
+The `github-pages-demo` branch exports the site into `out/` and deploys it with `.github/workflows/github-pages.yml`. In repository **Settings → Pages**, choose **GitHub Actions** as the source. Add `SANITY_PROJECT_ID` as an Actions secret. Add `SANITY_DATASET` as an Actions variable if it is not `production`, and `SANITY_API_READ_TOKEN` as a secret only for a private dataset.
+
+Share `https://<owner>.github.io/<repository>/ru/` or `/en/`. This branch uses build-time Sanity data and demo-only form confirmations; it does not send form submissions. Re-run the workflow after content changes. Keep these static-export changes on `github-pages-demo`; Vercel production remains on its configured production branch.
+
+GitHub Pages does not apply the runtime redirects or response headers configured for the Vercel deployment.

@@ -2,7 +2,7 @@
 
 import { useState, useSyncExternalStore, type FormEvent } from "react";
 
-import type { FieldErrorCode, FieldErrors, FormResponse } from "@/lib/forms/shared";
+import type { FieldErrorCode, FieldErrors } from "@/lib/forms/shared";
 
 export type FormStatus = "idle" | "submitting" | "success" | "error";
 export type StatusMessage = "success" | "invalid" | "network";
@@ -35,11 +35,10 @@ function focusFirst(form: HTMLFormElement, errors: FieldErrors) {
 }
 
 /**
- * Progressive enhancement for a plain `<form action="/api/…" method="post">`:
- * - without JS the browser validates natively and posts the form (server redirects to a status page);
- * - with JS we validate client-side, submit via fetch and render inline, localized feedback.
+ * Demo-only form behavior for a static host: validate locally and show a clearly
+ * labeled confirmation without transmitting or storing the entered data.
  */
-export function useFormSubmission(endpoint: string) {
+export function useFormSubmission() {
   const [status, setStatus] = useState<FormStatus>("idle");
   const [errors, setErrors] = useState<FieldErrors>({});
   const [message, setMessage] = useState<StatusMessage | null>(null);
@@ -66,35 +65,22 @@ export function useFormSubmission(endpoint: string) {
     setStatus("submitting");
     setMessage(null);
 
-    try {
-      const response = await fetch(endpoint, {
-        method: "POST",
-        body: new FormData(form),
-        headers: { Accept: "application/json" },
-      });
-      const result = (await response.json()) as FormResponse;
-
-      if (result.ok) {
-        form.reset();
-        setErrors({});
-        setMessage("success");
-        setStatus("success");
-        return;
-      }
-      fail(form, result.errors ?? {}, result.error);
-    } catch {
-      fail(form, {}, "network");
-    }
+    await new Promise((resolve) => window.setTimeout(resolve, 350));
+    form.reset();
+    setErrors({});
+    setMessage("success");
+    setStatus("success");
   }
 
   return {
     status,
     errors,
     message,
+    hydrated,
     formProps: {
-      action: endpoint,
+      action: "#",
       method: "post",
-      // Native validation stays on until hydration, so no-JS visitors still get it.
+      // The disabled button prevents a static form from posting without JavaScript.
       noValidate: hydrated,
       onSubmit,
       onInput: (event: FormEvent<HTMLFormElement>) => {

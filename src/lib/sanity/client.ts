@@ -5,9 +5,8 @@ import { createClient } from "@sanity/client";
 import { sanityConfig } from "./env";
 
 /**
- * Server-only read client. `useCdn: false` because results are cached by Next.js
- * (`use cache` + tags) and refreshed by the publish webhook - reading from the API
- * directly guarantees the refresh picks up the just-published version.
+ * Server-only read client. Static demo pages fetch published Sanity content
+ * during the build, so read directly from the API rather than the CDN cache.
  */
 export const sanityClient = createClient({
   ...sanityConfig,

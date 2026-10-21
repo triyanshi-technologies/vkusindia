@@ -16,5 +16,3 @@ export const sanityConfig = {
   /** Only needed if the dataset is private. Read-only (Viewer) token. */
   token: process.env.SANITY_API_READ_TOKEN || undefined,
 } as const;
-
-export const revalidateSecret = process.env.SANITY_REVALIDATE_SECRET;

@@ -2,9 +2,7 @@ import type { MetadataRoute } from "next";
 
 import { SITE_URL } from "@/config/site";
 
-// Demo phase: crawling is blocked so the preview doesn't compete with the live vkusindia.ru.
-// At launch, replace the rule with:
-// { userAgent: "*", allow: "/", disallow: ["/api/", "/ru/submitted/", "/en/submitted/"] }
+// Keep the temporary GitHub Pages demo out of search results.
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [{ userAgent: "*", disallow: "/" }],

@@ -1,11 +1,11 @@
 "use client";
 
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
-import { useFormStatus } from "react-dom";
 
-import { switchLocale } from "@/actions/locale";
 import { LOCALES, type Locale } from "@/i18n/config";
+import { switchLocalePath } from "@/i18n/routing";
 import { cn } from "@/lib/utils";
 
 const LANGUAGE_NAMES: Record<Locale, string> = { ru: "Русский", en: "English" };
@@ -22,12 +22,7 @@ interface LanguageSwitcherProps {
 const SCROLL_KEY = "locale-switch-scroll";
 const scrollableHeight = () => document.documentElement.scrollHeight - window.innerHeight;
 
-/**
- * Plain form posting to a Server Action: works before hydration and without JS,
- * saves the choice in a cookie and redirects to the same page in the other language.
- * The other language is a different root layout (full reload), so the scroll
- * position is kept as a fraction of the page height and restored on arrival.
- */
+/** Static-host compatible locale links; the URL, rather than a cookie, keeps the language choice. */
 export function LanguageSwitcher({
   locale,
   groupLabel,
@@ -58,25 +53,9 @@ export function LanguageSwitcher({
       const height = scrollableHeight();
       sessionStorage.setItem(SCROLL_KEY, String(height > 0 ? window.scrollY / height : 0));
     } catch {
-      /* storage unavailable */
+      /* storage unavailable - default scroll */
     }
   };
-
-  return (
-    <form action={switchLocale} onSubmit={saveScroll} className={className}>
-      <input type="hidden" name="path" value={pathname} />
-      <Options locale={locale} groupLabel={groupLabel} switchLabel={switchLabel} tone={tone} />
-    </form>
-  );
-}
-
-function Options({
-  locale,
-  groupLabel,
-  switchLabel,
-  tone,
-}: Omit<LanguageSwitcherProps, "className">) {
-  const { pending } = useFormStatus();
 
   return (
     <div
@@ -85,27 +64,25 @@ function Options({
       className={cn(
         "flex items-center rounded-full border p-0.5 text-[0.8125rem] font-medium transition-opacity",
         tone === "light" ? "border-line" : "border-paper/25",
-        pending && "opacity-60",
+        className,
       )}
     >
       {LOCALES.map((option) => {
         const current = option === locale;
         return (
-          <button
+          <Link
             key={option}
-            type="submit"
-            name="locale"
-            value={option}
+            href={switchLocalePath(pathname, option)}
+            onClick={current ? undefined : saveScroll}
             lang={option}
-            aria-pressed={current}
+            aria-current={current ? "page" : undefined}
             aria-label={
               current
                 ? LANGUAGE_NAMES[option]
                 : switchLabel.replace("{language}", LANGUAGE_NAMES[option])
             }
-            disabled={pending}
             className={cn(
-              "h-8 min-w-10 rounded-full px-2.5 uppercase transition-colors",
+              "grid h-8 min-w-10 place-items-center rounded-full px-2.5 uppercase transition-colors",
               current
                 ? tone === "light"
                   ? "bg-ink text-paper"
@@ -116,7 +93,7 @@ function Options({
             )}
           >
             {option}
-          </button>
+          </Link>
         );
       })}
     </div>

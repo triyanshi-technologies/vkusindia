@@ -17,7 +17,7 @@ interface EnquiryFormProps {
 }
 
 export function EnquiryForm({ locale, product, labels, privacyHref }: EnquiryFormProps) {
-  const { status, errors, message, formProps } = useFormSubmission("/api/enquiry");
+  const { status, errors, message, formProps, hydrated } = useFormSubmission();
   const error = (name: string) => {
     const code = errors[name];
     return code ? labels.errors[code] : undefined;
@@ -110,10 +110,14 @@ export function EnquiryForm({ locale, product, labels, privacyHref }: EnquiryFor
         />
       </div>
 
+      <p role="note" className="text-sm text-muted-strong sm:col-span-2">
+        {labels.demoNotice}
+      </p>
+
       <div className="flex flex-col gap-4 sm:col-span-2 sm:flex-row sm:items-center">
         <button
           type="submit"
-          disabled={status === "submitting"}
+          disabled={!hydrated || status === "submitting"}
           className={buttonClass({ size: "lg" })}
         >
           {status === "submitting" ? labels.submitting : labels.submit}
