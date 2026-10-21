@@ -6,6 +6,7 @@ import { heroImages, heroLead } from "@/content/pages";
 import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/get-dictionary";
 import { href } from "@/i18n/routing";
+import { publicPath } from "@/lib/public-path";
 import { buttonArrowClass, buttonClass } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { IconArrowRight } from "@/components/ui/icons";
@@ -61,7 +62,7 @@ export function Hero({ locale, dict, stats: counts }: HeroProps) {
           <div className="relative mx-auto max-w-[35rem] pb-10 lg:mr-0 lg:ml-auto">
             <div className="relative aspect-[4/3.3] overflow-hidden rounded-[2rem] bg-mist">
               <Image
-                src={heroImages.main.src}
+                src={publicPath(heroImages.main.src)}
                 alt={heroImages.main.alt[locale]}
                 fill
                 preload
@@ -71,7 +72,7 @@ export function Hero({ locale, dict, stats: counts }: HeroProps) {
             </div>
             <div className="absolute bottom-0 -left-3 aspect-[4/3] w-[46%] overflow-hidden rounded-[1.5rem] border-[6px] border-paper bg-mist shadow-[0_20px_40px_-20px_rgb(34_34_34/0.35)] sm:-left-10">
               <Image
-                src={heroImages.inset.src}
+                src={publicPath(heroImages.inset.src)}
                 alt={heroImages.inset.alt[locale]}
                 fill
                 sizes="(min-width: 1024px) 260px, 44vw"

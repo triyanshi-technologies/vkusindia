@@ -12,6 +12,7 @@ import { about, heroImages, welcome } from "@/content/pages";
 import { isLocale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/get-dictionary";
 import { href } from "@/i18n/routing";
+import { publicPath } from "@/lib/public-path";
 import { pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata({ params }: PageProps<"/[lang]/about">): Promise<Metadata> {
@@ -73,7 +74,7 @@ export default async function AboutPage({ params }: PageProps<"/[lang]/about">) 
           <aside className="space-y-8 lg:col-span-5">
             <div className="relative aspect-[4/3] overflow-hidden rounded-[2rem] bg-mist">
               <Image
-                src={heroImages.inset.src}
+                src={publicPath(heroImages.inset.src)}
                 alt={heroImages.inset.alt[lang]}
                 fill
                 sizes="(min-width: 1024px) 480px, 92vw"

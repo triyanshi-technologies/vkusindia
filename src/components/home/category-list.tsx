@@ -4,6 +4,7 @@ import Link from "next/link";
 import type { CategoryWithProducts } from "@/content/types";
 import type { Locale } from "@/i18n/config";
 import { plural, type PluralForms } from "@/i18n/format";
+import { publicPath } from "@/lib/public-path";
 import { IconArrowUpRight } from "@/components/ui/icons";
 
 interface CategoryListProps {
@@ -25,7 +26,7 @@ export function CategoryList({ locale, categories, productsHref, countForms }: C
           >
             <div className="relative aspect-square w-[6.5rem] shrink-0 overflow-hidden rounded-2xl bg-mist sm:w-40 md:aspect-[3/2] md:w-full">
               <Image
-                src={category.image.src}
+                src={publicPath(category.image.src)}
                 alt=""
                 fill
                 sizes="(min-width: 768px) 30vw, (min-width: 640px) 160px, 104px"

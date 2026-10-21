@@ -6,6 +6,7 @@ import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/get-dictionary";
 import { href } from "@/i18n/routing";
 import { getCategoriesWithProducts } from "@/lib/content";
+import { publicPath } from "@/lib/public-path";
 import { Container } from "@/components/ui/container";
 import { buttonClass } from "@/components/ui/button";
 import { IconArrowRight, IconMail, IconPhone, IconPin } from "@/components/ui/icons";
@@ -51,7 +52,7 @@ export async function SiteHeader({ locale, dict }: SiteHeaderProps) {
         <Container className="flex h-[4.5rem] items-center gap-6 lg:h-20">
           <Link href={href(locale)} className="shrink-0" aria-label={company.brand[locale]}>
             <Image
-              src="/images/brand/logo.jpeg"
+              src={publicPath("/images/brand/logo.jpeg")}
               alt={`${company.brand[locale]} - ${company.tagline[locale]}`}
               width={236}
               height={105}

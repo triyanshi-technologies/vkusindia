@@ -6,6 +6,7 @@ import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/get-dictionary";
 import { href } from "@/i18n/routing";
 import { getCategoriesWithProducts } from "@/lib/content";
+import { publicPath } from "@/lib/public-path";
 import { Container } from "@/components/ui/container";
 import {
   IconChevronDown,
@@ -41,7 +42,7 @@ export async function SiteFooter({ locale, dict }: SiteFooterProps) {
         <div className="pb-10 md:pb-0 lg:col-span-4">
           <Link href={href(locale)} className="inline-block">
             <Image
-              src="/images/brand/logo.jpeg"
+              src={publicPath("/images/brand/logo.jpeg")}
               alt={company.brand[locale]}
               width={236}
               height={105}
