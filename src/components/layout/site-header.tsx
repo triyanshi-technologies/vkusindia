@@ -125,9 +125,9 @@ export async function SiteHeader({ locale, dict }: SiteHeaderProps) {
 
 function TopBar({ locale, dict }: SiteHeaderProps) {
   return (
-    <div className="hidden bg-ink text-[0.8125rem] text-paper/75 xl:block">
-      <Container className="flex h-10 items-center justify-between gap-6">
-        <p className="flex items-center gap-2">
+    <div className="hidden bg-ink text-[0.8125rem] text-paper/75 md:block">
+      <Container className="flex h-10 items-center justify-between gap-3 xl:gap-6">
+        <p className="flex items-center gap-2 whitespace-nowrap">
           <span className="hidden text-paper lg:inline">{dict.topBar.welcome}</span>
           <span aria-hidden="true" className="hidden text-paper/30 lg:inline">
             ·
@@ -135,7 +135,7 @@ function TopBar({ locale, dict }: SiteHeaderProps) {
           <IconPin className="text-leaf" />
           {company.address.short[locale]}
         </p>
-        <ul className="flex items-center gap-6">
+        <ul className="flex items-center gap-3 whitespace-nowrap xl:gap-6">
           {company.phones.map((phone) => (
             <li key={phone.href}>
               <a
