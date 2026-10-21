@@ -6,6 +6,8 @@ import { href } from "@/i18n/routing";
 import { getProductSlugs } from "@/lib/content";
 import { absoluteUrl, languageAlternates } from "@/lib/seo";
 
+export const dynamic = "force-static";
+
 const STATIC_PAGES: { path: string; priority: number }[] = [
   { path: "/", priority: 1 },
   { path: "/products", priority: 0.9 },
