@@ -83,7 +83,7 @@ export function ProductsMenu({ label, href, allProductsLabel, groups }: Products
         id={panelId}
         onClick={onPanelClick}
         className={cn(
-          "absolute inset-x-0 top-full border-b border-line bg-paper shadow-[0_24px_40px_-24px_rgb(34_34_34/0.18)] transition-[opacity,visibility] duration-200",
+          "absolute inset-x-0 top-full z-50 border-b border-line bg-paper shadow-[0_24px_40px_-24px_rgb(34_34_34/0.18)] transition-[opacity,visibility] duration-200",
           open ? "visible opacity-100" : "invisible opacity-0",
         )}
       >
