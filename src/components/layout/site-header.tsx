@@ -49,7 +49,7 @@ export async function SiteHeader({ locale, dict }: SiteHeaderProps) {
       <TopBar locale={locale} dict={dict} />
 
       <header className="sticky top-0 z-40 border-b border-line bg-paper">
-        <Container className="flex h-[4.5rem] items-center gap-6 lg:h-20">
+        <Container className="flex h-[4.5rem] items-center gap-3 lg:gap-3 lg:h-20 xl:gap-6">
           <Link href={href(locale)} className="shrink-0" aria-label={company.brand[locale]}>
             <Image
               src={publicPath("/images/brand/logo.jpeg")}
@@ -62,7 +62,7 @@ export async function SiteHeader({ locale, dict }: SiteHeaderProps) {
             />
           </Link>
 
-          <nav aria-label={dict.nav.primary} className="ml-4 hidden h-full lg:block">
+          <nav aria-label={dict.nav.primary} className="ml-1 hidden h-full lg:block xl:ml-4">
             <ul className="flex h-full items-center">
               {items.map((item) =>
                 item.href === productsHref ? (
@@ -70,6 +70,7 @@ export async function SiteHeader({ locale, dict }: SiteHeaderProps) {
                     key={item.href}
                     label={item.label}
                     href={item.href}
+                    allProductsLabel={dict.nav.allProducts}
                     groups={productGroups}
                   />
                 ) : (
@@ -77,7 +78,7 @@ export async function SiteHeader({ locale, dict }: SiteHeaderProps) {
                     <NavLink
                       href={item.href}
                       exact={item.exact}
-                      className="flex h-full items-center px-4 text-[0.9375rem] font-medium text-ink transition-colors hover:text-olive aria-[current=page]:text-olive"
+                      className="flex h-full items-center whitespace-nowrap px-2 text-sm font-medium text-ink transition-colors hover:text-olive aria-[current=page]:text-olive xl:px-4 xl:text-[0.9375rem]"
                     >
                       {item.label}
                     </NavLink>
@@ -88,8 +89,8 @@ export async function SiteHeader({ locale, dict }: SiteHeaderProps) {
           </nav>
 
           <div className="ml-auto flex items-center gap-3">
-            <LanguageSwitcher locale={locale} {...switcherLabels} className="hidden sm:grid" />
-            <div className="hidden md:block">
+            <LanguageSwitcher locale={locale} {...switcherLabels} className="hidden lg:grid" />
+            <div className="hidden lg:block">
               <Link href={enquireHref} className={buttonClass()}>
                 {dict.common.enquire}
                 <IconArrowRight className="size-4" />
@@ -113,7 +114,7 @@ export async function SiteHeader({ locale, dict }: SiteHeaderProps) {
                 allProducts: dict.nav.allProducts,
               }}
             >
-              <LanguageSwitcher locale={locale} {...switcherLabels} className="sm:hidden" />
+              <LanguageSwitcher locale={locale} {...switcherLabels} className="lg:hidden" />
             </MobileMenu>
           </div>
         </Container>
@@ -124,7 +125,7 @@ export async function SiteHeader({ locale, dict }: SiteHeaderProps) {
 
 function TopBar({ locale, dict }: SiteHeaderProps) {
   return (
-    <div className="hidden bg-ink text-[0.8125rem] text-paper/75 md:block">
+    <div className="hidden bg-ink text-[0.8125rem] text-paper/75 xl:block">
       <Container className="flex h-10 items-center justify-between gap-6">
         <p className="flex items-center gap-2">
           <span className="hidden text-paper lg:inline">{dict.topBar.welcome}</span>
