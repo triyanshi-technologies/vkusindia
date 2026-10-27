@@ -20,7 +20,7 @@ export function ShowcaseCarousel({ children, labels, className }: ShowcaseCarous
   const trackId = useId();
   const trackRef = useRef<HTMLUListElement>(null);
   const count = Children.count(children);
-  const [view, setView] = useState({ index: 1, atStart: true, atEnd: false, scrollable: false });
+  const [view, setView] = useState({ first: 1, last: 1, atStart: true, atEnd: false, scrollable: false });
 
   const step = useCallback(() => {
     const track = trackRef.current!;
@@ -31,29 +31,41 @@ export function ShowcaseCarousel({ children, labels, className }: ShowcaseCarous
   useEffect(() => {
     const track = trackRef.current;
     if (!track) return;
-    let frame = 0;
-    const update = () => {
-      cancelAnimationFrame(frame);
-      frame = requestAnimationFrame(() => {
-        const max = track.scrollWidth - track.clientWidth;
-        const atEnd = track.scrollLeft >= max - 2;
-        setView({
-          index: atEnd ? count : Math.round(track.scrollLeft / step()) + 1,
-          atStart: track.scrollLeft <= 2,
-          atEnd,
-          scrollable: max > 2,
-        });
+    // Counter reflects the slides fully in view, measured only once scrolling settles.
+    const measure = () => {
+      const box = track.getBoundingClientRect();
+      const visible = Array.from(track.children).flatMap((slide, i) => {
+        const rect = slide.getBoundingClientRect();
+        return rect.left >= box.left - 2 && rect.right <= box.right + 2 ? [i + 1] : [];
+      });
+      const nearest = Math.round(track.scrollLeft / step()) + 1;
+      const max = track.scrollWidth - track.clientWidth;
+      setView({
+        first: visible[0] ?? nearest,
+        last: visible.at(-1) ?? nearest,
+        atStart: track.scrollLeft <= 2,
+        atEnd: track.scrollLeft >= max - 2,
+        scrollable: max > 2,
       });
     };
-    const resize = new ResizeObserver(update);
-    resize.observe(track);
-    track.addEventListener("scroll", update, { passive: true });
-    return () => {
-      cancelAnimationFrame(frame);
-      resize.disconnect();
-      track.removeEventListener("scroll", update);
+
+    // Safari has no `scrollend` yet, so fall back to a short debounce there.
+    let timer = 0;
+    const debounced = () => {
+      clearTimeout(timer);
+      timer = window.setTimeout(measure, 120);
     };
-  }, [count, step]);
+    const [event, onScroll] = "onscrollend" in window ? ["scrollend", measure] : ["scroll", debounced];
+
+    const resize = new ResizeObserver(measure);
+    resize.observe(track);
+    track.addEventListener(event, onScroll, { passive: true });
+    return () => {
+      clearTimeout(timer);
+      resize.disconnect();
+      track.removeEventListener(event, onScroll);
+    };
+  }, [step]);
 
   const scroll = (direction: 1 | -1) => {
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -85,7 +97,7 @@ export function ShowcaseCarousel({ children, labels, className }: ShowcaseCarous
           <IconArrowRight className="rotate-180" />
         </button>
         <p className="min-w-12 text-center text-sm text-muted-strong tabular-nums">
-          {view.index} / {count}
+          {view.first === view.last ? view.first : `${view.first}-${view.last}`} / {count}
         </p>
         <button
           type="button"
