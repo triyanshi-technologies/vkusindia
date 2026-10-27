@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
-import { CategoryList } from "@/components/home/category-list";
 import { ContactBand } from "@/components/sections/contact-band";
 import { Hero } from "@/components/home/hero";
 import { PhotoMosaic } from "@/components/home/photo-mosaic";
@@ -17,7 +16,7 @@ import { about, welcome } from "@/content/pages";
 import { isLocale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/get-dictionary";
 import { href } from "@/i18n/routing";
-import { getCatalogStats, getCategoriesWithProducts } from "@/lib/content";
+import { getListedProducts, getProductPhotos } from "@/lib/content";
 import { pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata({ params }: PageProps<"/[lang]">): Promise<Metadata> {
@@ -37,76 +36,36 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
   const { lang } = await params;
   if (!isLocale(lang)) notFound();
 
-  const [dict, categories, stats] = await Promise.all([
+  const [dict, products, photos] = await Promise.all([
     getDictionary(lang),
-    getCategoriesWithProducts(lang),
-    getCatalogStats(),
+    getListedProducts(lang),
+    getProductPhotos(lang, 4),
   ]);
   const t = dict.home;
-  const productsHref = href(lang, "/products");
-
-  // Up to four photos, taken round-robin across categories for variety.
-  const longest = Math.max(0, ...categories.map((c) => c.products.length));
-  const mosaic = Array.from({ length: longest }, (_, i) => categories.map((c) => c.products[i]))
-    .flat()
-    .filter((p) => p !== undefined)
-    .slice(0, 4)
-    .map((p) => ({ image: p.image, alt: p.name }));
 
   return (
     <>
-      <Hero locale={lang} dict={dict} stats={stats} />
+      <Hero locale={lang} dict={dict} productCount={products.length} inset={photos[0]} />
 
-      <section
-        aria-labelledby="categories-title"
-        className="border-y border-line bg-mist/70 py-20 lg:py-28"
-      >
-        <Container>
-          <SectionHeading
-            eyebrow={t.categoriesEyebrow}
-            title={t.categoriesTitle}
-            id="categories-title"
-          />
-          <div className="mt-12">
-            <CategoryList
-              locale={lang}
-              categories={categories}
-              productsHref={productsHref}
-              countForms={dict.common.productCount}
-            />
-          </div>
-        </Container>
-      </section>
-
-      {/* Same as the live home page: listed products grouped under their category. */}
-      <section aria-labelledby="featured-title" className="py-20 lg:py-28">
+      <section aria-labelledby="featured-title" className="border-t border-line py-20 lg:py-28">
         <Container>
           <SectionHeading eyebrow={t.featuredEyebrow} title={t.featuredTitle} id="featured-title" />
-          {categories
-            .filter((category) => category.products.length > 0)
-            .map((category) => (
-              <div key={category.id} className="mt-12 lg:mt-14">
-                <h3 className="border-b border-line pb-4 font-serif text-2xl text-ink">
-                  {category.name}
-                </h3>
-                <ProductGrid className="mt-8">
-                  {category.products.map((product) => (
-                    <ProductCard
-                      key={product.slug}
-                      product={product}
-                      href={href(lang, `/products/${product.slug}`)}
-                      detailsLabel={dict.common.details}
-                    />
-                  ))}
-                </ProductGrid>
-              </div>
+          <ProductGrid className="mt-12 lg:mt-14">
+            {products.map((product) => (
+              <ProductCard
+                key={product.slug}
+                product={product}
+                href={href(lang, `/products/${product.slug}`)}
+                detailsLabel={dict.common.details}
+              />
             ))}
+          </ProductGrid>
         </Container>
       </section>
 
       <section aria-labelledby="about-title" className="pb-20 lg:pb-28">
         <Container className="grid items-center gap-14 lg:grid-cols-12 lg:gap-16">
-          <PhotoMosaic photos={mosaic} className="pb-8 lg:col-span-5" />
+          <PhotoMosaic photos={photos}className="pb-8 lg:col-span-5" />
           <div className="lg:col-span-7">
             <SectionHeading eyebrow={t.aboutEyebrow} title={t.aboutTitle} id="about-title" />
             <p className="mt-6 max-w-2xl text-lg text-muted-strong">{welcome[lang]}</p>

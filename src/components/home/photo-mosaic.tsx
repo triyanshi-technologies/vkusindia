@@ -7,16 +7,20 @@ interface PhotoMosaicProps {
   className?: string;
 }
 
-/** 2×2 grid of product photos, offset like prints laid on a table. */
+/** Two-column grid of product photos, offset like prints laid on a table. An odd count widens the first one. */
 export function PhotoMosaic({ photos, className }: PhotoMosaicProps) {
+  const shown = photos.slice(0, 4);
+  const wideFirst = shown.length % 2 === 1;
+
   return (
     <div className={cn("grid grid-cols-2 gap-3 sm:gap-4", className)}>
-      {photos.slice(0, 4).map((photo, index) => (
+      {shown.map((photo, index) => (
         <div
           key={photo.image.url}
           className={cn(
-            "relative aspect-[3/2] overflow-hidden rounded-2xl bg-mist",
-            index % 2 === 1 && "translate-y-8",
+            "relative overflow-hidden rounded-2xl bg-mist",
+            wideFirst && index === 0 ? "col-span-2 aspect-[2/1]" : "aspect-[3/2]",
+            (index - Number(wideFirst)) % 2 === 1 && "translate-y-8",
           )}
         >
           <CmsImage

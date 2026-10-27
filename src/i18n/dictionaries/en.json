@@ -3,8 +3,8 @@
     "siteName": "VKUS India",
     "titleTemplate": "%s - VKUS India",
     "home": {
-      "title": "VKUS India - chicory, basmati rice, spices and superfoods from India",
-      "description": "Indo Russian Trade supplies chicory, 1121 and Pusa basmati rice, Indian spices, chia, quinoa, psyllium and Assam tea. Moscow office. Send an enquiry for your volume in kilograms."
+      "title": "VKUS India - natural chicory from India",
+      "description": "Indo Russian Trade supplies chicory from India: instant powder, liquid extract and roasted chicory cubes. Moscow office. Send an enquiry for your volume in kilograms."
     },
     "about": {
       "title": "About the company",
@@ -12,7 +12,7 @@
     },
     "products": {
       "title": "Product catalogue",
-      "description": "Chicory, basmati rice, superfoods, spices and tea from India. Description and enquiry form for every product."
+      "description": "Instant powder, liquid extract and roasted chicory cubes from India. Description and enquiry form for every product."
     },
     "contact": {
       "title": "Contacts",
@@ -64,16 +64,14 @@
   },
   "home": {
     "eyebrow": "Indo Russian Trade · Moscow",
-    "titleLead": "Chicory, basmati, spices & superfoods",
+    "titleLead": "Natural chicory",
     "titleAccent": "from India",
     "stats": {
-      "products": "products in the catalogue",
-      "categories": "product categories",
+      "products": { "one": "chicory product", "other": "chicory products" },
+      "caffeine": "caffeine",
       "route": "India - Russia"
     },
     "taglineCard": "The best for you",
-    "categoriesEyebrow": "Range",
-    "categoriesTitle": "Three categories, one supplier",
     "featuredEyebrow": "Catalogue",
     "featuredTitle": "Our products",
     "aboutEyebrow": "About us",
@@ -109,7 +107,7 @@
   "products": {
     "eyebrow": "Catalogue",
     "title": "Products from India",
-    "intro": "Chicory, basmati rice, spices, superfoods and tea. Open any product for its description and send an enquiry for the volume you need.",
+    "intro": "Instant powder, liquid extract and roasted chicory cubes. Open any product for its description and send an enquiry for the volume you need.",
     "jumpTo": "Categories"
   },
   "product": {
@@ -175,7 +173,7 @@
     "accept": "Accept and close"
   },
   "footer": {
-    "about": "Supplying chicory, basmati rice, spices and superfoods from India. Office in Moscow.",
+    "about": "Supplying natural chicory from India. Office in Moscow.",
     "products": "Products",
     "company": "Company",
     "contacts": "Contacts",

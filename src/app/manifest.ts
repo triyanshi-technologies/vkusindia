@@ -8,7 +8,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: "Вкусы Индии - VKUS India",
     short_name: "Вкусы Индии",
-    description: "Цикорий, рис басмати, специи и суперфуды из Индии.",
+    description: "Натуральный цикорий из Индии.",
     start_url: publicPath("/"),
     display: "browser",
     background_color: "#ffffff",

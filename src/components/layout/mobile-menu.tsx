@@ -115,25 +115,37 @@ export function MobileMenu({
                         >
                           {labels.allProducts}
                         </Link>
-                        {productGroups.map((group) => (
-                          <div key={group.href}>
-                            <Link href={group.href} className="font-serif text-lg text-ink">
-                              {group.label}
-                            </Link>
-                            <ul className="mt-2 space-y-2 border-l border-line pl-4">
-                              {group.products.map((product) => (
-                                <li key={product.href}>
-                                  <Link
-                                    href={product.href}
-                                    className="text-[0.9375rem] text-muted-strong"
-                                  >
-                                    {product.label}
-                                  </Link>
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                        ))}
+                        {productGroups.length === 1 ? (
+                          <ul className="space-y-3 border-l border-line pl-4">
+                            {productGroups[0]!.products.map((product) => (
+                              <li key={product.href}>
+                                <Link href={product.href} className="font-serif text-lg text-ink">
+                                  {product.label}
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        ) : (
+                          productGroups.map((group) => (
+                            <div key={group.href}>
+                              <Link href={group.href} className="font-serif text-lg text-ink">
+                                {group.label}
+                              </Link>
+                              <ul className="mt-2 space-y-2 border-l border-line pl-4">
+                                {group.products.map((product) => (
+                                  <li key={product.href}>
+                                    <Link
+                                      href={product.href}
+                                      className="text-[0.9375rem] text-muted-strong"
+                                    >
+                                      {product.label}
+                                    </Link>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          ))
+                        )}
                       </div>
                     </details>
                   ) : (

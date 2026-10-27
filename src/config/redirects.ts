@@ -5,21 +5,6 @@ export const LEGACY_PRODUCT_IDS: Record<string, string> = {
   "1": "instant-chicory-powder",
   "2": "liquid-chicory-extract",
   "3": "roasted-chicory-cubes",
-  "4": "basmati-1121-steam-rice",
-  "5": "basmati-1121-sella-rice",
-  "6": "pusa-basmati-steam-rice",
-  "7": "pusa-basmati-sella-rice",
-  "8": "pusa-basmati-raw-rice",
-  "9": "turmeric-powder",
-  "10": "ginger-powder",
-  "11": "red-chili",
-  "12": "paprika",
-  "13": "black-pepper",
-  "14": "moringa-powder",
-  "15": "psyllium-husk",
-  "16": "chia-seeds",
-  "21": "quinoa",
-  "22": "assam-black-tea",
 };
 
 const LEGACY_PAGES: Record<string, string> = {

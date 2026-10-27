@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { ContactBand } from "@/components/sections/contact-band";
@@ -8,10 +9,11 @@ import { Container } from "@/components/ui/container";
 import { IconCheck, IconUser } from "@/components/ui/icons";
 import { PageHeader } from "@/components/ui/page-header";
 import { company } from "@/content/company";
-import { about, heroImages, welcome } from "@/content/pages";
+import { about, heroImage, welcome } from "@/content/pages";
 import { isLocale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/get-dictionary";
 import { href } from "@/i18n/routing";
+import { getListedProducts } from "@/lib/content";
 import { publicPath } from "@/lib/public-path";
 import { pageMetadata } from "@/lib/seo";
 
@@ -30,7 +32,7 @@ export async function generateMetadata({ params }: PageProps<"/[lang]/about">): 
 export default async function AboutPage({ params }: PageProps<"/[lang]/about">) {
   const { lang } = await params;
   if (!isLocale(lang)) notFound();
-  const dict = await getDictionary(lang);
+  const [dict, products] = await Promise.all([getDictionary(lang), getListedProducts(lang)]);
 
   return (
     <>
@@ -56,12 +58,17 @@ export default async function AboutPage({ params }: PageProps<"/[lang]/about">) 
 
             <h2 className="mt-12 font-serif text-2xl text-ink">{dict.about.rangeTitle}</h2>
             <ul className="mt-5 divide-y divide-line border-y border-line">
-              {about.range[lang].map((line) => (
-                <li key={line} className="flex items-center gap-4 py-4 text-lg">
-                  <span className="grid size-8 shrink-0 place-items-center rounded-full bg-leaf/25 text-olive">
-                    <IconCheck className="size-4" />
-                  </span>
-                  {line}
+              {products.map((product) => (
+                <li key={product.slug}>
+                  <Link
+                    href={href(lang, `/products/${product.slug}`)}
+                    className="flex items-center gap-4 py-4 text-lg text-ink transition-colors hover:text-olive"
+                  >
+                    <span className="grid size-8 shrink-0 place-items-center rounded-full bg-leaf/25 text-olive">
+                      <IconCheck className="size-4" />
+                    </span>
+                    {product.name}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -74,8 +81,8 @@ export default async function AboutPage({ params }: PageProps<"/[lang]/about">) 
           <aside className="space-y-8 lg:col-span-5">
             <div className="relative aspect-[4/3] overflow-hidden rounded-[2rem] bg-mist">
               <Image
-                src={publicPath(heroImages.inset.src)}
-                alt={heroImages.inset.alt[lang]}
+                src={publicPath(heroImage.src)}
+                alt={heroImage.alt[lang]}
                 fill
                 unoptimized
                 sizes="(min-width: 1024px) 480px, 92vw"
