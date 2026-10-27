@@ -20,6 +20,14 @@ export const heroImage = {
   } satisfies Localized,
 };
 
+export const showcaseImage = {
+  src: "/images/home/chicory-showcase.webp",
+  alt: {
+    ru: "Цветы цикория, растворимый цикорий в чаше, жареные кубики и чашка напитка",
+    en: "Chicory flowers, instant chicory in a bowl, roasted cubes and a cup of the drink",
+  } satisfies Localized,
+};
+
 export const about = {
   intro: {
     ru: "Наша компания заслужила надёжную репутацию, связывая производителей и покупателей по всем континентам. Мы тесно сотрудничаем с фермерами, производителями, дистрибьюторами и розничными торговцами, чтобы обеспечить своевременную доставку безопасных высококачественных продуктов питания, соответствующих мировым стандартам.",

@@ -7,7 +7,7 @@ import { Hero } from "@/components/home/hero";
 import { PhotoMosaic } from "@/components/home/photo-mosaic";
 import { Principles } from "@/components/sections/principles";
 import { ProcessSteps } from "@/components/home/process-steps";
-import { ProductCard, ProductGrid } from "@/components/product/product-card";
+import { ProductShowcase } from "@/components/home/product-showcase";
 import { buttonArrowClass, buttonClass } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { IconArrowRight } from "@/components/ui/icons";
@@ -47,23 +47,9 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
     <>
       <Hero locale={lang} dict={dict} productCount={products.length} inset={photos[0]} />
 
-      <section aria-labelledby="featured-title" className="border-t border-line py-20 lg:py-28">
-        <Container>
-          <SectionHeading eyebrow={t.featuredEyebrow} title={t.featuredTitle} id="featured-title" />
-          <ProductGrid className="mt-12 lg:mt-14">
-            {products.map((product) => (
-              <ProductCard
-                key={product.slug}
-                product={product}
-                href={href(lang, `/products/${product.slug}`)}
-                detailsLabel={dict.common.details}
-              />
-            ))}
-          </ProductGrid>
-        </Container>
-      </section>
+      <ProductShowcase locale={lang} dict={dict} products={products} />
 
-      <section aria-labelledby="about-title" className="pb-20 lg:pb-28">
+      <section aria-labelledby="about-title" className="py-20 lg:py-28">
         <Container className="grid items-center gap-14 lg:grid-cols-12 lg:gap-16">
           <PhotoMosaic photos={photos}className="pb-8 lg:col-span-5" />
           <div className="lg:col-span-7">
