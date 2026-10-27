@@ -26,14 +26,14 @@ export function Hero({ locale, dict, stats: counts }: HeroProps) {
   ];
 
   return (
-    <section className="overflow-hidden bg-surface-dark text-paper">
+    <section className="overflow-hidden">
       <Container className="grid items-center gap-16 pt-10 pb-20 sm:pt-14 lg:grid-cols-12 lg:gap-10 lg:pt-14 lg:pb-24">
         <div className="lg:col-span-6">
-          <p className="eyebrow text-paper/60">{t.eyebrow}</p>
-          <h1 className="mt-6 font-serif text-[2.5rem] leading-[1.05] tracking-tight text-paper xs:text-5xl sm:text-6xl xl:text-[4rem]">
-            {t.titleLead} <em className="text-leaf">{t.titleAccent}</em>
+          <p className="eyebrow">{t.eyebrow}</p>
+          <h1 className="mt-6 font-serif text-[2.5rem] leading-[1.05] tracking-tight text-ink xs:text-5xl sm:text-6xl xl:text-[4rem]">
+            {t.titleLead} <em className="text-olive">{t.titleAccent}</em>
           </h1>
-          <p className="mt-7 max-w-xl text-lg text-paper/70">{heroLead[locale]}</p>
+          <p className="mt-7 max-w-xl text-lg text-muted-strong">{heroLead[locale]}</p>
 
           <div className="mt-9 flex flex-wrap gap-3">
             <Link href={href(locale, "/products")} className={buttonClass({ size: "lg" })}>
@@ -42,17 +42,17 @@ export function Hero({ locale, dict, stats: counts }: HeroProps) {
             </Link>
             <Link
               href={`${href(locale, "/contact")}#form`}
-              className={buttonClass({ variant: "inverse", size: "lg" })}
+              className={buttonClass({ variant: "outline", size: "lg" })}
             >
               {dict.common.enquire}
             </Link>
           </div>
 
-          <dl className="mt-14 grid max-w-lg grid-cols-3 gap-4 border-t border-paper/15 pt-6 sm:gap-8">
+          <dl className="mt-14 grid max-w-lg grid-cols-3 gap-4 border-t border-line pt-6 sm:gap-8">
             {stats.map((stat) => (
               <div key={stat.label} className="flex flex-col gap-1">
-                <dt className="order-last text-sm leading-snug text-paper/60">{stat.label}</dt>
-                <dd className="font-serif text-2xl text-paper sm:text-3xl">{stat.value}</dd>
+                <dt className="order-last text-sm leading-snug text-muted-strong">{stat.label}</dt>
+                <dd className="font-serif text-2xl text-ink sm:text-3xl">{stat.value}</dd>
               </div>
             ))}
           </dl>
@@ -71,7 +71,7 @@ export function Hero({ locale, dict, stats: counts }: HeroProps) {
                 className="object-cover"
               />
             </div>
-            <div className="absolute bottom-0 -left-3 aspect-[4/3] w-[46%] overflow-hidden rounded-[1.5rem] border-[6px] border-surface-dark bg-mist shadow-[0_20px_40px_-20px_rgb(0_0_0/0.6)] sm:-left-10">
+            <div className="absolute bottom-0 -left-3 aspect-[4/3] w-[46%] overflow-hidden rounded-[1.5rem] border-[6px] border-paper bg-mist shadow-[0_20px_40px_-20px_rgb(34_34_34/0.35)] sm:-left-10">
               <Image
                 src={publicPath(heroImages.inset.src)}
                 alt={heroImages.inset.alt[locale]}
