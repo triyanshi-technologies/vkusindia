@@ -32,9 +32,6 @@ export function ProductCard({
           sizes="(min-width: 1280px) 300px, (min-width: 640px) 45vw, 92vw"
           className="object-cover transition-transform duration-500 ease-soft group-hover:scale-[1.04]"
         />
-        <span className="absolute top-3 left-3 rounded-full bg-leaf px-3 py-1 text-xs font-medium text-ink">
-          {product.categoryName}
-        </span>
       </div>
 
       <Heading className="mt-5 font-serif text-xl leading-snug text-ink transition-colors group-hover:text-olive">

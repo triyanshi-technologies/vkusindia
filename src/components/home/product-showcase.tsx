@@ -119,9 +119,6 @@ function ShowcaseCard({
           sizes="(min-width: 1024px) 300px, (min-width: 768px) 50vw, 78vw"
           className="object-contain p-3 transition-transform duration-500 ease-soft group-hover:scale-[1.04]"
         />
-        <span className="absolute top-3 left-3 rounded-full bg-leaf px-3 py-1 text-xs font-medium text-ink">
-          {product.categoryName}
-        </span>
       </div>
       <h3 className="mt-4 font-serif text-lg leading-snug text-ink transition-colors group-hover:text-olive">
         <Link href={href} className="after:absolute after:inset-0 after:rounded-2xl">
