@@ -23,6 +23,10 @@
   --color-mist: #f6f8ef;
   --color-danger: #b42318;
 
+  /* Surface roles (charcoal-led direction): change these to re-balance the whole site. */
+  --color-surface-dark: var(--color-ink);
+  --color-surface-tint: var(--color-mist);
+
   --font-sans: var(--font-golos), ui-sans-serif, system-ui, sans-serif;
   --font-serif: var(--font-lora), ui-serif, Georgia, serif;
 

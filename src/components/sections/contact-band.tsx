@@ -15,49 +15,49 @@ export function ContactBand({ locale, dict }: { locale: Locale; dict: Dictionary
   return (
     <section aria-labelledby="contact-band-title" className="pb-20 lg:pb-28">
       <Container>
-        <div className="relative grid items-center gap-10 overflow-hidden rounded-[2rem] bg-leaf px-6 py-12 sm:px-12 lg:grid-cols-12 lg:px-16 lg:py-16">
-          <LeafMark className="pointer-events-none absolute -right-16 -bottom-24 w-[26rem] text-ink/[0.07] lg:right-[38%]" />
+        <div className="relative grid items-center gap-10 overflow-hidden rounded-[2rem] bg-surface-dark px-6 py-12 sm:px-12 lg:grid-cols-12 lg:px-16 lg:py-16">
+          <LeafMark className="pointer-events-none absolute -right-16 -bottom-24 w-[26rem] text-leaf/[0.12] lg:right-[38%]" />
 
           <div className="relative lg:col-span-7">
             <h2
               id="contact-band-title"
-              className="font-serif text-3xl leading-tight text-ink sm:text-[2.75rem]"
+              className="font-serif text-3xl leading-tight text-paper sm:text-[2.75rem]"
             >
               {dict.home.ctaTitle}
             </h2>
-            <p className="mt-4 max-w-lg text-lg text-ink/75">{dict.home.ctaText}</p>
+            <p className="mt-4 max-w-lg text-lg text-paper/70">{dict.home.ctaText}</p>
           </div>
 
           <div className="relative flex flex-col gap-3 lg:col-span-5">
             <a
               href={primaryPhone.href}
-              className="group flex items-center justify-between gap-4 rounded-2xl bg-paper px-5 py-4 transition-colors hover:bg-ink hover:text-paper"
+              className="group flex items-center justify-between gap-4 rounded-2xl bg-paper px-5 py-4 text-ink transition-colors hover:bg-leaf"
             >
               <span>
-                <span className="block text-[0.8125rem] text-muted-strong group-hover:text-paper/60">
+                <span className="block text-[0.8125rem] text-muted-strong group-hover:text-ink/70">
                   {dict.common.callUs}
                 </span>
                 <span className="font-serif text-xl">{primaryPhone.display}</span>
               </span>
-              <IconPhone className="text-xl text-olive group-hover:text-leaf" />
+              <IconPhone className="text-xl text-olive group-hover:text-ink" />
             </a>
             <a
               href={company.whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center justify-between gap-4 rounded-2xl bg-paper px-5 py-4 transition-colors hover:bg-ink hover:text-paper"
+              className="group flex items-center justify-between gap-4 rounded-2xl bg-paper px-5 py-4 text-ink transition-colors hover:bg-leaf"
             >
               <span>
-                <span className="block text-[0.8125rem] text-muted-strong group-hover:text-paper/60">
+                <span className="block text-[0.8125rem] text-muted-strong group-hover:text-ink/70">
                   {dict.common.whatsapp}
                 </span>
                 <span className="font-serif text-xl">{dict.common.writeWhatsapp}</span>
               </span>
-              <IconWhatsApp className="text-xl text-olive group-hover:text-leaf" />
+              <IconWhatsApp className="text-xl text-olive group-hover:text-ink" />
             </a>
             <Link
               href={`${href(locale, "/contact")}#form`}
-              className={buttonClass({ variant: "dark", size: "lg" })}
+              className={buttonClass({ size: "lg" })}
             >
               {dict.common.enquire}
               <IconArrowRight className={buttonArrowClass} />
