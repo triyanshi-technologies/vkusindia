@@ -76,7 +76,7 @@
     "featuredTitle": "Our products",
     "featuredText": "Instant powder, liquid extract and roasted chicory cubes.",
     "featuredPerks": ["Natural product", "Caffeine-free", "Coffee substitute", "From India"],
-    "carousel": { "prev": "Previous product", "next": "Next product" },
+    "carousel": { "prev": "Previous product", "next": "Next product", "slide": "Product {n} of {total}" },
     "aboutEyebrow": "About us",
     "aboutTitle": "A reliable name in food import and export",
     "approachEyebrow": "How we work",

@@ -78,7 +78,7 @@ export function ProductShowcase({ locale, dict, products }: ProductShowcaseProps
           </ul>
 
           <ShowcaseCarousel
-            labels={{ region: t.featuredTitle, prev: t.carousel.prev, next: t.carousel.next }}
+            labels={{ region: t.featuredTitle, ...t.carousel }}
             className="mt-6 min-h-0 flex-1 md:short:mt-4"
           >
             {products.map((product) => (
