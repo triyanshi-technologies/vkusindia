@@ -57,7 +57,7 @@ export function ContactBand({ locale, dict }: { locale: Locale; dict: Dictionary
             </a>
             <Link
               href={`${href(locale, "/contact")}#form`}
-              className={buttonClass({ size: "lg" })}
+              className={buttonClass({ variant: "outline", size: "lg" })}
             >
               {dict.common.enquire}
               <IconArrowRight className={buttonArrowClass} />

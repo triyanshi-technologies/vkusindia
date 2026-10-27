@@ -59,7 +59,7 @@ export function CookieNotice({ text, linkLabel, linkHref, acceptLabel }: CookieN
       <button
         type="button"
         onClick={accept}
-        className={buttonClass({ className: "mt-3 w-full sm:mt-4 sm:w-auto" })}
+        className={buttonClass({ variant: "outline", className: "mt-3 w-full sm:mt-4 sm:w-auto" })}
       >
         {acceptLabel}
       </button>

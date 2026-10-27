@@ -115,7 +115,7 @@ export default async function ProductPage({ params }: Props) {
                   rel="noopener noreferrer"
                   className={buttonClass({ variant: "outline", size: "lg" })}
                 >
-                  <IconWhatsApp className="text-lg text-leaf group-hover/btn:text-olive" />
+                  <IconWhatsApp className="text-lg" />
                   {dict.common.whatsapp}
                 </a>
               </div>

@@ -7,9 +7,9 @@ const base =
   "group/btn inline-flex items-center justify-center gap-2.5 rounded-full font-medium whitespace-nowrap transition-colors duration-200 disabled:pointer-events-none disabled:opacity-60";
 
 const variants: Record<Variant, string> = {
-  primary: "bg-leaf text-ink hover:bg-olive hover:text-paper",
+  primary: "border border-ink bg-ink text-paper hover:bg-paper hover:text-ink",
   dark: "bg-ink text-paper hover:bg-olive",
-  outline: "border border-ink bg-ink text-paper hover:bg-paper hover:text-ink",
+  outline: "bg-leaf text-ink hover:bg-olive hover:text-paper",
   inverse: "border border-paper/30 text-paper hover:border-paper hover:bg-paper hover:text-ink",
 };
 
