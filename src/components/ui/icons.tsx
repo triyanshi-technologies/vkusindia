@@ -85,6 +85,27 @@ export const IconLeaf = (p: IconProps) => (
   </Stroke>
 );
 
+export const IconCup = (p: IconProps) => (
+  <Stroke {...p}>
+    <path d="M4 10h13v4a6 6 0 0 1-6 6h-1a6 6 0 0 1-6-6v-4Z" />
+    <path d="M17 11.5h1.5a2.5 2.5 0 0 1 0 5H16.6M8.5 3.5v3M12.5 3.5v3" />
+  </Stroke>
+);
+
+export const IconNoCaffeine = (p: IconProps) => (
+  <Stroke {...p}>
+    <ellipse cx="12" cy="12" rx="5.2" ry="7.8" transform="rotate(35 12 12)" />
+    <path d="M9.2 16.4c.4-3.6 5.2-5.2 5.6-8.8M3.5 3.5l17 17" />
+  </Stroke>
+);
+
+export const IconGlobe = (p: IconProps) => (
+  <Stroke {...p}>
+    <circle cx="12" cy="12" r="9" />
+    <path d="M3 12h18M12 3c2.4 2.6 3.7 5.6 3.7 9s-1.3 6.4-3.7 9c-2.4-2.6-3.7-5.6-3.7-9S9.6 5.6 12 3Z" />
+  </Stroke>
+);
+
 export const IconUser = (p: IconProps) => (
   <Stroke {...p}>
     <circle cx="12" cy="8" r="4" />

@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* Laptop-height screens (e.g. 1366×768), for one-screen sections. */
+@custom-variant short (@media (max-height: 820px));
+
 /*
  * Brand palette
  *   ink    #222222  charcoal black - headings, navigation, body text, footer
@@ -22,6 +25,10 @@
   --color-line: #e6e7e0;
   --color-mist: #f6f8ef;
   --color-danger: #b42318;
+
+  /* Surface roles (charcoal-led direction): change these to re-balance the whole site. */
+  --color-surface-dark: var(--color-ink);
+  --color-surface-tint: var(--color-mist);
 
   --font-sans: var(--font-golos), ui-sans-serif, system-ui, sans-serif;
   --font-serif: var(--font-lora), ui-serif, Georgia, serif;

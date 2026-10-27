@@ -14,11 +14,12 @@ interface PageHeaderProps {
 
 export function PageHeader({ crumbs, crumbsLabel, eyebrow, title, children }: PageHeaderProps) {
   return (
-    <header className="border-b border-line bg-mist/70">
+    <header className="bg-surface-dark">
       <Container className="pt-8 pb-14 lg:pt-10 lg:pb-20">
-        <Breadcrumbs items={crumbs} label={crumbsLabel} />
+        <Breadcrumbs items={crumbs} label={crumbsLabel} tone="dark" />
         <SectionHeading
           as="h1"
+          tone="dark"
           eyebrow={eyebrow}
           title={title}
           className="mt-10 max-w-3xl lg:mt-14"

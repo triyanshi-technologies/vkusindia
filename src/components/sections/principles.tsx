@@ -12,7 +12,10 @@ export function Principles({
   title: string;
 }) {
   return (
-    <section aria-labelledby="principles-title" className="bg-ink py-20 text-paper lg:py-28">
+    <section
+      aria-labelledby="principles-title"
+      className="bg-surface-dark py-20 text-paper lg:py-28"
+    >
       <Container className="grid gap-12 lg:grid-cols-12 lg:gap-10">
         <div className="lg:col-span-4">
           <p className="eyebrow text-paper/60">{eyebrow}</p>

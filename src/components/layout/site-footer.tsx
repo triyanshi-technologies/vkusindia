@@ -28,7 +28,13 @@ export async function SiteFooter({ locale, dict }: SiteFooterProps) {
   const categories = await getCategoriesWithProducts(locale);
   const productsHref = href(locale, "/products");
 
-  const productLinks = categories.map((c) => ({ label: c.name, href: `${productsHref}#${c.id}` }));
+  const productLinks =
+    categories.length === 1
+      ? categories[0]!.products.map((p) => ({
+          label: p.name,
+          href: href(locale, `/products/${p.slug}`),
+        }))
+      : categories.map((c) => ({ label: c.name, href: `${productsHref}#${c.id}` }));
   const companyLinks = [
     { label: dict.nav.about, href: href(locale, "/about") },
     { label: dict.nav.allProducts, href: productsHref },

@@ -21,7 +21,7 @@ export function FloatingContacts({ labels }: { labels: { whatsapp: string; call:
       <a
         href={primaryPhone.href}
         aria-label={labels.call}
-        className={`${buttonClass} bg-ink text-paper hover:bg-olive`}
+        className={`${buttonClass} bg-ink text-paper ring-1 ring-paper/25 hover:bg-olive`}
       >
         <IconPhone className="text-[1.375rem]" />
       </a>

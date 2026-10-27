@@ -7,6 +7,7 @@ import { categories } from "@/content/categories";
 import type {
   CategoryId,
   CategoryWithProducts,
+  CmsImage,
   Product,
   ProductSummary,
 } from "@/content/types";
@@ -107,6 +108,16 @@ export async function getProductSlugs(): Promise<string[]> {
   return (await fetchProducts()).map((r) => r.slug);
 }
 
-export async function getCatalogStats(): Promise<{ products: number; categories: number }> {
-  return { products: (await fetchListed()).length, categories: categories.length };
+/** Up to `limit` photos of listed products, taken round-robin so each product shows first. */
+export async function getProductPhotos(
+  locale: Locale,
+  limit: number,
+): Promise<{ image: CmsImage; alt: string }[]> {
+  const rows = await fetchListed();
+  const longest = Math.max(0, ...rows.map((r) => r.images.length));
+  return Array.from({ length: longest }, (_, i) =>
+    rows.flatMap((r) => (r.images[i] ? [{ image: toCmsImage(r.images[i]), alt: r.name[locale] }] : [])),
+  )
+    .flat()
+    .slice(0, limit);
 }

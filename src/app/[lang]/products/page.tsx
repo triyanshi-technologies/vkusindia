@@ -52,16 +52,18 @@ export default async function ProductsPage({ params }: PageProps<"/[lang]/produc
       </PageHeader>
 
       {/* Category jump links - sticks under the header while scrolling the catalogue. */}
-      <nav
-        aria-label={dict.products.jumpTo}
-        className="sticky top-[4.5rem] z-20 border-b border-line bg-paper/95 backdrop-blur-md lg:top-20"
-      >
-        <Container>
-          <CategoryPills
-            items={categories.map((c) => ({ id: c.id, label: c.name, count: c.products.length }))}
-          />
-        </Container>
-      </nav>
+      {categories.length > 1 && (
+        <nav
+          aria-label={dict.products.jumpTo}
+          className="sticky top-[4.5rem] z-20 border-b border-line bg-paper/95 backdrop-blur-md lg:top-20"
+        >
+          <Container>
+            <CategoryPills
+              items={categories.map((c) => ({ id: c.id, label: c.name, count: c.products.length }))}
+            />
+          </Container>
+        </nav>
+      )}
 
       <div className="py-16 lg:py-20">
         {categories.map((category) => (

@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useId, useState, type MouseEvent, type ReactNode } from "react";
+import { useEffect, useId, useRef, useState, type MouseEvent, type ReactNode } from "react";
 
 import { Container } from "@/components/ui/container";
 import { buttonClass } from "@/components/ui/button";
@@ -42,17 +42,27 @@ export function MobileMenu({
   children,
 }: MobileMenuProps) {
   const [open, setOpen] = useState(false);
+  const [panelTop, setPanelTop] = useState(0);
   const panelId = useId();
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     if (!open) return;
     const onKeyDown = (event: KeyboardEvent) => event.key === "Escape" && setOpen(false);
+    const onViewportChange = () => {
+      const header = menuButtonRef.current?.closest("header");
+      setPanelTop(header?.getBoundingClientRect().bottom ?? 0);
+    };
     const root = document.documentElement;
     root.style.overflow = "hidden";
     document.addEventListener("keydown", onKeyDown);
+    window.addEventListener("resize", onViewportChange);
+    window.addEventListener("scroll", onViewportChange, true);
     return () => {
       root.style.overflow = "";
       document.removeEventListener("keydown", onKeyDown);
+      window.removeEventListener("resize", onViewportChange);
+      window.removeEventListener("scroll", onViewportChange, true);
     };
   }, [open]);
 
@@ -63,10 +73,17 @@ export function MobileMenu({
   return (
     <>
       <button
+        ref={menuButtonRef}
         type="button"
         aria-expanded={open}
         aria-controls={panelId}
-        onClick={() => setOpen((value) => !value)}
+        onClick={() => {
+          if (!open) {
+            const header = menuButtonRef.current?.closest("header");
+            setPanelTop(header?.getBoundingClientRect().bottom ?? 0);
+          }
+          setOpen((value) => !value);
+        }}
         className="grid size-11 place-items-center rounded-full border border-line text-xl text-ink transition-colors hover:border-ink lg:hidden"
       >
         {open ? <IconClose /> : <IconMenu />}
@@ -77,7 +94,8 @@ export function MobileMenu({
         id={panelId}
         hidden={!open}
         onClick={closeOnLink}
-        className="fixed inset-x-0 top-[4.5rem] bottom-0 z-30 overflow-y-auto border-t border-line bg-paper lg:hidden"
+        style={{ top: panelTop }}
+        className="fixed inset-x-0 bottom-0 z-30 overflow-y-auto border-t border-line bg-paper lg:hidden"
       >
         <Container className="flex min-h-full flex-col py-6">
           <nav aria-label={labels.nav}>
@@ -97,25 +115,37 @@ export function MobileMenu({
                         >
                           {labels.allProducts}
                         </Link>
-                        {productGroups.map((group) => (
-                          <div key={group.href}>
-                            <Link href={group.href} className="font-serif text-lg text-ink">
-                              {group.label}
-                            </Link>
-                            <ul className="mt-2 space-y-2 border-l border-line pl-4">
-                              {group.products.map((product) => (
-                                <li key={product.href}>
-                                  <Link
-                                    href={product.href}
-                                    className="text-[0.9375rem] text-muted-strong"
-                                  >
-                                    {product.label}
-                                  </Link>
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                        ))}
+                        {productGroups.length === 1 ? (
+                          <ul className="space-y-3 border-l border-line pl-4">
+                            {productGroups[0]!.products.map((product) => (
+                              <li key={product.href}>
+                                <Link href={product.href} className="font-serif text-lg text-ink">
+                                  {product.label}
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        ) : (
+                          productGroups.map((group) => (
+                            <div key={group.href}>
+                              <Link href={group.href} className="font-serif text-lg text-ink">
+                                {group.label}
+                              </Link>
+                              <ul className="mt-2 space-y-2 border-l border-line pl-4">
+                                {group.products.map((product) => (
+                                  <li key={product.href}>
+                                    <Link
+                                      href={product.href}
+                                      className="text-[0.9375rem] text-muted-strong"
+                                    >
+                                      {product.label}
+                                    </Link>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          ))
+                        )}
                       </div>
                     </details>
                   ) : (

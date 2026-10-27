@@ -7,6 +7,8 @@ interface SectionHeadingProps {
   title: ReactNode;
   id?: string;
   as?: "h1" | "h2";
+  /** `dark` for headings placed on a dark surface. */
+  tone?: "light" | "dark";
   className?: string;
   children?: ReactNode;
 }
@@ -16,16 +18,19 @@ export function SectionHeading({
   title,
   id,
   as: Tag = "h2",
+  tone = "light",
   className,
   children,
 }: SectionHeadingProps) {
+  const dark = tone === "dark";
   return (
     <div className={cn("max-w-2xl", className)}>
-      {eyebrow && <p className="eyebrow">{eyebrow}</p>}
+      {eyebrow && <p className={cn("eyebrow", dark && "text-paper/60")}>{eyebrow}</p>}
       <Tag
         id={id}
         className={cn(
-          "font-serif tracking-tight text-ink",
+          "font-serif tracking-tight",
+          dark ? "text-paper" : "text-ink",
           eyebrow && "mt-4",
           Tag === "h1"
             ? "text-[2.375rem] leading-[1.08] sm:text-5xl lg:text-[3.5rem]"
@@ -34,7 +39,11 @@ export function SectionHeading({
       >
         {title}
       </Tag>
-      {children && <div className="mt-5 text-lg text-muted-strong">{children}</div>}
+      {children && (
+        <div className={cn("mt-5 text-lg", dark ? "text-paper/70" : "text-muted-strong")}>
+          {children}
+        </div>
+      )}
     </div>
   );
 }

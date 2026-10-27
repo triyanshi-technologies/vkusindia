@@ -12,21 +12,20 @@ export const heroLead: Localized = {
   en: "Indo Russian Trade sources and supplies high-quality food products from India - with a focus on quality, reliability and long-term partnership.",
 };
 
-export const heroImages = {
-  main: {
-    src: "/images/hero/about2.jpg",
-    alt: {
-      ru: "Длиннозёрный рис басмати на ладони",
-      en: "Long-grain basmati rice in a palm",
-    } satisfies Localized,
-  },
-  inset: {
-    src: "/images/hero/about.jpg",
-    alt: {
-      ru: "Цветы цикория и молотый цикорий в чаше",
-      en: "Chicory flowers and ground chicory in a bowl",
-    } satisfies Localized,
-  },
+export const heroImage = {
+  src: "/images/hero/about.jpg",
+  alt: {
+    ru: "Цветы цикория и молотый цикорий в чаше",
+    en: "Chicory flowers and ground chicory in a bowl",
+  } satisfies Localized,
+};
+
+export const showcaseImage = {
+  src: "/images/home/chicory-showcase.webp",
+  alt: {
+    ru: "Цветы цикория, растворимый цикорий в чаше, жареные кубики и чашка напитка",
+    en: "Chicory flowers, instant chicory in a bowl, roasted cubes and a cup of the drink",
+  } satisfies Localized,
 };
 
 export const about = {
@@ -34,18 +33,6 @@ export const about = {
     ru: "Наша компания заслужила надёжную репутацию, связывая производителей и покупателей по всем континентам. Мы тесно сотрудничаем с фермерами, производителями, дистрибьюторами и розничными торговцами, чтобы обеспечить своевременную доставку безопасных высококачественных продуктов питания, соответствующих мировым стандартам.",
     en: "Our company has earned a solid reputation for connecting producers and buyers across continents. We work closely with farmers, manufacturers, distributors and retailers to ensure the timely delivery of safe, high-quality food products that meet global standards.",
   } satisfies Localized,
-  range: {
-    ru: [
-      "Цикорий, кофе, рис, чиа",
-      "Куркума, имбирь, подорожник, моринга",
-      "Красный перец чили, чёрный перец и другие специи",
-    ],
-    en: [
-      "Chicory, Coffee, Rice, Chia",
-      "Turmeric, Ginger, Psyllium, Moringa",
-      "Red chili, Black pepper & Other Spices",
-    ],
-  } satisfies Localized<string[]>,
   partnership: {
     ru: "В Indo Russian Trade мы верим в развитие долгосрочных партнёрских отношений, основанных на доверии, прозрачности и взаимном росте. Независимо от того, хотите ли вы импортировать высококачественную продукцию или расширить свой экспортный охват, наша команда обеспечивает бесперебойную логистику, надлежащую документацию и бесперебойную трансграничную торговлю.",
     en: "At Indo Russian Trade we believe in building long-term partnerships founded on trust, transparency and mutual growth. Whether you want to import high-quality products or expand your export reach, our dedicated team ensures smooth logistics, proper documentation and seamless cross-border trade.",
