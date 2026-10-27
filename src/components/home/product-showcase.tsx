@@ -36,7 +36,7 @@ export function ProductShowcase({ locale, dict, products }: ProductShowcaseProps
   return (
     <section
       aria-labelledby="featured-title"
-      className="flex border-t border-line py-10 sm:py-14 md:h-[min(calc(100svh-4.5rem),52rem)] md:min-h-[38rem] md:py-8 lg:h-[min(calc(100svh-5rem),54rem)] lg:py-10"
+      className="flex py-10 sm:py-14 md:h-[min(calc(100svh-4.5rem),52rem)] md:min-h-[38rem] md:py-8 lg:h-[min(calc(100svh-5rem),54rem)] lg:py-10"
     >
       <Container className="grid gap-8 md:grid-cols-12 md:grid-rows-[minmax(0,1fr)] lg:gap-12">
         <div className="relative aspect-[16/10] overflow-hidden rounded-[1.5rem] bg-mist sm:aspect-[16/9] sm:rounded-[2rem] md:col-span-5 md:aspect-auto lg:col-span-6">

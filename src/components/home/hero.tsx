@@ -30,7 +30,7 @@ export function Hero({ locale, dict, productCount, inset }: HeroProps) {
   ];
 
   return (
-    <section className="overflow-hidden">
+    <section className="overflow-hidden bg-leaf/20">
       <Container className="grid items-center gap-16 pt-10 pb-20 sm:pt-14 lg:grid-cols-12 lg:gap-10 lg:pt-14 lg:pb-24">
         <div className="lg:col-span-6">
           <p className="eyebrow">{t.eyebrow}</p>
@@ -52,7 +52,7 @@ export function Hero({ locale, dict, productCount, inset }: HeroProps) {
             </Link>
           </div>
 
-          <dl className="mt-14 grid max-w-lg grid-cols-3 gap-4 border-t border-line pt-6 sm:gap-8">
+          <dl className="mt-14 grid max-w-lg grid-cols-3 gap-4 border-t border-ink/10 pt-6 sm:gap-8">
             {stats.map((stat) => (
               <div key={stat.label} className="flex flex-col gap-1">
                 <dt className="order-last text-sm leading-snug text-muted-strong">{stat.label}</dt>
