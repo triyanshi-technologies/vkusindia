@@ -31,14 +31,15 @@ export function Hero({ locale, dict, productCount, inset }: HeroProps) {
   return (
     <section className="overflow-hidden bg-leaf/20">
       <Container className="grid items-center gap-8 pt-10 pb-20 sm:pt-14 lg:grid-cols-12 lg:gap-10 lg:pt-14 lg:pb-24">
-        <div className="lg:col-span-6">
+        {/* Tablet landscape (769-1023px): text block centred under the images. */}
+        <div className="min-[769px]:max-lg:text-center lg:col-span-6">
           <p className="eyebrow">{t.eyebrow}</p>
           <h1 className="mt-6 font-serif text-[2.5rem] leading-[1.05] tracking-tight text-ink xs:text-5xl sm:text-6xl xl:text-[4rem]">
             {t.titleLead} <em className="text-olive">{t.titleAccent}</em>
           </h1>
-          <p className="mt-7 max-w-xl text-lg text-muted-strong">{heroLead[locale]}</p>
+          <p className="mt-7 max-w-xl text-lg text-muted-strong min-[769px]:max-lg:mx-auto">{heroLead[locale]}</p>
 
-          <div className="mt-9 flex flex-wrap gap-3">
+          <div className="mt-9 flex flex-wrap gap-3 min-[769px]:max-lg:justify-center">
             <Link href={href(locale, "/products")} className={buttonClass({ size: "lg" })}>
               {dict.common.viewCatalogue}
               <IconArrowRight className={buttonArrowClass} />
@@ -51,7 +52,7 @@ export function Hero({ locale, dict, productCount, inset }: HeroProps) {
             </Link>
           </div>
 
-          <dl className="mt-14 grid max-w-lg grid-cols-3 gap-4 border-t border-ink/10 pt-6 sm:gap-8">
+          <dl className="mt-14 grid max-w-lg grid-cols-3 gap-4 border-t border-ink/10 pt-6 sm:gap-8 min-[769px]:max-lg:mx-auto">
             {stats.map((stat) => (
               <div key={stat.label} className="flex flex-col gap-1">
                 <dt className="order-last text-sm leading-snug text-muted-strong">{stat.label}</dt>
