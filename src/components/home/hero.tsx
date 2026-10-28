@@ -30,7 +30,7 @@ export function Hero({ locale, dict, productCount, inset }: HeroProps) {
 
   return (
     <section className="overflow-hidden bg-leaf/20">
-      <Container className="grid items-center gap-16 pt-10 pb-20 sm:pt-14 lg:grid-cols-12 lg:gap-10 lg:pt-14 lg:pb-24">
+      <Container className="grid items-center gap-8 pt-10 pb-20 sm:pt-14 lg:grid-cols-12 lg:gap-10 lg:pt-14 lg:pb-24">
         <div className="lg:col-span-6">
           <p className="eyebrow">{t.eyebrow}</p>
           <h1 className="mt-6 font-serif text-[2.5rem] leading-[1.05] tracking-tight text-ink xs:text-5xl sm:text-6xl xl:text-[4rem]">
@@ -61,7 +61,8 @@ export function Hero({ locale, dict, productCount, inset }: HeroProps) {
           </dl>
         </div>
 
-        <div className="lg:col-span-6">
+        {/* Images lead on stacked layouts; DOM order keeps the heading first for a11y/SEO. */}
+        <div className="order-first lg:order-none lg:col-span-6">
           <div className="relative mx-auto max-w-[35rem] pb-10 lg:mr-0 lg:ml-auto">
             <div className="relative aspect-[4/3.3] overflow-hidden rounded-[2rem] bg-mist">
               <Image
