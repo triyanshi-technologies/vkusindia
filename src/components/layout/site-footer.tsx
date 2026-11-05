@@ -44,7 +44,7 @@ export async function SiteFooter({ locale, dict }: SiteFooterProps) {
 
   return (
     <footer className="bg-ink text-[0.9375rem] text-paper">
-      <Container className="grid py-16 md:grid-cols-2 md:gap-12 lg:grid-cols-12 lg:gap-8 lg:py-20">
+      <Container className="grid py-12 md:grid-cols-2 md:gap-12 lg:grid-cols-12 lg:gap-8 lg:py-16">
         <div className="pb-10 md:pb-0 lg:col-span-4">
           <Link href={href(locale)} className="inline-block">
             <Image

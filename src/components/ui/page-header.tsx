@@ -15,7 +15,7 @@ interface PageHeaderProps {
 export function PageHeader({ crumbs, crumbsLabel, eyebrow, title, children }: PageHeaderProps) {
   return (
     <header className="bg-surface-dark">
-      <Container className="pt-8 pb-14 lg:pt-10 lg:pb-20">
+      <Container className="pt-8 pb-10 lg:pt-10 lg:pb-14">
         <Breadcrumbs items={crumbs} label={crumbsLabel} tone="dark" />
         <SectionHeading
           as="h1"

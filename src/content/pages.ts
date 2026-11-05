@@ -13,10 +13,10 @@ export const heroLead: Localized = {
 };
 
 export const heroImage = {
-  src: "/images/hero/about.jpg",
+  src: "/images/hero/chicory-banner.webp",
   alt: {
-    ru: "Цветы цикория и молотый цикорий в чаше",
-    en: "Chicory flowers and ground chicory in a bowl",
+    ru: "Цветы цикория и молотый цикорий в керамической чаше",
+    en: "Chicory flowers and ground chicory in a ceramic bowl",
   } satisfies Localized,
 };
 

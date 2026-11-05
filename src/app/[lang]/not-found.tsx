@@ -14,7 +14,7 @@ export default async function NotFound() {
   const dict = await getDictionary(locale);
 
   return (
-    <Container className="flex flex-col items-center py-24 text-center lg:py-36">
+    <Container className="flex flex-col items-center py-16 text-center lg:py-24">
       <p className="font-serif text-[7rem] leading-none text-leaf">404</p>
       <h1 className="mt-6 font-serif text-4xl text-ink sm:text-5xl">{dict.notFound.title}</h1>
       <p className="mt-5 max-w-lg text-lg text-muted-strong">{dict.notFound.text}</p>

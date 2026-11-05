@@ -8,6 +8,9 @@ export type Localized<T = string> = Record<Locale, T>;
 /** The three categories of the live site. Must match studio/schemaTypes/product.ts. */
 export type CategoryId = "chicory" | "rice" | "superfood";
 
+/** Where a product leaves the chicory process. Must match PROCESS_ROUTES in studio/schemaTypes/product.ts. */
+export type ProcessRoute = "dried" | "roasted" | "extract";
+
 /** Image shipped with the site in /public (layout imagery, category tiles). */
 export interface ImageAsset {
   src: string;
@@ -48,6 +51,19 @@ export interface ProductSummary {
   name: string;
   /** Main photo (first of `images`). */
   image: CmsImage;
+  processRoute: ProcessRoute | null;
+  hasVariants: boolean;
+}
+
+export interface Specification {
+  label: string;
+  value: string;
+}
+
+/** A choice the buyer can make, e.g. Colour: Light / Medium / Dark. */
+export interface VariantGroup {
+  name: string;
+  options: string[];
 }
 
 export interface Product extends ProductSummary {
@@ -55,6 +71,8 @@ export interface Product extends ProductSummary {
   description: PortableTextBlock[];
   /** Plain-text start of the description - used for meta description and structured data. */
   excerpt: string;
+  specifications: Specification[];
+  variants: VariantGroup[];
 }
 
 export interface CategoryWithProducts extends Category {

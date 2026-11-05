@@ -43,7 +43,7 @@ export default async function PrivacyPage({ params }: PageProps<"/[lang]/privacy
         {policy.note && <p className="text-base">{policy.note}</p>}
       </PageHeader>
 
-      <Container className="grid gap-12 py-16 lg:grid-cols-12 lg:gap-16 lg:py-24">
+      <Container className="section-y grid gap-12 lg:grid-cols-12 lg:gap-16">
         <nav aria-label={policy.title} className="hidden lg:col-span-4 lg:block">
           <TocNav
             className="sticky top-28"

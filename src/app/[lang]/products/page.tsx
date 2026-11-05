@@ -65,7 +65,8 @@ export default async function ProductsPage({ params }: PageProps<"/[lang]/produc
         </nav>
       )}
 
-      <div className="py-16 lg:py-20">
+      {/* With each category's own py-10/14 this adds up to the standard section spacing. */}
+      <div className="py-4 lg:py-6">
         {categories.map((category) => (
           <section
             key={category.id}
@@ -96,6 +97,7 @@ export default async function ProductsPage({ params }: PageProps<"/[lang]/produc
                     product={product}
                     href={href(lang, `/products/${product.slug}`)}
                     detailsLabel={dict.common.details}
+                    variantsLabel={dict.common.hasVariants}
                   />
                 ))}
               </ProductGrid>

@@ -7,17 +7,26 @@ import { isLocale, type Locale } from "@/i18n/config";
 import { href } from "@/i18n/routing";
 
 import { toFieldErrors } from "./schemas";
-import type { FormResponse } from "./shared";
+import type { FieldErrors, FormResponse } from "./shared";
 
 /**
- * Shared POST handler for every form: parse → validate with Zod → log.
+ * Shared POST handler for every form: parse → validate with Zod → (optional check) → log.
  *
  * Works with and without JavaScript: fetch() callers get JSON, plain HTML form
  * posts get a 303 redirect to a localized status page.
  */
 export async function handleFormSubmission<S extends z.ZodType>(
   request: Request,
-  { kind, schema }: { kind: string; schema: S },
+  {
+    kind,
+    schema,
+    validate,
+  }: {
+    kind: string;
+    schema: S;
+    /** Checks that need data (e.g. the CMS); return field errors to reject. */
+    validate?: (data: z.output<S>) => Promise<FieldErrors | null>;
+  },
 ): Promise<Response> {
   const wantsJson = request.headers.get("accept")?.includes("application/json") ?? false;
   let locale: Locale = "ru";
@@ -35,8 +44,13 @@ export async function handleFormSubmission<S extends z.ZodType>(
     return respond(400, { ok: false, error: "invalid" });
   }
 
-  const input: Record<string, string> = {};
-  for (const [key, value] of form) if (typeof value === "string") input[key] = value;
+  // Repeated fields (e.g. one `variant` per group) become lists; schemas decide what they accept.
+  const input: Record<string, string | string[]> = {};
+  for (const [key, value] of form) {
+    if (typeof value !== "string") continue;
+    const previous = input[key];
+    input[key] = previous === undefined ? value : [previous, value].flat();
+  }
   if (isLocale(input.locale)) locale = input.locale;
 
   const parsed = schema.safeParse(input);
@@ -47,6 +61,9 @@ export async function handleFormSubmission<S extends z.ZodType>(
       errors: toFieldErrors(parsed.error, input),
     });
   }
+
+  const rejected = await validate?.(parsed.data);
+  if (rejected) return respond(422, { ok: false, error: "invalid", errors: rejected });
 
   console.info(`[forms] ${kind} received`, parsed.data);
   return respond(200, { ok: true });

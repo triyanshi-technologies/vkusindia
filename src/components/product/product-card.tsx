@@ -10,6 +10,8 @@ interface ProductCardProps {
   product: ProductSummary;
   href: string;
   detailsLabel: string;
+  /** Shown next to the details link when the product has variants. */
+  variantsLabel?: string;
   headingLevel?: "h2" | "h3";
   className?: string;
 }
@@ -19,6 +21,7 @@ export function ProductCard({
   product,
   href,
   detailsLabel,
+  variantsLabel,
   headingLevel: Heading = "h3",
   className,
 }: ProductCardProps) {
@@ -39,14 +42,83 @@ export function ProductCard({
           {product.name}
         </Link>
       </Heading>
-      <span
-        aria-hidden="true"
-        className="mt-3 inline-flex items-center gap-1.5 text-sm font-medium text-ink"
+      <CardMeta detailsLabel={detailsLabel} variantsLabel={product.hasVariants ? variantsLabel : undefined} className="mt-3" />
+    </article>
+  );
+}
+
+interface ProductTileProps {
+  product: ProductSummary;
+  href: string;
+  detailsLabel: string;
+  variantsLabel?: string;
+  sizes: string;
+  /** Photo grows to fill a fixed-height parent (home showcase) from md up instead of a fixed ratio. */
+  fillHeight?: boolean;
+}
+
+/** Carousel card: whole photo on white (cut-out product shots), one link target. */
+export function ProductTile({
+  product,
+  href,
+  detailsLabel,
+  variantsLabel,
+  sizes,
+  fillHeight = false,
+}: ProductTileProps) {
+  return (
+    <article className="group relative flex w-full flex-col">
+      <div
+        className={cn(
+          "relative overflow-hidden rounded-2xl border border-line bg-paper",
+          fillHeight ? "aspect-[4/5] md:aspect-auto md:min-h-36 md:flex-1" : "aspect-[4/3]",
+        )}
       >
+        <CmsImage
+          image={product.image}
+          alt=""
+          fill
+          sizes={sizes}
+          className="object-contain p-3 transition-transform duration-500 ease-soft group-hover:scale-[1.04]"
+        />
+      </div>
+      <h3 className="mt-4 font-serif text-lg leading-snug text-ink transition-colors group-hover:text-olive">
+        <Link href={href} className="after:absolute after:inset-0 after:rounded-2xl">
+          {product.name}
+        </Link>
+      </h3>
+      <CardMeta
+        detailsLabel={detailsLabel}
+        variantsLabel={product.hasVariants ? variantsLabel : undefined}
+        className="mt-1.5"
+      />
+    </article>
+  );
+}
+
+/** "Details ↗" plus an optional "options available" note on the same line, so cards keep equal heights. */
+export function CardMeta({
+  detailsLabel,
+  variantsLabel,
+  className,
+}: {
+  detailsLabel: string;
+  variantsLabel?: string;
+  className?: string;
+}) {
+  return (
+    <p className={cn("flex flex-wrap items-center gap-x-3 gap-y-1 text-sm", className)}>
+      <span aria-hidden="true" className="inline-flex items-center gap-1.5 font-medium text-ink">
         {detailsLabel}
         <IconArrowUpRight className="size-4 text-olive transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
       </span>
-    </article>
+      {variantsLabel && (
+        <span className="inline-flex items-center gap-1.5 text-muted-strong">
+          <span aria-hidden="true" className="size-1.5 rounded-full bg-leaf" />
+          {variantsLabel}
+        </span>
+      )}
+    </p>
   );
 }
 

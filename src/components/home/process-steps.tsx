@@ -9,7 +9,7 @@ interface ProcessStepsProps {
 
 export function ProcessSteps({ eyebrow, title, steps }: ProcessStepsProps) {
   return (
-    <section aria-labelledby="process-title" className="py-20 lg:py-28">
+    <section aria-labelledby="process-title" className="section-y">
       <Container>
         <SectionHeading eyebrow={eyebrow} title={title} id="process-title" />
         <ol className="mt-12 grid gap-4 md:grid-cols-3 md:gap-6">

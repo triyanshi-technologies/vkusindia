@@ -1,6 +1,6 @@
 import type { PortableTextBlock } from "@portabletext/react";
 
-import type { CategoryId, Localized } from "@/content/types";
+import type { CategoryId, Localized, ProcessRoute } from "@/content/types";
 
 /**
  * All products in one request (a few dozen small documents): every page derives
@@ -20,7 +20,10 @@ export const PRODUCTS_QUERY = /* groq */ `
         "dimensions": asset->metadata.dimensions { width, height },
         "lqip": asset->metadata.lqip
       },
-      description
+      description,
+      "specifications": specifications[] { label, value },
+      "variants": variants[] { name, options },
+      processRoute
     }
 `;
 
@@ -39,4 +42,7 @@ export interface ProductRow {
   name: Localized;
   images: SanityImageField[];
   description: Partial<Localized<PortableTextBlock[] | null>> | null;
+  specifications: { label?: Partial<Localized>; value?: Partial<Localized> }[] | null;
+  variants: { name?: Partial<Localized>; options?: Partial<Localized>[] | null }[] | null;
+  processRoute: ProcessRoute | null;
 }

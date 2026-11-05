@@ -12,6 +12,10 @@ const text = (min: number, max: number) => z.string().trim().min(min).max(max);
 const email = z.string().trim().max(FIELD_LIMITS.email.max).pipe(z.email());
 const consent = z.literal("on", { error: "consent" });
 const locale = z.enum(LOCALES).catch("ru");
+/** One "Group: Option" per variant select; empty values ("no preference") are dropped. */
+const variants = z
+  .preprocess((value) => [value ?? []].flat(), z.array(z.string().trim().max(160)).max(10))
+  .transform((list) => list.filter(Boolean));
 
 export const enquirySchema = z.object({
   locale,
@@ -28,6 +32,7 @@ export const enquirySchema = z.object({
   email,
   country: text(FIELD_LIMITS.country.min, FIELD_LIMITS.country.max),
   quantity: z.coerce.number().int().min(FIELD_LIMITS.quantity.min).max(FIELD_LIMITS.quantity.max),
+  variant: variants,
   comment: z.string().trim().max(FIELD_LIMITS.comment.max).optional(),
   consent,
 });

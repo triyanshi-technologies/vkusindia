@@ -30,7 +30,7 @@ export function Hero({ locale, dict, productCount, inset }: HeroProps) {
 
   return (
     <section className="overflow-hidden bg-leaf/20">
-      <Container className="grid items-center gap-8 pt-10 pb-20 sm:pt-14 lg:grid-cols-12 lg:gap-10 lg:pt-14 lg:pb-24">
+      <Container className="grid items-center gap-8 pt-10 pb-14 sm:pt-14 lg:grid-cols-12 lg:gap-10 lg:pt-14 lg:pb-16">
         {/* Tablet landscape (769-1023px): text block centred under the images. */}
         <div className="min-[769px]:max-lg:text-center lg:col-span-6">
           <p className="eyebrow">{t.eyebrow}</p>

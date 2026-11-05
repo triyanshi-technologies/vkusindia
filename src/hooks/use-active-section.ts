@@ -7,12 +7,15 @@ import { useEffect, useState } from "react";
  * feedback on click). The active section is the last one whose top has passed a
  * reading line just below the sticky header; at the page bottom it is the last one.
  * The observer only watches that line, so it fires on crossings — no scroll listener.
+ * `readingLineOption` is px from the top, or a share of the viewport height when ≤ 1.
  */
-export function useActiveSection(ids: string[], readingLine = 180) {
+export function useActiveSection(ids: string[], readingLineOption = 180) {
   const [active, setActive] = useState<string | null>(null);
   const key = ids.join("|");
 
   useEffect(() => {
+    const readingLine =
+      readingLineOption <= 1 ? Math.round(window.innerHeight * readingLineOption) : readingLineOption;
     const elements = key
       .split("|")
       .map((id) => document.getElementById(id))
@@ -31,7 +34,7 @@ export function useActiveSection(ids: string[], readingLine = 180) {
     elements.forEach((el) => observer.observe(el));
     update();
     return () => observer.disconnect();
-  }, [key, readingLine]);
+  }, [key, readingLineOption]);
 
   return [active, setActive] as const;
 }
