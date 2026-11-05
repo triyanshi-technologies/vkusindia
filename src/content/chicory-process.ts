@@ -2,6 +2,9 @@ import type { Localized, ProcessRoute } from "./types";
 
 export type ProcessChapterId = "field" | "drying" | "roasting" | "dispatch";
 
+/** Uses shown under the process; the id picks the chip icon. */
+export type ProcessUseId = "coffee" | "caffeineFree" | "bakery" | "confectionery" | "chocolate";
+
 interface ProcessFact {
   value: string;
   label: string;
@@ -33,7 +36,7 @@ interface ChicoryProcessCopy {
   outputLabel: string;
   chapters: ProcessChapter[];
   usesTitle: string;
-  uses: string[];
+  uses: { id: ProcessUseId; label: string }[];
 }
 
 /** Home page "seed to cup" section, condensed from the manufacturer's process sheet. */
@@ -108,11 +111,11 @@ export const chicoryProcess: Localized<ChicoryProcessCopy> = {
     ],
     usesTitle: "Где применяют",
     uses: [
-      "Кофейные напитки и добавки к кофе",
-      "Горячие напитки без кофеина",
-      "Хлебопечение",
-      "Кондитерские изделия",
-      "Шоколадные вкусы",
+      { id: "coffee", label: "Кофейные напитки и добавки к кофе" },
+      { id: "caffeineFree", label: "Горячие напитки без кофеина" },
+      { id: "bakery", label: "Хлебопечение" },
+      { id: "confectionery", label: "Кондитерские изделия" },
+      { id: "chocolate", label: "Шоколадные вкусы" },
     ],
   },
   en: {
@@ -185,11 +188,11 @@ export const chicoryProcess: Localized<ChicoryProcessCopy> = {
     ],
     usesTitle: "Where it's used",
     uses: [
-      "Coffee drinks and coffee additive",
-      "Caffeine-free hot drinks",
-      "Bakery",
-      "Confectionery",
-      "Chocolate flavours",
+      { id: "coffee", label: "Coffee drinks and coffee additive" },
+      { id: "caffeineFree", label: "Caffeine-free hot drinks" },
+      { id: "bakery", label: "Bakery" },
+      { id: "confectionery", label: "Confectionery" },
+      { id: "chocolate", label: "Chocolate flavours" },
     ],
   },
 };

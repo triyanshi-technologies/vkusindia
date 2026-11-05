@@ -5,6 +5,7 @@ import {
   chicoryProcess,
   type ProcessChapter,
   type ProcessChapterId,
+  type ProcessUseId,
 } from "@/content/chicory-process";
 import type { ProcessRoute, ProductSummary } from "@/content/types";
 import type { Locale } from "@/i18n/config";
@@ -12,17 +13,37 @@ import { href } from "@/i18n/routing";
 import { PROCESS_READING_LINE } from "@/lib/scroll";
 import { cn } from "@/lib/utils";
 import { Container } from "@/components/ui/container";
-import { IconArrowUpRight, IconCup, IconFlame, IconLeaf, IconSun } from "@/components/ui/icons";
+import {
+  IconArrowUpRight,
+  IconBread,
+  IconChocolate,
+  IconCup,
+  IconCupcake,
+  IconFlame,
+  IconLeaf,
+  IconNoCaffeine,
+  IconSun,
+} from "@/components/ui/icons";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { TocNav } from "@/components/ui/toc-nav";
 
 import { ProcessStem } from "./process-stem";
 
-const chapterIcons: Record<ProcessChapterId, ComponentType<SVGProps<SVGSVGElement>>> = {
+type Icon = ComponentType<SVGProps<SVGSVGElement>>;
+
+const chapterIcons: Record<ProcessChapterId, Icon> = {
   field: IconLeaf,
   drying: IconSun,
   roasting: IconFlame,
   dispatch: IconCup,
+};
+
+const useIcons: Record<ProcessUseId, Icon> = {
+  coffee: IconCup,
+  caffeineFree: IconNoCaffeine,
+  bakery: IconBread,
+  confectionery: IconCupcake,
+  chocolate: IconChocolate,
 };
 
 const anchor = (id: ProcessChapterId) => `process-${id}`;
@@ -76,14 +97,27 @@ export function ChicoryProcess({ locale, products }: ChicoryProcessProps) {
       </Container>
 
       <Container className="mt-12 lg:mt-14">
-        <div className="rounded-[2rem] bg-paper p-6 sm:p-10 lg:flex lg:items-center lg:gap-10">
-          <h3 className="shrink-0 font-serif text-2xl text-ink">{t.usesTitle}</h3>
-          <ul className="mt-5 flex flex-wrap gap-2 lg:mt-0">
-            {t.uses.map((use) => (
-              <li key={use} className="rounded-full bg-mist px-4 py-2 text-[0.9375rem] text-ink">
-                {use}
-              </li>
-            ))}
+        {/* Dark band so the uses stand out between the light process and the white seals. */}
+        {/* From xl the title sits in its own column beside the items, so the band is one row. */}
+        <div className="rounded-[2rem] bg-surface-dark px-6 py-7 text-paper sm:px-10 lg:px-12 lg:py-8 xl:flex xl:items-center xl:gap-8">
+          <h3 className="eyebrow text-paper/60 xl:w-40 xl:shrink-0 xl:self-stretch xl:border-r xl:border-paper/15 xl:pr-6 xl:font-serif xl:text-[1.375rem] xl:leading-tight xl:tracking-normal xl:text-paper xl:normal-case xl:before:hidden">
+            {t.usesTitle}
+          </h3>
+          <ul className="mt-6 grid grid-cols-2 gap-x-4 gap-y-5 sm:grid-cols-3 sm:gap-x-6 xl:mt-0 xl:flex-1 xl:grid-cols-5 xl:gap-0 xl:divide-x xl:divide-paper/15">
+            {t.uses.map((use) => {
+              const Icon = useIcons[use.id];
+              return (
+                <li
+                  key={use.id}
+                  className="flex min-w-0 items-center gap-2.5 sm:gap-3 xl:px-4 xl:first:pl-0 xl:last:pr-0"
+                >
+                  <span className="grid size-10 shrink-0 place-items-center rounded-full bg-leaf/15 text-lg text-leaf ring-1 ring-leaf/30 sm:size-11 sm:text-xl xl:size-10 xl:text-lg">
+                    <Icon />
+                  </span>
+                  <span className="min-w-0 text-sm leading-snug font-medium sm:text-[0.9375rem] xl:text-sm">{use.label}</span>
+                </li>
+              );
+            })}
           </ul>
         </div>
       </Container>
