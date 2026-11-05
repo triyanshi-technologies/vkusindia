@@ -99,6 +99,29 @@ export const IconNoCaffeine = (p: IconProps) => (
   </Stroke>
 );
 
+export const IconBread = (p: IconProps) => (
+  <Stroke {...p}>
+    <path d="M5 11.5a3.5 3.5 0 0 1 .5-7c1.6 0 2.6.6 3.3 1.4.9-.9 2.1-1.4 3.2-1.4s2.3.5 3.2 1.4c.7-.8 1.7-1.4 3.3-1.4a3.5 3.5 0 0 1 .5 7V19a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 5 19v-7.5Z" />
+    <path d="M9.5 10v4M14.5 10v4" />
+  </Stroke>
+);
+
+export const IconCupcake = (p: IconProps) => (
+  <Stroke {...p}>
+    <path d="M5 12.5h14l-1.6 7.2a1.5 1.5 0 0 1-1.5 1.3H8.1a1.5 1.5 0 0 1-1.5-1.3L5 12.5Z" />
+    <path d="M10 12.5 9.4 21M14 12.5l.6 8.5" />
+    <path d="M5 12.5A3 3 0 0 1 7.4 8a4.6 4.6 0 0 1 9.2 0 3 3 0 0 1 2.4 4.5" />
+    <path d="M12 3.4V2.5" />
+  </Stroke>
+);
+
+export const IconChocolate = (p: IconProps) => (
+  <Stroke {...p}>
+    <rect x="5" y="3" width="14" height="18" rx="2" />
+    <path d="M5 9h14M5 15h14M12 3v18" />
+  </Stroke>
+);
+
 export const IconSprout = (p: IconProps) => (
   <Stroke {...p}>
     <path d="M12 21v-9" />
