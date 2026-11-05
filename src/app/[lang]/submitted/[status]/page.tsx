@@ -39,7 +39,7 @@ export default async function SubmittedPage({ params }: PageProps<"/[lang]/submi
   const ok = status === "success";
 
   return (
-    <Container className="flex flex-col items-center py-24 text-center lg:py-36">
+    <Container className="flex flex-col items-center py-16 text-center lg:py-24">
       <span
         className={
           ok

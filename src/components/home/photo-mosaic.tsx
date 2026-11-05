@@ -7,7 +7,10 @@ interface PhotoMosaicProps {
   className?: string;
 }
 
-/** Two-column grid of product photos, offset like prints laid on a table. An odd count widens the first one. */
+/**
+ * Two-column grid of product photos, offset like prints laid on a table. An odd count widens the first one.
+ * The cut-out shots are multiplied onto a leaf tint, so their white backgrounds take the tile colour.
+ */
 export function PhotoMosaic({ photos, className }: PhotoMosaicProps) {
   const shown = photos.slice(0, 4);
   const wideFirst = shown.length % 2 === 1;
@@ -18,7 +21,7 @@ export function PhotoMosaic({ photos, className }: PhotoMosaicProps) {
         <div
           key={photo.image.url}
           className={cn(
-            "relative overflow-hidden rounded-2xl bg-mist",
+            "relative overflow-hidden rounded-2xl bg-leaf/15",
             wideFirst && index === 0 ? "col-span-2 aspect-[2/1]" : "aspect-[3/2]",
             (index - Number(wideFirst)) % 2 === 1 && "translate-y-8",
           )}
@@ -28,7 +31,7 @@ export function PhotoMosaic({ photos, className }: PhotoMosaicProps) {
             alt={photo.alt}
             fill
             sizes="(min-width: 1024px) 270px, 46vw"
-            className="object-cover"
+            className="object-contain p-3 mix-blend-multiply sm:p-4"
           />
         </div>
       ))}

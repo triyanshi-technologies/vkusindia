@@ -13,7 +13,7 @@ export function ContactBand({ locale, dict }: { locale: Locale; dict: Dictionary
   const [primaryPhone] = company.phones;
 
   return (
-    <section aria-labelledby="contact-band-title" className="pb-20 lg:pb-28">
+    <section aria-labelledby="contact-band-title" className="section-b">
       <Container>
         <div className="relative grid items-center gap-10 overflow-hidden rounded-[2rem] bg-surface-dark px-6 py-12 sm:px-12 lg:grid-cols-12 lg:px-16 lg:py-16">
           <LeafMark className="pointer-events-none absolute -right-16 -bottom-24 w-[26rem] text-leaf/[0.12] lg:right-[38%]" />

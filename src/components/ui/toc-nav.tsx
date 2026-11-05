@@ -5,12 +5,17 @@ import { cn } from "@/lib/utils";
 
 interface TocNavProps {
   items: { id: string; label: string }[];
+  /** Passed to useActiveSection: px from the top, or a share of the viewport height if ≤ 1. */
+  readingLine?: number;
   className?: string;
 }
 
-/** Table of contents with the section in view highlighted (used on the privacy page). */
-export function TocNav({ items, className }: TocNavProps) {
-  const [active, setActive] = useActiveSection(items.map((item) => item.id));
+/** Table of contents with the section in view highlighted (privacy page, chicory process). */
+export function TocNav({ items, readingLine, className }: TocNavProps) {
+  const [active, setActive] = useActiveSection(
+    items.map((item) => item.id),
+    readingLine,
+  );
 
   return (
     <ol className={cn("space-y-2 border-l border-line text-[0.9375rem]", className)}>

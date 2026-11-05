@@ -16,8 +16,8 @@ export const categories: CategoryDoc[] = [
     id: "chicory",
     name: { ru: "Цикорий", en: "Chicory" },
     description: {
-      ru: "Растворимый порошок, жидкий экстракт и жареные кубики цикория.",
-      en: "Instant powder, liquid extract and roasted chicory cubes.",
+      ru: "Сушёные и обжаренные кубики, гранулы, обжаренный и растворимый порошок, жидкий экстракт.",
+      en: "Sun-dried and roasted cubes, granules, roasted and instant powder, liquid extract.",
     },
     image: photo("instant.jpg"),
   },

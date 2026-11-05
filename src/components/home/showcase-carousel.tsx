@@ -1,6 +1,6 @@
 "use client";
 
-import { Children, useCallback, useEffect, useId, useRef, useState, type ReactNode } from "react";
+import { Children, useEffect, useId, useRef, useState, type ReactNode } from "react";
 
 import { IconArrowRight } from "@/components/ui/icons";
 import { interpolate } from "@/i18n/format";
@@ -19,6 +19,12 @@ const MAX_DOTS = 5;
 const arrowClass =
   "grid size-10 place-items-center rounded-full border border-line text-ink transition-colors hover:border-ink hover:bg-ink hover:text-paper disabled:pointer-events-none disabled:opacity-35";
 
+/** Width of one slide plus the gap - the distance an arrow press scrolls. */
+function slideStep(track: HTMLElement): number {
+  const slide = track.firstElementChild as HTMLElement | null;
+  return slide ? slide.offsetWidth + parseFloat(getComputedStyle(track).columnGap) : track.clientWidth;
+}
+
 /** Native scroll-snap track; arrows and dots are an enhancement on top of swipe/scroll. */
 export function ShowcaseCarousel({ children, labels, className }: ShowcaseCarouselProps) {
   const trackId = useId();
@@ -26,23 +32,19 @@ export function ShowcaseCarousel({ children, labels, className }: ShowcaseCarous
   const count = Children.count(children);
   const [view, setView] = useState({ first: 1, last: 1, atStart: true, atEnd: false, scrollable: false });
 
-  const step = useCallback(() => {
-    const track = trackRef.current!;
-    const slide = track.firstElementChild as HTMLElement | null;
-    return slide ? slide.offsetWidth + parseFloat(getComputedStyle(track).columnGap) : track.clientWidth;
-  }, []);
-
   useEffect(() => {
     const track = trackRef.current;
     if (!track) return;
     // Active dots are the slides fully in view, measured only once scrolling settles.
     const measure = () => {
+      // Observer/scroll callbacks can still fire while the carousel is unmounting.
+      if (!track.isConnected) return;
       const box = track.getBoundingClientRect();
       const visible = Array.from(track.children).flatMap((slide, i) => {
         const rect = slide.getBoundingClientRect();
         return rect.left >= box.left - 2 && rect.right <= box.right + 2 ? [i + 1] : [];
       });
-      const nearest = Math.round(track.scrollLeft / step()) + 1;
+      const nearest = Math.round(track.scrollLeft / slideStep(track)) + 1;
       const max = track.scrollWidth - track.clientWidth;
       setView({
         first: visible[0] ?? nearest,
@@ -69,13 +71,15 @@ export function ShowcaseCarousel({ children, labels, className }: ShowcaseCarous
       resize.disconnect();
       track.removeEventListener(event, onScroll);
     };
-  }, [step]);
+  }, []);
 
   const behavior = (): ScrollBehavior =>
     window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth";
 
   const scroll = (direction: 1 | -1) => {
-    trackRef.current?.scrollBy({ left: direction * step(), behavior: behavior() });
+    const track = trackRef.current;
+    if (!track) return;
+    track.scrollBy({ left: direction * slideStep(track), behavior: behavior() });
   };
 
   /** Brings slide `n` (1-based) to the snap start; the browser clamps at the end. */

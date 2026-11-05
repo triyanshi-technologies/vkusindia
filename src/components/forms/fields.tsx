@@ -5,10 +5,11 @@ import {
   useId,
   type InputHTMLAttributes,
   type ReactNode,
+  type SelectHTMLAttributes,
   type TextareaHTMLAttributes,
 } from "react";
 
-import { IconCheck } from "@/components/ui/icons";
+import { IconCheck, IconChevronDown } from "@/components/ui/icons";
 import { cn } from "@/lib/utils";
 
 import type { StatusMessage } from "./use-form-submission";
@@ -106,6 +107,28 @@ export function TextAreaField({
         className={cn(controlClass, "resize-y py-3")}
         {...props}
       />
+    </FieldShell>
+  );
+}
+
+type SelectFieldProps = SelectHTMLAttributes<HTMLSelectElement> & {
+  name: string;
+  label: string;
+};
+
+export function SelectField({ label, className, children, ...props }: SelectFieldProps) {
+  const id = useId();
+  return (
+    <FieldShell id={id} label={label} className={className}>
+      <div className="relative">
+        <select id={id} className={cn(controlClass, "h-12 cursor-pointer appearance-none pr-11")} {...props}>
+          {children}
+        </select>
+        <IconChevronDown
+          aria-hidden="true"
+          className="pointer-events-none absolute top-1/2 right-4 -translate-y-1/2 text-muted-strong"
+        />
+      </div>
     </FieldShell>
   );
 }

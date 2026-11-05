@@ -58,7 +58,7 @@ export default async function ContactPage({ params }: PageProps<"/[lang]/contact
         <p>{t.intro}</p>
       </PageHeader>
 
-      <section className="py-16 lg:py-24">
+      <section className="section-y">
         <Container className="grid gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="space-y-4 lg:col-span-5">
             <div className={cardClass}>

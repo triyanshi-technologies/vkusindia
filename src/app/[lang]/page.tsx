@@ -3,11 +3,13 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { ContactBand } from "@/components/sections/contact-band";
+import { ChicoryProcess } from "@/components/home/chicory-process";
 import { Hero } from "@/components/home/hero";
 import { PhotoMosaic } from "@/components/home/photo-mosaic";
 import { Principles } from "@/components/sections/principles";
 import { ProcessSteps } from "@/components/home/process-steps";
 import { ProductShowcase } from "@/components/home/product-showcase";
+import { TrustBadges } from "@/components/home/trust-badges";
 import { buttonArrowClass, buttonClass } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { IconArrowRight } from "@/components/ui/icons";
@@ -48,8 +50,10 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
       <Hero locale={lang} dict={dict} productCount={products.length} inset={photos[0]} />
 
       <ProductShowcase locale={lang} dict={dict} products={products} />
+      <ChicoryProcess locale={lang} products={products} />
+      <TrustBadges locale={lang} />
 
-      <section aria-labelledby="about-title" className="py-20 lg:py-28">
+      <section aria-labelledby="about-title" className="section-y">
         <Container className="grid items-center gap-14 lg:grid-cols-12 lg:gap-16">
           <PhotoMosaic photos={photos}className="pb-8 lg:col-span-5" />
           <div className="lg:col-span-7">

@@ -106,6 +106,49 @@
     content: "";
     @apply absolute top-[0.7em] left-0 size-2 rounded-full bg-leaf;
   }
+
+  /* Trust seals rise in one after another as the row scrolls in.
+     Without scroll timelines (or with reduced motion) they are simply visible. */
+  @supports (animation-timeline: view()) {
+    @media (prefers-reduced-motion: no-preference) {
+      .seal-in {
+        animation: seal-rise linear both;
+        animation-timeline: view();
+        animation-range: entry 10% entry 70%;
+      }
+      .seal-in:nth-child(2) {
+        animation-range: entry 20% entry 80%;
+      }
+      .seal-in:nth-child(3) {
+        animation-range: entry 30% entry 90%;
+      }
+      .seal-in:nth-child(4) {
+        animation-range: entry 40% entry 100%;
+      }
+    }
+  }
+}
+
+@keyframes seal-rise {
+  from {
+    opacity: 0;
+    transform: translateY(1.25rem) scale(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Vertical rhythm between page sections: change here to re-space the whole site. */
+@utility section-y {
+  @apply py-14 lg:py-20;
+}
+@utility section-t {
+  @apply pt-14 lg:pt-20;
+}
+@utility section-b {
+  @apply pb-14 lg:pb-20;
 }
 
 @utility scrollbar-none {

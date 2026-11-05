@@ -8,6 +8,7 @@ import type {
   CmsImage,
   Product,
   ProductSummary,
+  VariantGroup,
 } from "@/content/types";
 import type { Locale } from "@/i18n/config";
 import { sanityClient } from "@/lib/sanity/client";
@@ -48,7 +49,18 @@ function toSummary(row: ProductRow, locale: Locale): ProductSummary {
     categoryName: categoryById.get(row.category)?.name[locale] ?? "",
     name: row.name[locale],
     image: toCmsImage(row.images[0]!),
+    processRoute: row.processRoute ?? null,
+    hasVariants: toVariants(row, locale).length > 0,
   };
+}
+
+/** Variant groups in one language; untranslated names/options are skipped, single-option groups dropped. */
+function toVariants(row: ProductRow, locale: Locale): VariantGroup[] {
+  return (row.variants ?? []).flatMap((group) => {
+    const name = group.name?.[locale]?.trim();
+    const options = (group.options ?? []).flatMap((o) => o[locale]?.trim() || []);
+    return name && options.length > 1 ? [{ name, options }] : [];
+  });
 }
 
 /** First sentences of the description as plain text, cut at a word boundary. */
@@ -84,6 +96,13 @@ export async function getProduct(locale: Locale, slug: string): Promise<Product 
     images: row.images.map(toCmsImage),
     description,
     excerpt: toExcerpt(description) || row.name[locale],
+    // Rows missing a translation are skipped rather than shown half-empty.
+    specifications: (row.specifications ?? []).flatMap((spec) => {
+      const label = spec.label?.[locale]?.trim();
+      const value = spec.value?.[locale]?.trim();
+      return label && value ? [{ label, value }] : [];
+    }),
+    variants: toVariants(row, locale),
   };
 }
 

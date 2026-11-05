@@ -1,8 +1,10 @@
 "use client";
 
+import type { VariantGroup } from "@/content/types";
 import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/get-dictionary";
 import { FIELD_LIMITS, PHONE_PATTERN } from "@/lib/forms/shared";
+import { VariantSelects } from "@/components/product/variant-selection";
 import { buttonClass } from "@/components/ui/button";
 import { IconArrowRight } from "@/components/ui/icons";
 
@@ -12,11 +14,12 @@ import { useFormSubmission } from "./use-form-submission";
 interface EnquiryFormProps {
   locale: Locale;
   product: { slug: string; name: string };
+  variants?: VariantGroup[];
   labels: Dictionary["form"];
   privacyHref: string;
 }
 
-export function EnquiryForm({ locale, product, labels, privacyHref }: EnquiryFormProps) {
+export function EnquiryForm({ locale, product, variants = [], labels, privacyHref }: EnquiryFormProps) {
   const { status, errors, message, formProps, hydrated } = useFormSubmission();
   const error = (name: string) => {
     const code = errors[name];
@@ -90,6 +93,11 @@ export function EnquiryForm({ locale, product, labels, privacyHref }: EnquiryFor
         error={error("quantity")}
         className="sm:col-span-2"
       />
+      {variants.length > 0 && (
+        <div className="grid gap-5 sm:col-span-2 sm:grid-cols-[repeat(auto-fit,minmax(10rem,1fr))]">
+          <VariantSelects groups={variants} noPreference={labels.noPreference} />
+        </div>
+      )}
       <TextAreaField
         name="comment"
         label={labels.comment}

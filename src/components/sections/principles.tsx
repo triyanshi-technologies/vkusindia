@@ -14,7 +14,7 @@ export function Principles({
   return (
     <section
       aria-labelledby="principles-title"
-      className="bg-surface-dark py-20 text-paper lg:py-28"
+      className="section-y bg-surface-dark text-paper"
     >
       <Container className="grid gap-12 lg:grid-cols-12 lg:gap-10">
         <div className="lg:col-span-4">

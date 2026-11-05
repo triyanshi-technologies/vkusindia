@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 
 import { showcaseImage } from "@/content/pages";
 import type { ProductSummary } from "@/content/types";
@@ -7,10 +6,9 @@ import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/get-dictionary";
 import { href } from "@/i18n/routing";
 import { publicPath } from "@/lib/public-path";
-import { CmsImage } from "@/components/ui/cms-image";
+import { ProductTile } from "@/components/product/product-card";
 import { Container } from "@/components/ui/container";
 import {
-  IconArrowUpRight,
   IconCup,
   IconGlobe,
   IconLeaf,
@@ -86,10 +84,13 @@ export function ProductShowcase({ locale, dict, products }: ProductShowcaseProps
                 key={product.slug}
                 className="flex w-[78%] shrink-0 snap-start sm:w-[46%] md:w-[85%] lg:w-[calc((100%-1.5rem)/2)]"
               >
-                <ShowcaseCard
+                <ProductTile
                   product={product}
                   href={href(locale, `/products/${product.slug}`)}
                   detailsLabel={dict.common.details}
+                  variantsLabel={dict.common.hasVariants}
+                  sizes="(min-width: 1024px) 300px, (min-width: 768px) 50vw, 78vw"
+                  fillHeight
                 />
               </li>
             ))}
@@ -97,41 +98,5 @@ export function ProductShowcase({ locale, dict, products }: ProductShowcaseProps
         </div>
       </Container>
     </section>
-  );
-}
-
-function ShowcaseCard({
-  product,
-  href,
-  detailsLabel,
-}: {
-  product: ProductSummary;
-  href: string;
-  detailsLabel: string;
-}) {
-  return (
-    <article className="group relative flex w-full flex-col">
-      <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-line bg-paper md:aspect-auto md:min-h-36 md:flex-1">
-        <CmsImage
-          image={product.image}
-          alt=""
-          fill
-          sizes="(min-width: 1024px) 300px, (min-width: 768px) 50vw, 78vw"
-          className="object-contain p-3 transition-transform duration-500 ease-soft group-hover:scale-[1.04]"
-        />
-      </div>
-      <h3 className="mt-4 font-serif text-lg leading-snug text-ink transition-colors group-hover:text-olive">
-        <Link href={href} className="after:absolute after:inset-0 after:rounded-2xl">
-          {product.name}
-        </Link>
-      </h3>
-      <span
-        aria-hidden="true"
-        className="mt-1.5 inline-flex items-center gap-1.5 text-sm font-medium text-ink"
-      >
-        {detailsLabel}
-        <IconArrowUpRight className="size-4 text-olive transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-      </span>
-    </article>
   );
 }

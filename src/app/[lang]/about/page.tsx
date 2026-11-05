@@ -48,7 +48,7 @@ export default async function AboutPage({ params }: PageProps<"/[lang]/about">) 
         <p>{welcome[lang]}</p>
       </PageHeader>
 
-      <section className="py-20 lg:py-28">
+      <section className="section-y">
         <Container className="grid gap-14 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-7">
             <div className="prose-content text-lg">
@@ -129,7 +129,7 @@ export default async function AboutPage({ params }: PageProps<"/[lang]/about">) 
         eyebrow={dict.home.approachEyebrow}
         title={dict.home.approachTitle}
       />
-      <div className="pt-20 lg:pt-28">
+      <div className="section-t">
         <ContactBand locale={lang} dict={dict} />
       </div>
     </>

@@ -7,6 +7,13 @@ export const CATEGORIES = [
   { title: "Супер фуд / Superfood", value: "superfood" },
 ];
 
+/** Where a product leaves the chicory process. Must match `ProcessRoute` in src/content/types.ts. */
+export const PROCESS_ROUTES = [
+  { title: "Сушёный / Dried", value: "dried" },
+  { title: "Обжаренный / Roasted", value: "roasted" },
+  { title: "Экстракт / Extract", value: "extract" },
+];
+
 export const product = defineType({
   name: "product",
   title: "Product",
@@ -50,6 +57,64 @@ export const product = defineType({
       name: "description",
       title: "Description",
       type: "localeBlockContent",
+    }),
+    defineField({
+      name: "specifications",
+      title: "Specifications",
+      type: "array",
+      description: "Shown as a table on the product page, in this order.",
+      of: [
+        defineArrayMember({
+          name: "specification",
+          title: "Row",
+          type: "object",
+          fields: [
+            defineField({ name: "label", title: "Item", type: "localeString" }),
+            defineField({ name: "value", title: "Value", type: "localeString" }),
+          ],
+          preview: {
+            select: { title: "label.ru", subtitle: "value.ru" },
+          },
+        }),
+      ],
+    }),
+    defineField({
+      name: "variants",
+      title: "Variants",
+      type: "array",
+      description:
+        "Options a buyer can choose (e.g. Colour: Light, Medium, Dark). Shown as pills on the product page and as choices in the enquiry form.",
+      of: [
+        defineArrayMember({
+          name: "variantGroup",
+          title: "Group",
+          type: "object",
+          fields: [
+            defineField({ name: "name", title: "Name", type: "localeString" }),
+            defineField({
+              name: "options",
+              title: "Options",
+              type: "array",
+              of: [defineArrayMember({ type: "localeString" })],
+              validation: (rule) => rule.min(2),
+            }),
+          ],
+          preview: {
+            select: { title: "name.ru", o0: "options.0.ru", o1: "options.1.ru", o2: "options.2.ru" },
+            prepare: ({ title, o0, o1, o2 }) => ({
+              title,
+              subtitle: [o0, o1, o2].filter(Boolean).join(", "),
+            }),
+          },
+        }),
+      ],
+    }),
+    defineField({
+      name: "processRoute",
+      title: "Process route",
+      type: "string",
+      description: "Where the product leaves the chicory process on the home page. Empty = not shown there.",
+      options: { list: PROCESS_ROUTES, layout: "radio" },
     }),
     defineField({
       name: "listed",

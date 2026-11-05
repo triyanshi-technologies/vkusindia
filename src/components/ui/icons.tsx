@@ -99,6 +99,38 @@ export const IconNoCaffeine = (p: IconProps) => (
   </Stroke>
 );
 
+export const IconSprout = (p: IconProps) => (
+  <Stroke {...p}>
+    <path d="M12 21v-9" />
+    <path d="M12 12c0-4-2.9-6.5-7-6.5 0 4 2.9 6.5 7 6.5Z" />
+    <path d="M12 10c0-3.5 2.6-6 6.5-6 0 3.6-2.6 6-6.5 6Z" />
+  </Stroke>
+);
+
+export const IconWheatOff = (p: IconProps) => (
+  <Stroke {...p}>
+    <path d="M12 21.5v-11" />
+    <path d="M12 10.5C9.9 10.1 8.6 8.6 8.6 6.6c2.1.4 3.4 1.9 3.4 3.9Zm0 0c2.1-.4 3.4-1.9 3.4-3.9-2.1.4-3.4 1.9-3.4 3.9Z" />
+    <path d="M12 15.5c-2.1-.4-3.4-1.9-3.4-3.9 2.1.4 3.4 1.9 3.4 3.9Zm0 0c2.1-.4 3.4-1.9 3.4-3.9-2.1.4-3.4 1.9-3.4 3.9Z" />
+    <path d="M12 6.4c-.9-.9-1.1-2.2-.5-3.6 1 .9 1.2 2.2.5 3.6Z" />
+    <path d="M3.5 3.5l17 17" />
+  </Stroke>
+);
+
+export const IconSun = (p: IconProps) => (
+  <Stroke {...p}>
+    <circle cx="12" cy="12" r="4" />
+    <path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4" />
+  </Stroke>
+);
+
+export const IconFlame = (p: IconProps) => (
+  <Stroke {...p}>
+    <path d="M12 21.5c-3.9 0-6.5-2.6-6.5-6.2 0-3.9 3.3-5.9 3.9-10.3 2.7 1.5 3.7 4.4 3.5 6.3 1-.6 1.6-1.6 1.8-2.8 2 1.6 3.8 4.1 3.8 6.8 0 3.6-2.6 6.2-6.5 6.2Z" />
+    <path d="M12 21.5c-1.6 0-2.7-1.1-2.7-2.6 0-1.7 1.4-2.5 2.7-4.1 1.3 1.6 2.7 2.4 2.7 4.1 0 1.5-1.1 2.6-2.7 2.6Z" />
+  </Stroke>
+);
+
 export const IconGlobe = (p: IconProps) => (
   <Stroke {...p}>
     <circle cx="12" cy="12" r="9" />

@@ -4,7 +4,7 @@
     "titleTemplate": "%s - VKUS India",
     "home": {
       "title": "VKUS India - natural chicory from India",
-      "description": "Indo Russian Trade supplies chicory from India: instant powder, liquid extract and roasted chicory cubes. Moscow office. Send an enquiry for your volume in kilograms."
+      "description": "Indo Russian Trade supplies chicory from India: sun-dried and roasted cubes, granules, roasted and instant powder, and liquid extract. Moscow office. Send an enquiry for your volume in kilograms."
     },
     "about": {
       "title": "About the company",
@@ -12,7 +12,7 @@
     },
     "products": {
       "title": "Product catalogue",
-      "description": "Instant powder, liquid extract and roasted chicory cubes from India. Description and enquiry form for every product."
+      "description": "Sun-dried and roasted cubes, granules, roasted and instant powder, and liquid chicory extract from India. Specifications and an enquiry form for every product."
     },
     "contact": {
       "title": "Contacts",
@@ -47,6 +47,7 @@
     "viewCatalogue": "View catalogue",
     "readMore": "More about us",
     "details": "Details",
+    "hasVariants": "Options available",
     "callUs": "Call us",
     "whatsapp": "WhatsApp",
     "writeWhatsapp": "Message on WhatsApp",
@@ -74,7 +75,7 @@
     "taglineCard": "The best for you",
     "featuredEyebrow": "Catalogue",
     "featuredTitle": "Our products",
-    "featuredText": "Instant powder, liquid extract and roasted chicory cubes.",
+    "featuredText": "Sun-dried and roasted cubes, granules, roasted and instant powder, and liquid chicory extract.",
     "featuredPerks": ["Natural product", "Caffeine-free", "Coffee substitute", "From India"],
     "carousel": { "prev": "Previous product", "next": "Next product", "slide": "Product {n} of {total}" },
     "aboutEyebrow": "About us",
@@ -110,12 +111,19 @@
   "products": {
     "eyebrow": "Catalogue",
     "title": "Products from India",
-    "intro": "Instant powder, liquid extract and roasted chicory cubes. Open any product for its description and send an enquiry for the volume you need.",
+    "intro": "Sun-dried and roasted cubes, granules, roasted and instant powder, and liquid chicory extract. Open any product for its description and send an enquiry for the volume you need.",
     "jumpTo": "Categories"
   },
   "product": {
     "category": "Category",
     "description": "Description",
+    "specifications": "Specifications",
+    "specsMore": "Show all specifications ({count})",
+    "specsLess": "Show less",
+    "variants": "Options",
+    "variantsHint": "Tap an option - it is added to the enquiry form below.",
+    "variantsSelected": "Selected",
+    "toEnquiry": "Go to enquiry",
     "enquiryTitle": "Enquire about this product",
     "enquiryText": "Tell us the quantity and destination country - we will get back to you with an offer.",
     "related": "More from this category",
@@ -142,6 +150,7 @@
     "message": "Message",
     "comment": "Comment",
     "optional": "optional",
+    "noPreference": "No preference",
     "consent": "I agree to the processing of my personal data in accordance with the",
     "consentLink": "privacy policy",
     "submit": "Send",
