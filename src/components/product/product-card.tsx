@@ -53,27 +53,19 @@ interface ProductTileProps {
   detailsLabel: string;
   variantsLabel?: string;
   sizes: string;
-  /** Photo grows to fill a fixed-height parent (home showcase) from md up instead of a fixed ratio. */
-  fillHeight?: boolean;
 }
 
-/** Carousel card: whole photo on white (cut-out product shots), one link target. */
+/** Showcase card: whole photo on white (cut-out product shots), one link target. */
 export function ProductTile({
   product,
   href,
   detailsLabel,
   variantsLabel,
   sizes,
-  fillHeight = false,
 }: ProductTileProps) {
   return (
     <article className="group relative flex w-full flex-col">
-      <div
-        className={cn(
-          "relative overflow-hidden rounded-2xl border border-line bg-paper",
-          fillHeight ? "aspect-[4/5] md:aspect-auto md:min-h-36 md:flex-1" : "aspect-[4/3]",
-        )}
-      >
+      <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-line bg-paper">
         <CmsImage
           image={product.image}
           alt=""

@@ -15,8 +15,6 @@ import {
 } from "@/components/ui/icons";
 import { SectionHeading } from "@/components/ui/section-heading";
 
-import { ShowcaseCarousel } from "./showcase-carousel";
-
 /** Same order as `home.featuredPerks` in the dictionaries. */
 const perkIcons = [IconLeaf, IconNoCaffeine, IconCup, IconGlobe];
 
@@ -26,27 +24,15 @@ interface ProductShowcaseProps {
   products: ProductSummary[];
 }
 
-/** Photo + product carousel; from tablet up it is sized to fit one screen under the sticky header. */
+/** From tablet up the intro column stays pinned while the products scroll past in a two-column grid. */
 export function ProductShowcase({ locale, dict, products }: ProductShowcaseProps) {
   const t = dict.home;
 
   return (
-    <section
-      aria-labelledby="featured-title"
-      className="flex py-10 sm:py-14 md:h-[min(calc(100svh-4.5rem),52rem)] md:min-h-[38rem] md:py-8 lg:h-[min(calc(100svh-5rem),54rem)] lg:py-10"
-    >
-      <Container className="grid gap-8 md:grid-cols-12 md:grid-rows-[minmax(0,1fr)] lg:gap-12">
-        <div className="relative aspect-[16/10] overflow-hidden rounded-[1.5rem] bg-mist sm:aspect-[16/9] sm:rounded-[2rem] md:col-span-5 md:aspect-auto lg:col-span-6">
-          <Image
-            src={showcaseImage.src}
-            alt={showcaseImage.alt[locale]}
-            fill
-            sizes="(min-width: 1024px) 50vw, (min-width: 768px) 42vw, 100vw"
-            className="object-cover"
-          />
-        </div>
-
-        <div className="flex min-h-0 min-w-0 flex-col md:col-span-7 lg:col-span-6">
+    <section aria-labelledby="featured-title" className="section-y">
+      <Container className="grid gap-10 md:grid-cols-12 md:items-start lg:gap-12">
+        {/* Capped to the screen under the sticky header; on short screens the photo gives up the height. */}
+        <div className="flex flex-col md:sticky md:top-24 md:col-span-5 md:max-h-[calc(100svh-7.5rem)] lg:top-26 lg:max-h-[calc(100svh-8rem)]">
           <SectionHeading
             eyebrow={t.featuredEyebrow}
             title={t.featuredTitle}
@@ -73,27 +59,30 @@ export function ProductShowcase({ locale, dict, products }: ProductShowcaseProps
             })}
           </ul>
 
-          <ShowcaseCarousel
-            labels={{ region: t.featuredTitle, ...t.carousel }}
-            className="mt-6 min-h-0 flex-1 md:short:mt-4"
-          >
-            {products.map((product) => (
-              <li
-                key={product.slug}
-                className="flex w-[78%] shrink-0 snap-start sm:w-[46%] md:w-[85%] lg:w-[calc((100%-1.5rem)/2)]"
-              >
-                <ProductTile
-                  product={product}
-                  href={href(locale, `/products/${product.slug}`)}
-                  detailsLabel={dict.common.details}
-                  variantsLabel={dict.common.hasVariants}
-                  sizes="(min-width: 1024px) 300px, (min-width: 768px) 50vw, 78vw"
-                  fillHeight
-                />
-              </li>
-            ))}
-          </ShowcaseCarousel>
+          <div className="relative mt-6 aspect-[16/10] overflow-hidden rounded-[1.5rem] bg-mist sm:aspect-[16/9] sm:rounded-[2rem] md:aspect-[4/3] md:min-h-32 md:shrink md:short:mt-4">
+            <Image
+              src={showcaseImage.src}
+              alt={showcaseImage.alt[locale]}
+              fill
+              sizes="(min-width: 1280px) 520px, (min-width: 768px) 42vw, 100vw"
+              className="object-cover"
+            />
+          </div>
         </div>
+
+        <ul className="grid grid-cols-2 gap-x-4 gap-y-8 sm:gap-x-6 sm:gap-y-10 md:col-span-7 lg:gap-x-8">
+          {products.map((product) => (
+            <li key={product.slug} className="flex">
+              <ProductTile
+                product={product}
+                href={href(locale, `/products/${product.slug}`)}
+                detailsLabel={dict.common.details}
+                variantsLabel={dict.common.hasVariants}
+                sizes="(min-width: 1280px) 340px, (min-width: 768px) 28vw, 46vw"
+              />
+            </li>
+          ))}
+        </ul>
       </Container>
     </section>
   );
