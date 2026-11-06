@@ -6,7 +6,7 @@ import { FIELD_LIMITS } from "@/lib/forms/shared";
 import { buttonClass } from "@/components/ui/button";
 import { IconArrowRight } from "@/components/ui/icons";
 
-import { ConsentField, FormStatusMessage, TextAreaField, TextField } from "./fields";
+import { ConsentField, FormStatusMessage, HoneypotField, TextAreaField, TextField } from "./fields";
 import { useFormSubmission } from "./use-form-submission";
 
 interface ContactFormProps {
@@ -26,6 +26,7 @@ export function ContactForm({ locale, labels, privacyHref }: ContactFormProps) {
   return (
     <form {...formProps} className="relative grid gap-5 sm:grid-cols-2">
       <input type="hidden" name="locale" value={locale} />
+      <HoneypotField label={labels.honeypot} />
 
       <TextField
         name="name"

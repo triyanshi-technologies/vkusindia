@@ -7,10 +7,10 @@ import { isLocale, type Locale } from "@/i18n/config";
 import { href } from "@/i18n/routing";
 
 import { toFieldErrors } from "./schemas";
-import type { FieldErrors, FormResponse } from "./shared";
+import { HONEYPOT_FIELD, type FieldErrors, type FormResponse } from "./shared";
 
 /**
- * Shared POST handler for every form: parse → validate with Zod → (optional check) → log.
+ * Shared POST handler for every form: parse → honeypot → validate with Zod → (optional check) → log.
  *
  * Works with and without JavaScript: fetch() callers get JSON, plain HTML form
  * posts get a 303 redirect to a localized status page.
@@ -52,6 +52,12 @@ export async function handleFormSubmission<S extends z.ZodType>(
     input[key] = previous === undefined ? value : [previous, value].flat();
   }
   if (isLocale(input.locale)) locale = input.locale;
+
+  // Answer a bot as if it succeeded, so it has no reason to adapt.
+  if (input[HONEYPOT_FIELD]) {
+    console.info(`[forms] ${kind} dropped (honeypot)`);
+    return respond(200, { ok: true });
+  }
 
   const parsed = schema.safeParse(input);
   if (!parsed.success) {

@@ -11,6 +11,9 @@ export const FIELD_LIMITS = {
   comment: { max: 2000 },
 } as const;
 
+/** Hidden field only bots fill in; a non-empty value marks the submission as spam. */
+export const HONEYPOT_FIELD = "website";
+
 /** Allowed phone characters: digits, spaces, +, -, (, ). Also used as an HTML `pattern`. */
 export const PHONE_PATTERN = "[+\\d\\s()\\-]+";
 

@@ -10,6 +10,7 @@ import {
 } from "react";
 
 import { IconCheck, IconChevronDown } from "@/components/ui/icons";
+import { HONEYPOT_FIELD } from "@/lib/forms/shared";
 import { cn } from "@/lib/utils";
 
 import type { StatusMessage } from "./use-form-submission";
@@ -138,6 +139,18 @@ interface ConsentFieldProps {
   linkLabel: string;
   href: string;
   error?: string;
+}
+
+/** Spam trap: off-screen (not `display: none`, which some bots skip), out of the tab order and hidden from screen readers. */
+export function HoneypotField({ label }: { label: string }) {
+  return (
+    <div aria-hidden="true" className="absolute -left-[9999px] size-px overflow-hidden">
+      <label>
+        {label}
+        <input type="text" name={HONEYPOT_FIELD} tabIndex={-1} autoComplete="off" />
+      </label>
+    </div>
+  );
 }
 
 /** Explicit consent to personal data processing (Federal Law 152-FZ). */

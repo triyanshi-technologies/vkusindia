@@ -8,7 +8,7 @@ import { VariantSelects } from "@/components/product/variant-selection";
 import { buttonClass } from "@/components/ui/button";
 import { IconArrowRight } from "@/components/ui/icons";
 
-import { ConsentField, FormStatusMessage, TextAreaField, TextField } from "./fields";
+import { ConsentField, FormStatusMessage, HoneypotField, TextAreaField, TextField } from "./fields";
 import { useFormSubmission } from "./use-form-submission";
 
 interface EnquiryFormProps {
@@ -30,6 +30,7 @@ export function EnquiryForm({ locale, product, variants = [], labels, privacyHre
   return (
     <form {...formProps} className="relative grid gap-5 sm:grid-cols-2">
       <input type="hidden" name="locale" value={locale} />
+      <HoneypotField label={labels.honeypot} />
       <input type="hidden" name="product" value={product.slug} />
 
       <p className="flex flex-wrap items-baseline gap-x-2 rounded-xl bg-mist px-4 py-3 text-[0.9375rem] sm:col-span-2">

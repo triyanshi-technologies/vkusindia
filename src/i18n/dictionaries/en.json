@@ -153,6 +153,7 @@
     "noPreference": "No preference",
     "consent": "I agree to the processing of my personal data in accordance with the",
     "consentLink": "privacy policy",
+    "honeypot": "Leave this field empty",
     "submit": "Send",
     "submitting": "Sending…",
     "placeholders": {
