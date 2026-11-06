@@ -28,11 +28,11 @@ export function TrustBadges({ locale }: { locale: Locale }) {
           id="trust-title"
           className="mx-auto text-center"
         />
-        <ul className="mx-auto mt-10 grid max-w-5xl grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-4 sm:gap-x-8 lg:mt-14">
+        <ul className="mt-10 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-4 sm:gap-x-8 lg:mt-14">
           {t.badges.map((badge) => (
             <li key={badge.id} className="seal-in group flex flex-col items-center text-center">
               <Seal Icon={badgeIcons[badge.id]} />
-              <p className="mt-4 max-w-[12rem] text-[0.9375rem] leading-snug font-medium text-ink">
+              <p className="mt-4 max-w-[14rem] text-base leading-snug font-medium text-ink sm:text-lg">
                 {badge.label}
               </p>
             </li>
@@ -47,7 +47,7 @@ function Seal({ Icon }: { Icon: Icon }) {
   return (
     <div
       aria-hidden="true"
-      className="relative aspect-square w-full max-w-[8rem] transition-transform duration-500 ease-soft group-hover:-translate-y-1 group-hover:scale-[1.03] motion-reduce:transition-none sm:max-w-[9.5rem] lg:max-w-[11rem]"
+      className="relative aspect-square w-full max-w-[8rem] transition-transform duration-500 ease-soft group-hover:-translate-y-1 group-hover:scale-[1.03] motion-reduce:transition-none sm:max-w-[9.5rem] lg:max-w-[12rem]"
     >
       <svg viewBox="0 0 200 200" fill="none" className="absolute inset-0 size-full">
         <circle cx="100" cy="100" r="97" stroke="var(--color-leaf)" strokeWidth="2" />

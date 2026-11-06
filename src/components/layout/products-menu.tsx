@@ -88,7 +88,7 @@ export function ProductsMenu({ label, href, allProductsLabel, groups }: Products
         )}
       >
         <Container className="py-6 xl:py-10">
-          <Link href={href} className="text-sm font-medium text-olive hover:text-ink">
+          <Link href={href} className="text-base font-medium text-olive hover:text-ink">
             {allProductsLabel}
           </Link>
           {groups.length === 1 ? (
