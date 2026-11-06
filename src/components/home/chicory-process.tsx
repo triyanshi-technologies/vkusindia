@@ -46,6 +46,15 @@ const useIcons: Record<ProcessUseId, Icon> = {
   chocolate: IconChocolate,
 };
 
+/** Each chapter's content card; dark tones switch the text inside to light. */
+const chapterTones: Record<ProcessChapterId, { card: string; dark: boolean }> = {
+  field: { card: "bg-leaf/20", dark: false },
+  drying: { card: "bg-paper ring-1 ring-line", dark: false },
+  roasting: { card: "bg-surface-dark", dark: true },
+  // Olive darkened so light text stays readable on it.
+  dispatch: { card: "bg-[color-mix(in_oklab,var(--color-olive)_75%,black)]", dark: true },
+};
+
 const anchor = (id: ProcessChapterId) => `process-${id}`;
 
 type ProductLink = { label: string; href: string };
@@ -134,7 +143,8 @@ interface ChapterProps {
 
 function Chapter({ chapter, number, outputLabel, linksFor }: ChapterProps) {
   const Icon = chapterIcons[chapter.id];
-  const dark = Boolean(chapter.branches);
+  const tone = chapterTones[chapter.id];
+  const { dark } = tone;
 
   return (
     <li id={anchor(chapter.id)} className="group/chapter relative pb-12 pl-14 last:pb-0 sm:pl-20">
@@ -159,24 +169,33 @@ function Chapter({ chapter, number, outputLabel, linksFor }: ChapterProps) {
         {chapter.title}
       </h3>
 
-      {chapter.notes.length > 0 && (
-        <ul className="mt-5 space-y-2 text-[0.9375rem] text-muted-strong">
-          {chapter.notes.map((note) => (
-            <li key={note} className="relative pl-5">
-              <span aria-hidden="true" className="absolute top-[0.6em] left-0 size-1.5 rounded-full bg-leaf" />
-              {note}
-            </li>
-          ))}
-        </ul>
-      )}
+      <div className={cn("mt-6 rounded-[1.75rem] p-5 sm:p-8", tone.card, dark && "text-paper")}>
+        {chapter.notes.length > 0 && (
+          <ul className={cn("space-y-2 text-[0.9375rem]", dark ? "text-paper/80" : "text-muted-strong")}>
+            {chapter.notes.map((note) => (
+              <li key={note} className="relative pl-5">
+                <span
+                  aria-hidden="true"
+                  className={cn("absolute top-[0.6em] left-0 size-1.5 rounded-full", dark ? "bg-leaf" : "bg-olive")}
+                />
+                {note}
+              </li>
+            ))}
+          </ul>
+        )}
 
-      <div className={cn("mt-6", dark && "rounded-[1.75rem] bg-surface-dark p-5 text-paper sm:p-8")}>
         {chapter.facts.length > 0 && (
-          <dl className="grid grid-cols-2 gap-x-4 gap-y-5 sm:gap-x-6 xl:grid-cols-[repeat(auto-fit,minmax(9rem,1fr))]">
+          // Two per row inside the card; a set of three fits one row on wide screens.
+          <dl
+            className={cn(
+              "mt-6 grid grid-cols-2 gap-x-4 gap-y-5 first:mt-0 sm:gap-x-6",
+              chapter.facts.length === 3 && "xl:grid-cols-3",
+            )}
+          >
             {chapter.facts.map((fact) => (
               <div
                 key={fact.label}
-                className={cn("flex flex-col gap-1 border-t pt-3", dark ? "border-paper/15" : "border-line")}
+                className={cn("flex flex-col gap-1 border-t pt-3", dark ? "border-paper/15" : "border-ink/10")}
               >
                 <dt className={cn("order-last text-sm", dark ? "text-paper/60" : "text-muted-strong")}>
                   {fact.label}
