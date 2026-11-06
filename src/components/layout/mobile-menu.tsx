@@ -111,7 +111,7 @@ export function MobileMenu({
                       <div className="space-y-5 pb-5">
                         <Link
                           href={productsHref}
-                          className="block text-[0.9375rem] font-medium text-olive"
+                          className="block text-[1.0625rem] font-medium text-olive"
                         >
                           {labels.allProducts}
                         </Link>

@@ -27,7 +27,7 @@ export function ProductCard({
 }: ProductCardProps) {
   return (
     <article className={cn("group relative flex flex-col", className)}>
-      <div className="relative aspect-[3/2] overflow-hidden rounded-2xl bg-mist">
+      <div className="relative aspect-[3/2] overflow-hidden rounded-2xl border border-line bg-mist transition-colors duration-300 group-hover:border-leaf">
         <CmsImage
           image={product.image}
           alt=""
@@ -65,7 +65,7 @@ export function ProductTile({
 }: ProductTileProps) {
   return (
     <article className="group relative flex w-full flex-col">
-      <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-line bg-paper">
+      <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-line bg-paper transition-colors duration-300 group-hover:border-leaf">
         <CmsImage
           image={product.image}
           alt=""
