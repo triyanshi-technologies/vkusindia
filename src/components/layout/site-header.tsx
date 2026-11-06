@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { company } from "@/content/company";
+import { company, mapLinks } from "@/content/company";
 import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/get-dictionary";
 import { href } from "@/i18n/routing";
@@ -130,8 +130,15 @@ function TopBar({ locale, dict }: SiteHeaderProps) {
           <span aria-hidden="true" className="hidden text-paper/30 lg:inline">
             ·
           </span>
-          <IconPin className="text-leaf" />
-          {company.address.short[locale]}
+          <a
+            href={mapLinks(company.address.mapQuery).yandex}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 transition-colors hover:text-paper"
+          >
+            <IconPin className="text-leaf" />
+            {company.address.short[locale]}
+          </a>
         </p>
         <ul className="flex items-center gap-3 whitespace-nowrap xl:gap-6">
           {company.phones.map((phone) => (
