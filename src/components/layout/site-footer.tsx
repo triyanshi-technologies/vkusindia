@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { company } from "@/content/company";
+import { company, mapLinks } from "@/content/company";
 import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/get-dictionary";
 import { href } from "@/i18n/routing";
@@ -93,10 +93,15 @@ export async function SiteFooter({ locale, dict }: SiteFooterProps) {
             >
               <IconMail className="shrink-0 text-leaf" /> {company.email}
             </a>
-            <p className="flex gap-3 text-paper/70">
+            <a
+              href={mapLinks(company.address.mapQuery).yandex}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex gap-3 text-paper/70 transition-colors hover:text-leaf"
+            >
               <IconPin className="mt-1 shrink-0 text-leaf" />
               <span>{company.address.full[locale]}</span>
-            </p>
+            </a>
           </address>
         </div>
       </Container>
