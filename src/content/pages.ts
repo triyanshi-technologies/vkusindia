@@ -43,42 +43,66 @@ export const about = {
   } satisfies Localized,
 };
 
-/** Principles distilled from the company's own About text. */
-export const principles: Localized<{ title: string; text: string }[]> = {
+/** Principles distilled from the company's own About text; `points` add detail on the about page only. */
+export const principles: Localized<{ title: string; text: string; points: string[] }[]> = {
   ru: [
     {
       title: "Работаем с источником",
       text: "Тесно сотрудничаем с фермерами, производителями, дистрибьюторами и розничными торговцами.",
+      points: [
+        "Поиск и поставка высококачественного цикория на международных рынках",
+      ],
     },
     {
       title: "Качество по мировым стандартам",
       text: "Поставляем безопасные, высококачественные продукты питания, соответствующие мировым стандартам.",
+      points: [
+        "Твёрдая приверженность качеству, надёжности и удовлетворённости клиентов",
+      ],
     },
     {
       title: "Логистика и документы",
       text: "Берём на себя бесперебойную логистику, надлежащую документацию и трансграничную торговлю.",
+      points: [
+        "Импорт высококачественной продукции или расширение экспортного охвата",
+      ],
     },
     {
       title: "Долгосрочное партнёрство",
       text: "Строим отношения на доверии, прозрачности и взаимном росте.",
+      points: [
+        "Надёжное имя в мировой индустрии импорта и экспорта",
+      ],
     },
   ],
   en: [
     {
       title: "Close to the source",
       text: "We work closely with farmers, manufacturers, distributors and retailers.",
+      points: [
+        "Sourcing and supplying high-quality chicory across international markets",
+      ],
     },
     {
       title: "Quality to global standards",
       text: "We deliver safe, high-quality food products that meet global standards.",
+      points: [
+        "A firm commitment to quality, reliability and customer satisfaction",
+      ],
     },
     {
       title: "Logistics and paperwork",
       text: "We take care of smooth logistics, proper documentation and cross-border trade.",
+      points: [
+        "Import high-quality products or expand your export reach",
+      ],
     },
     {
       title: "Long-term partnership",
       text: "We build relationships on trust, transparency and mutual growth.",
+      points: [
+        "A trusted name in global import and export",
+      ],
     },
   ],
 };

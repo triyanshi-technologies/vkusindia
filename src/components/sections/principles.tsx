@@ -1,15 +1,20 @@
 import { principles } from "@/content/pages";
 import type { Locale } from "@/i18n/config";
 import { Container } from "@/components/ui/container";
+import { IconCheck } from "@/components/ui/icons";
+import { cn } from "@/lib/utils";
 
 export function Principles({
   locale,
   eyebrow,
   title,
+  detailed = false,
 }: {
   locale: Locale;
   eyebrow: string;
   title: string;
+  /** Adds each principle's supporting points (about page); the home page keeps the brief version. */
+  detailed?: boolean;
 }) {
   return (
     <section
@@ -25,8 +30,14 @@ export function Principles({
           >
             {title}
           </h2>
-          {/* Only from lg, where the heading column leaves empty space; pinned to the column bottom so it never adds height. */}
-          <TradeGlobe className="pointer-events-none absolute bottom-0 left-0 hidden w-60 text-leaf/[0.14] lg:block" />
+          {/* Only from lg, where the heading column leaves empty space. Brief: pinned to the column bottom so it
+              never adds height. Detailed: the column is much taller, so it follows the heading and stays in view. */}
+          <TradeGlobe
+            className={cn(
+              "pointer-events-none hidden w-60 text-leaf/[0.14] lg:block",
+              detailed ? "mt-16 lg:sticky lg:top-32" : "absolute bottom-0 left-0",
+            )}
+          />
         </div>
         <ol className="grid gap-x-10 gap-y-12 sm:grid-cols-2 lg:col-span-8">
           {principles[locale].map((item, index) => (
@@ -36,6 +47,16 @@ export function Principles({
               </span>
               <h3 className="mt-3 font-serif text-2xl leading-snug">{item.title}</h3>
               <p className="mt-3 text-paper/70">{item.text}</p>
+              {detailed && (
+                <ul className="mt-5 space-y-2.5 border-t border-paper/10 pt-5 text-[0.9375rem] text-paper/85">
+                  {item.points.map((point) => (
+                    <li key={point} className="flex gap-2.5">
+                      <IconCheck className="mt-1 size-4 shrink-0 text-leaf" />
+                      {point}
+                    </li>
+                  ))}
+                </ul>
+              )}
             </li>
           ))}
         </ol>
