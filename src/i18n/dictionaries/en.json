@@ -176,6 +176,7 @@
     "status": {
       "success": "Thank you! Your enquiry has been sent - we will contact you shortly.",
       "invalid": "Please correct the highlighted fields.",
+      "failed": "Sorry, your message could not be sent. Please try again or contact us by phone.",
       "network": "No connection. Check your internet and try again."
     }
   },

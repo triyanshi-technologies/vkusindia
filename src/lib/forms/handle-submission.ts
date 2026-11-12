@@ -6,11 +6,12 @@ import type { z } from "zod";
 import { isLocale, type Locale } from "@/i18n/config";
 import { href } from "@/i18n/routing";
 
+import { sendMail, type Mail } from "./mailer";
 import { toFieldErrors } from "./schemas";
 import { HONEYPOT_FIELD, type FieldErrors, type FormResponse } from "./shared";
 
 /**
- * Shared POST handler for every form: parse → honeypot → validate with Zod → (optional check) → log.
+ * Shared POST handler for every form: parse → honeypot → validate with Zod → (optional check) → email.
  *
  * Works with and without JavaScript: fetch() callers get JSON, plain HTML form
  * posts get a 303 redirect to a localized status page.
@@ -21,11 +22,14 @@ export async function handleFormSubmission<S extends z.ZodType>(
     kind,
     schema,
     validate,
+    mail,
   }: {
     kind: string;
     schema: S;
     /** Checks that need data (e.g. the CMS); return field errors to reject. */
     validate?: (data: z.output<S>) => Promise<FieldErrors | null>;
+    /** The notification sent to the company inbox for an accepted submission. */
+    mail: (data: z.output<S>) => Mail | Promise<Mail>;
   },
 ): Promise<Response> {
   const wantsJson = request.headers.get("accept")?.includes("application/json") ?? false;
@@ -71,6 +75,18 @@ export async function handleFormSubmission<S extends z.ZodType>(
   const rejected = await validate?.(parsed.data);
   if (rejected) return respond(422, { ok: false, error: "invalid", errors: rejected });
 
+  try {
+    if (await sendMail(await mail(parsed.data))) {
+      console.info(`[forms] ${kind} sent`);
+      return respond(200, { ok: true });
+    }
+  } catch (error) {
+    // Tell the visitor, so the enquiry is not silently lost.
+    console.error(`[forms] ${kind} email failed`, error);
+    return respond(502, { ok: false, error: "failed" });
+  }
+
+  // SMTP not configured (local development): keep the submission visible in the log.
   console.info(`[forms] ${kind} received`, parsed.data);
   return respond(200, { ok: true });
 }

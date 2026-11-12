@@ -21,4 +21,7 @@ export const PHONE_PATTERN = "[+\\d\\s()\\-]+";
 export type FieldErrorCode = "required" | "invalid" | "tooShort" | "tooLong" | "consent";
 export type FieldErrors = Partial<Record<string, FieldErrorCode>>;
 
-export type FormResponse = { ok: true } | { ok: false; error: "invalid"; errors?: FieldErrors };
+/** "failed" = valid data, but the notification email could not be sent. */
+export type FormResponse =
+  | { ok: true }
+  | { ok: false; error: "invalid" | "failed"; errors?: FieldErrors };

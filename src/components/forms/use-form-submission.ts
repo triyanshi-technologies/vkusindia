@@ -5,7 +5,7 @@ import { useState, useSyncExternalStore, type FormEvent } from "react";
 import type { FieldErrorCode, FieldErrors, FormResponse } from "@/lib/forms/shared";
 
 export type FormStatus = "idle" | "submitting" | "success" | "error";
-export type StatusMessage = "success" | "invalid" | "network";
+export type StatusMessage = "success" | "invalid" | "failed" | "network";
 
 const subscribeNoop = () => () => {};
 
