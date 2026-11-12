@@ -1,15 +1,20 @@
 import { principles } from "@/content/pages";
 import type { Locale } from "@/i18n/config";
 import { Container } from "@/components/ui/container";
+import { IconCheck } from "@/components/ui/icons";
+import { cn } from "@/lib/utils";
 
 export function Principles({
   locale,
   eyebrow,
   title,
+  detailed = false,
 }: {
   locale: Locale;
   eyebrow: string;
   title: string;
+  /** Adds each principle's supporting points (about page); the home page keeps the brief version. */
+  detailed?: boolean;
 }) {
   return (
     <section
@@ -17,7 +22,7 @@ export function Principles({
       className="section-y bg-surface-dark text-paper"
     >
       <Container className="grid gap-12 lg:grid-cols-12 lg:gap-10">
-        <div className="lg:col-span-4">
+        <div className="relative lg:col-span-4">
           <p className="eyebrow text-paper/60">{eyebrow}</p>
           <h2
             id="principles-title"
@@ -25,6 +30,14 @@ export function Principles({
           >
             {title}
           </h2>
+          {/* Only from lg, where the heading column leaves empty space. Brief: pinned to the column bottom so it
+              never adds height. Detailed: the column is much taller, so it follows the heading and stays in view. */}
+          <TradeGlobe
+            className={cn(
+              "pointer-events-none hidden w-60 text-leaf/[0.14] lg:block",
+              detailed ? "mt-16 lg:sticky lg:top-32" : "absolute bottom-0 left-0",
+            )}
+          />
         </div>
         <ol className="grid gap-x-10 gap-y-12 sm:grid-cols-2 lg:col-span-8">
           {principles[locale].map((item, index) => (
@@ -34,10 +47,49 @@ export function Principles({
               </span>
               <h3 className="mt-3 font-serif text-2xl leading-snug">{item.title}</h3>
               <p className="mt-3 text-paper/70">{item.text}</p>
+              {detailed && (
+                <ul className="mt-5 space-y-2.5 border-t border-paper/10 pt-5 text-[0.9375rem] text-paper/85">
+                  {item.points.map((point) => (
+                    <li key={point} className="flex gap-2.5">
+                      <IconCheck className="mt-1 size-4 shrink-0 text-leaf" />
+                      {point}
+                    </li>
+                  ))}
+                </ul>
+              )}
             </li>
           ))}
         </ol>
       </Container>
     </section>
+  );
+}
+
+/** Line globe with a labelled India → Russia route; the route sits brighter than the globe. */
+function TradeGlobe({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 200 200"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2.5"
+      aria-hidden="true"
+      className={className}
+    >
+      <circle cx="100" cy="100" r="90" />
+      <ellipse cx="100" cy="100" rx="42" ry="90" />
+      <path d="M100 10v180M10 100h180M22 55h156M22 145h156" />
+      <g stroke="var(--color-leaf)" strokeOpacity="0.5">
+        <path d="M132 128C176 110 170 58 114 46" strokeWidth="3.5" strokeDasharray="7 8" strokeLinecap="round" />
+        <circle cx="132" cy="128" r="6" fill="var(--color-leaf)" fillOpacity="0.5" />
+        <circle cx="114" cy="46" r="6" fill="var(--color-leaf)" fillOpacity="0.5" />
+      </g>
+      <g stroke="none" fill="var(--color-leaf)" fontSize="13" fontWeight="600" letterSpacing="1.5">
+        <text x="146" y="133">IN</text>
+        <text x="100" y="51" textAnchor="end">
+          RU
+        </text>
+      </g>
+    </svg>
   );
 }

@@ -128,6 +128,7 @@ export default async function AboutPage({ params }: PageProps<"/[lang]/about">) 
         locale={lang}
         eyebrow={dict.home.approachEyebrow}
         title={dict.home.approachTitle}
+        detailed
       />
       <div className="section-t">
         <ContactBand locale={lang} dict={dict} />
