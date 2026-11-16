@@ -1,3 +1,4 @@
+import { company } from "./company";
 import type { Localized } from "./types";
 
 interface PolicySection {
@@ -12,12 +13,12 @@ interface Policy {
 }
 
 const SITE = "https://www.vkusindia.ru";
-const EMAIL = "info@vkusindia.ru";
-const OPT_OUT_EMAIL = "infoirtaif@gmail.com";
+const EMAIL = "info@vkusindia.com";
 
 export const privacyPolicy: Localized<Policy> = {
   ru: {
     title: "Политика в отношении обработки персональных данных",
+    note: "Редакция от 16 ноября 2026 г.",
     sections: [
       {
         heading: "1. Общие положения",
@@ -25,6 +26,7 @@ export const privacyPolicy: Localized<Policy> = {
           "Настоящая политика обработки персональных данных составлена в соответствии с требованиями Федерального закона от 27.07.2006 № 152-ФЗ «О персональных данных» и определяет порядок обработки персональных данных и меры по обеспечению безопасности персональных данных, предпринимаемые ООО «Индорашен трейд энд инвестмент форум» (далее - Оператор).",
           "1.1. Оператор ставит своей важнейшей целью и условием осуществления своей деятельности соблюдение прав и свобод человека и гражданина при обработке его персональных данных, в том числе защиты прав на неприкосновенность частной жизни, личную и семейную тайну.",
           `1.2. Настоящая политика Оператора в отношении обработки персональных данных (далее - Политика) применяется ко всей информации, которую Оператор может получить о посетителях веб-сайта ${SITE}.`,
+          `1.3. Сведения об Операторе: ${company.legalName.ru}, адрес: ${company.address.full.ru}, электронная почта: ${EMAIL}.`,
         ],
       },
       {
@@ -48,29 +50,24 @@ export const privacyPolicy: Localized<Policy> = {
       {
         heading: "3. Оператор может обрабатывать следующие персональные данные Пользователя",
         paragraphs: [
-          "3.1. Фамилия, имя, отчество.",
-          "3.2. Электронный адрес.",
-          "3.3. Номера телефонов.",
-          "3.4. Год, месяц, дата и место рождения.",
-          "3.5. Фотографии.",
-          "3.6. Адрес фактического места проживания и регистрации по месту жительства и (или) по месту пребывания.",
-          "3.7. Также на сайте происходит сбор и обработка обезличенных данных о посетителях (в т. ч. файлов «cookie») с помощью сервисов интернет-статистики (Яндекс Метрика, Google Analytics и других).",
-          "3.8. Вышеперечисленные данные далее по тексту Политики объединены общим понятием Персональные данные.",
+          "3.1. При отправке запроса на продукт: имя, номер телефона, адрес электронной почты, страна, выбранный продукт и его варианты, требуемое количество, комментарий.",
+          "3.2. При отправке сообщения через форму обратной связи: имя, адрес электронной почты, тема и текст сообщения.",
+          "3.3. Данные, перечисленные в пп. 3.1-3.2, далее по тексту Политики объединены общим понятием Персональные данные.",
+          "3.4. Сайт также использует технический файл «cookie», в котором сохраняется выбранный язык сайта, и сохраняет в браузере Пользователя отметку о закрытии уведомления об использовании файлов «cookie». Эти данные не позволяют идентифицировать Пользователя. Сервисы интернет-статистики на сайте не используются.",
         ],
       },
       {
         heading: "4. Цели обработки персональных данных",
         paragraphs: [
-          "4.1. Цель обработки персональных данных Пользователя - информирование Пользователя посредством отправки электронных писем; заключение, исполнение и прекращение гражданско-правовых договоров; предоставление доступа Пользователю к сервисам, информации и/или материалам, содержащимся на веб-сайте; доставка продукции.",
-          `4.2. Также Оператор имеет право направлять Пользователю уведомления о новых продуктах и услугах, специальных предложениях и различных событиях. Пользователь всегда может отказаться от получения информационных сообщений, направив Оператору письмо на адрес электронной почты ${OPT_OUT_EMAIL} с пометкой «Отказ от уведомлений о новых продуктах и услугах и специальных предложениях».`,
-          "4.3. Обезличенные данные Пользователей, собираемые с помощью сервисов интернет-статистики, служат для сбора информации о действиях Пользователей на сайте, улучшения качества сайта и его содержания.",
+          "4.1. Цель обработки персональных данных Пользователя - ответ на запросы и сообщения Пользователя; подготовка коммерческих предложений; заключение, исполнение и прекращение гражданско-правовых договоров; доставка продукции.",
+          "4.2. Технический файл «cookie» используется только для сохранения выбранного Пользователем языка сайта.",
         ],
       },
       {
         heading: "5. Правовые основания обработки персональных данных",
         paragraphs: [
           `5.1. Оператор обрабатывает персональные данные Пользователя только в случае их заполнения и/или отправки Пользователем самостоятельно через специальные формы, расположенные на сайте ${SITE}, или при их отправке на адрес электронной почты ${EMAIL}. Заполняя соответствующие формы и/или отправляя свои персональные данные Оператору, Пользователь выражает своё согласие с данной Политикой.`,
-          "5.2. Оператор обрабатывает обезличенные данные о Пользователе в случае, если это разрешено в настройках браузера Пользователя (включено сохранение файлов «cookie» и использование технологии JavaScript).",
+          "5.2. Файл «cookie» с выбранным языком сайта сохраняется, если это разрешено в настройках браузера Пользователя.",
         ],
       },
       {
@@ -79,9 +76,9 @@ export const privacyPolicy: Localized<Policy> = {
         paragraphs: [
           "Безопасность персональных данных, которые обрабатываются Оператором, обеспечивается путём реализации правовых, организационных и технических мер, необходимых для выполнения в полном объёме требований действующего законодательства в области защиты персональных данных.",
           "6.1. Оператор обеспечивает сохранность персональных данных и принимает все возможные меры, исключающие доступ к персональным данным неуполномоченных лиц.",
-          "6.2. Персональные данные Пользователя никогда, ни при каких условиях не будут переданы третьим лицам, за исключением случаев, связанных с исполнением действующего законодательства.",
+          "6.2. Персональные данные Пользователя не передаются третьим лицам, за исключением поставщиков технических услуг, необходимых для работы сайта и доставки запросов Оператору: хостинг-провайдера сайта (Vercel Inc.) и почтового сервиса, через который запросы направляются Оператору (в настоящее время - Gmail, Google LLC), а также случаев, предусмотренных действующим законодательством.",
           `6.3. В случае выявления неточностей в персональных данных Пользователь может актуализировать их самостоятельно, путём направления Оператору уведомления на адрес электронной почты ${EMAIL} с пометкой «Актуализация персональных данных».`,
-          `6.4. Срок обработки персональных данных является неограниченным. Пользователь может в любой момент отозвать своё согласие на обработку персональных данных, направив Оператору уведомление посредством электронной почты на адрес ${EMAIL} с пометкой «Отзыв согласия на обработку персональных данных».`,
+          `6.4. Персональные данные обрабатываются до достижения целей обработки (рассмотрения запроса или исполнения договора) либо до отзыва Пользователем согласия на их обработку. Пользователь может в любой момент отозвать своё согласие на обработку персональных данных, направив Оператору уведомление посредством электронной почты на адрес ${EMAIL} с пометкой «Отзыв согласия на обработку персональных данных».`,
         ],
       },
       {
@@ -89,6 +86,7 @@ export const privacyPolicy: Localized<Policy> = {
         paragraphs: [
           "7.1. Оператор до начала осуществления трансграничной передачи персональных данных обязан убедиться в том, что иностранным государством, на территорию которого предполагается осуществлять передачу персональных данных, обеспечивается надёжная защита прав субъектов персональных данных.",
           "7.2. Трансграничная передача персональных данных на территории иностранных государств, не отвечающих вышеуказанным требованиям, может осуществляться только в случае наличия согласия в письменной форме субъекта персональных данных на трансграничную передачу его персональных данных и/или исполнения договора, стороной которого является субъект персональных данных.",
+          "7.3. Серверы хостинг-провайдера и почтового сервиса, указанных в п. 6.2, могут располагаться за пределами Российской Федерации. Трансграничная передача персональных данных осуществляется только в объёме, необходимом для доставки Оператору запроса или сообщения, отправленного Пользователем через формы на сайте.",
         ],
       },
       {
@@ -103,7 +101,7 @@ export const privacyPolicy: Localized<Policy> = {
   },
   en: {
     title: "Personal data processing policy",
-    note: "This English translation is provided for convenience. In case of any discrepancy, the Russian version prevails.",
+    note: "Version of 16 November 2026. This English translation is provided for convenience. In case of any discrepancy, the Russian version prevails.",
     sections: [
       {
         heading: "1. General provisions",
@@ -111,6 +109,7 @@ export const privacyPolicy: Localized<Policy> = {
           "This personal data processing policy has been drawn up in accordance with Federal Law No. 152-FZ of 27 July 2006 “On Personal Data” and sets out the procedure for processing personal data and the measures taken to ensure its security by Indo Russian Trade and Investment Forum LLC (hereinafter, the Operator).",
           "1.1. The Operator’s primary goal and condition for carrying out its activities is to respect human and civil rights and freedoms when processing personal data, including the protection of the rights to privacy and personal and family secrets.",
           `1.2. This Operator policy on personal data processing (hereinafter, the Policy) applies to all information the Operator may obtain about visitors to the website ${SITE}.`,
+          `1.3. Operator details: ${company.legalName.en}, address: ${company.address.full.en}, email: ${EMAIL}.`,
         ],
       },
       {
@@ -134,29 +133,24 @@ export const privacyPolicy: Localized<Policy> = {
       {
         heading: "3. Personal data of the User the Operator may process",
         paragraphs: [
-          "3.1. Surname, first name and patronymic.",
-          "3.2. Email address.",
-          "3.3. Phone numbers.",
-          "3.4. Year, month, date and place of birth.",
-          "3.5. Photographs.",
-          "3.6. Address of actual residence and of registration at the place of residence and/or stay.",
-          "3.7. The website also collects and processes depersonalised visitor data (including cookies) using web analytics services (Yandex Metrica, Google Analytics and others).",
-          "3.8. The data listed above is hereinafter collectively referred to as Personal Data.",
+          "3.1. When sending a product enquiry: name, phone number, email address, country, the selected product and its options, required quantity and comment.",
+          "3.2. When sending a message through the contact form: name, email address, subject and message text.",
+          "3.3. The data listed in clauses 3.1-3.2 is hereinafter collectively referred to as Personal Data.",
+          "3.4. The website also uses a technical cookie that stores the selected website language, and stores in the User’s browser a note that the cookie notice has been closed. This data does not identify the User. No web analytics services are used on the website.",
         ],
       },
       {
         heading: "4. Purposes of processing personal data",
         paragraphs: [
-          "4.1. The purpose of processing the User’s personal data is to inform the User by email; to conclude, perform and terminate civil law contracts; to give the User access to services, information and/or materials on the website; and to deliver products.",
-          `4.2. The Operator may also send the User notifications about new products and services, special offers and events. The User can always unsubscribe by emailing the Operator at ${OPT_OUT_EMAIL} with the subject “Unsubscribe from notifications about new products, services and special offers”.`,
-          "4.3. Depersonalised User data collected by web analytics services is used to gather information about User actions on the website and to improve the quality of the website and its content.",
+          "4.1. The purpose of processing the User’s personal data is to respond to the User’s enquiries and messages; to prepare commercial offers; to conclude, perform and terminate civil law contracts; and to deliver products.",
+          "4.2. The technical cookie is used only to remember the website language selected by the User.",
         ],
       },
       {
         heading: "5. Legal grounds for processing personal data",
         paragraphs: [
           `5.1. The Operator processes the User’s personal data only if the User fills in and/or submits it through forms on the website ${SITE} or sends it to ${EMAIL}. By filling in such forms and/or sending personal data to the Operator, the User agrees to this Policy.`,
-          "5.2. The Operator processes depersonalised data about the User if this is permitted by the User’s browser settings (cookies and JavaScript enabled).",
+          "5.2. The cookie with the selected website language is stored if this is permitted by the User’s browser settings.",
         ],
       },
       {
@@ -164,9 +158,9 @@ export const privacyPolicy: Localized<Policy> = {
         paragraphs: [
           "The security of personal data processed by the Operator is ensured through the legal, organisational and technical measures required to fully comply with the applicable data protection legislation.",
           "6.1. The Operator ensures the safety of personal data and takes all possible measures to prevent access to it by unauthorised persons.",
-          "6.2. The User’s personal data will never, under any circumstances, be transferred to third parties, except as required by applicable law.",
+          "6.2. The User’s personal data is not transferred to third parties, except to the technical service providers needed to run the website and deliver enquiries to the Operator: the website hosting provider (Vercel Inc.) and the email service through which enquiries are sent to the Operator (currently Gmail, Google LLC), and except as required by applicable law.",
           `6.3. If inaccuracies are found in personal data, the User can update it by emailing the Operator at ${EMAIL} with the subject “Updating personal data”.`,
-          `6.4. The period of personal data processing is unlimited. The User may withdraw consent to the processing of personal data at any time by emailing the Operator at ${EMAIL} with the subject “Withdrawal of consent to personal data processing”.`,
+          `6.4. Personal data is processed until the purposes of processing are achieved (the enquiry is handled or the contract is performed) or until the User withdraws consent to its processing. The User may withdraw consent to the processing of personal data at any time by emailing the Operator at ${EMAIL} with the subject “Withdrawal of consent to personal data processing”.`,
         ],
       },
       {
@@ -174,6 +168,7 @@ export const privacyPolicy: Localized<Policy> = {
         paragraphs: [
           "7.1. Before carrying out a cross-border transfer of personal data, the Operator must make sure that the foreign state to which the data is to be transferred provides reliable protection of the rights of personal data subjects.",
           "7.2. Cross-border transfer of personal data to foreign states that do not meet the above requirements may only take place with the written consent of the data subject and/or for the performance of a contract to which the data subject is a party.",
+          "7.3. The servers of the hosting provider and the email service named in clause 6.2 may be located outside the Russian Federation. Cross-border transfer of personal data takes place only to the extent needed to deliver to the Operator the enquiry or message the User sends through the website forms.",
         ],
       },
       {

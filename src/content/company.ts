@@ -1,6 +1,6 @@
 import type { Localized } from "./types";
 
-const PRIMARY_PHONE = "+79255001254";
+const PRIMARY_PHONE = "+919825077622";
 
 export const company = {
   brand: { ru: "Вкусы Индии", en: "VKUS India" } satisfies Localized,
@@ -12,14 +12,12 @@ export const company = {
   } satisfies Localized,
 
   phones: [
-    { display: "+7 925 500 12 54", href: `tel:${PRIMARY_PHONE}`, whatsapp: true },
-    { display: "+7 926 472 84 42", href: "tel:+79264728442", whatsapp: false },
+    { display: "+91 98250 77622", href: `tel:${PRIMARY_PHONE}`, whatsapp: true },
+    { display: "+91 88667 77622", href: "tel:+918866777622", whatsapp: false },
   ],
   whatsappUrl: `https://wa.me/${PRIMARY_PHONE.slice(1)}`,
 
-  email: "info@vkusindia.ru",
-  ordersEmail: "infoirtaif@gmail.com",
-  extraEmails: ["info@irtaif.com"],
+  email: "info@vkusindia.com",
 
   address: {
     postalCode: "117342",
