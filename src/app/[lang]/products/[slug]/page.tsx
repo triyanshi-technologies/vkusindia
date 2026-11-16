@@ -205,10 +205,10 @@ export default async function ProductPage({ params }: Props) {
                 </li>
                 <li>
                   <a
-                    href={`mailto:${company.ordersEmail}`}
+                    href={`mailto:${company.email}`}
                     className="flex items-center gap-3 hover:text-olive"
                   >
-                    <IconMail className="text-olive" /> {company.ordersEmail}
+                    <IconMail className="text-olive" /> {company.email}
                   </a>
                 </li>
               </ul>

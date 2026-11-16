@@ -12,8 +12,7 @@ interface Policy {
 }
 
 const SITE = "https://www.vkusindia.ru";
-const EMAIL = "info@vkusindia.ru";
-const OPT_OUT_EMAIL = "infoirtaif@gmail.com";
+const EMAIL = "info@vkusindia.com";
 
 export const privacyPolicy: Localized<Policy> = {
   ru: {
@@ -62,7 +61,7 @@ export const privacyPolicy: Localized<Policy> = {
         heading: "4. Цели обработки персональных данных",
         paragraphs: [
           "4.1. Цель обработки персональных данных Пользователя - информирование Пользователя посредством отправки электронных писем; заключение, исполнение и прекращение гражданско-правовых договоров; предоставление доступа Пользователю к сервисам, информации и/или материалам, содержащимся на веб-сайте; доставка продукции.",
-          `4.2. Также Оператор имеет право направлять Пользователю уведомления о новых продуктах и услугах, специальных предложениях и различных событиях. Пользователь всегда может отказаться от получения информационных сообщений, направив Оператору письмо на адрес электронной почты ${OPT_OUT_EMAIL} с пометкой «Отказ от уведомлений о новых продуктах и услугах и специальных предложениях».`,
+          `4.2. Также Оператор имеет право направлять Пользователю уведомления о новых продуктах и услугах, специальных предложениях и различных событиях. Пользователь всегда может отказаться от получения информационных сообщений, направив Оператору письмо на адрес электронной почты ${EMAIL} с пометкой «Отказ от уведомлений о новых продуктах и услугах и специальных предложениях».`,
           "4.3. Обезличенные данные Пользователей, собираемые с помощью сервисов интернет-статистики, служат для сбора информации о действиях Пользователей на сайте, улучшения качества сайта и его содержания.",
         ],
       },
@@ -148,7 +147,7 @@ export const privacyPolicy: Localized<Policy> = {
         heading: "4. Purposes of processing personal data",
         paragraphs: [
           "4.1. The purpose of processing the User’s personal data is to inform the User by email; to conclude, perform and terminate civil law contracts; to give the User access to services, information and/or materials on the website; and to deliver products.",
-          `4.2. The Operator may also send the User notifications about new products and services, special offers and events. The User can always unsubscribe by emailing the Operator at ${OPT_OUT_EMAIL} with the subject “Unsubscribe from notifications about new products, services and special offers”.`,
+          `4.2. The Operator may also send the User notifications about new products and services, special offers and events. The User can always unsubscribe by emailing the Operator at ${EMAIL} with the subject “Unsubscribe from notifications about new products, services and special offers”.`,
           "4.3. Depersonalised User data collected by web analytics services is used to gather information about User actions on the website and to improve the quality of the website and its content.",
         ],
       },

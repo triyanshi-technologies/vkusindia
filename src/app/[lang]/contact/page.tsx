@@ -86,24 +86,9 @@ export default async function ContactPage({ params }: PageProps<"/[lang]/contact
 
             <div className={cardClass}>
               <h2 className={labelClass}>{dict.common.email}</h2>
-              <ul className="mt-4 space-y-3">
-                {[company.email, ...company.extraEmails].map((email) => (
-                  <li key={email}>
-                    <a href={`mailto:${email}`} className={linkClass}>
-                      <IconMail className="text-olive" /> {email}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-              <p className="mt-5 border-t border-line pt-4 text-[0.9375rem] text-muted-strong">
-                {t.orders}:{" "}
-                <a
-                  href={`mailto:${company.ordersEmail}`}
-                  className="text-ink underline underline-offset-2 hover:text-olive"
-                >
-                  {company.ordersEmail}
-                </a>
-              </p>
+              <a href={`mailto:${company.email}`} className={`${linkClass} mt-4`}>
+                <IconMail className="text-olive" /> {company.email}
+              </a>
             </div>
 
             <div className={cardClass}>
