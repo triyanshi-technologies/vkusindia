@@ -1,4 +1,4 @@
-# VKUS India - vkusindia.ru
+# VKUS India - vkusindia.com
 
 Bilingual (RU/EN) B2B catalogue for Indo Russian Trade: chicory, basmati rice, spices, superfoods and tea from India.
 
@@ -70,7 +70,7 @@ Website (`.env.local`, and Vercel → Settings → Environment Variables):
 | `SANITY_DATASET`           | yes                       | usually `production`               |
 | `SANITY_REVALIDATE_SECRET` | yes (prod)                | same value as the webhook secret   |
 | `SANITY_API_READ_TOKEN`    | only for private datasets | Viewer token                       |
-| `NEXT_PUBLIC_SITE_URL`     | no                        | defaults to `https://vkusindia.ru` |
+| `NEXT_PUBLIC_SITE_URL`     | no                        | defaults to `https://vkusindia.com` |
 
 Studio (`studio/.env`): `SANITY_STUDIO_PROJECT_ID`, `SANITY_STUDIO_DATASET`.
 

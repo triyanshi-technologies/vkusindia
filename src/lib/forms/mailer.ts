@@ -40,7 +40,7 @@ export async function sendMail({ subject, replyTo, rows }: Mail): Promise<boolea
   });
 
   await transport.sendMail({
-    from: { name: "vkusindia.ru", address: SMTP_USER! },
+    from: { name: "vkusindia.com", address: SMTP_USER! },
     to: MAIL_TO,
     replyTo,
     subject,
