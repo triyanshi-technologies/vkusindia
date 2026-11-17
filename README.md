@@ -1,4 +1,4 @@
-# VKUS India - vkusindia.ru
+# VKUS India - vkusindia.com
 
 Bilingual (RU/EN) B2B catalogue for Indo Russian Trade: chicory, basmati rice, spices, superfoods and tea from India.
 

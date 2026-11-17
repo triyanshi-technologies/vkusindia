@@ -1,5 +1,5 @@
 /** Public origin used for canonical URLs, sitemap, robots and Open Graph. */
-export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://vkusindia.ru").replace(
+export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://vkusindia.com").replace(
   /\/$/,
   "",
 );

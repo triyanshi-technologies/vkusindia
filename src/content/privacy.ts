@@ -12,7 +12,7 @@ interface Policy {
   sections: PolicySection[];
 }
 
-const SITE = "https://www.vkusindia.ru";
+const SITE = "https://vkusindia.com";
 const EMAIL = "info@vkusindia.com";
 
 export const privacyPolicy: Localized<Policy> = {
