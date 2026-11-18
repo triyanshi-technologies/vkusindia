@@ -3,13 +3,13 @@ import type { Localized } from "./types";
 /** Page copy for the home and about pages. */
 
 export const welcome: Localized = {
-  ru: "Добро пожаловать в Indo Russian Trade - надёжное имя в мировой индустрии импорта и экспорта продуктов питания. С твёрдой приверженностью качеству, надёжности и удовлетворённости клиентов мы специализируемся на поиске и поставке широкого ассортимента высококачественных продуктов питания на международных рынках.",
-  en: "Welcome to Indo Russian Trade - a trusted name in the global food import and export industry. With a firm commitment to quality, reliability and customer satisfaction, we specialise in sourcing and supplying a wide range of high-quality food products across international markets.",
+  ru: "Добро пожаловать во «Вкусы Индии» - надёжное имя в мировой индустрии импорта и экспорта продуктов питания. С твёрдой приверженностью качеству, надёжности и удовлетворённости клиентов мы специализируемся на поиске и поставке широкого ассортимента высококачественных продуктов питания на международных рынках.",
+  en: "Welcome to VKUS India - a trusted name in the global food import and export industry. With a firm commitment to quality, reliability and customer satisfaction, we specialise in sourcing and supplying a wide range of high-quality food products across international markets.",
 };
 
 export const heroLead: Localized = {
-  ru: "Indo Russian Trade ищет и поставляет высококачественные продукты питания из Индии - с упором на качество, надёжность и долгосрочное партнёрство.",
-  en: "Indo Russian Trade sources and supplies high-quality food products from India - with a focus on quality, reliability and long-term partnership.",
+  ru: "Компания «Вкусы Индии» ищет и поставляет высококачественные продукты питания из Индии - с упором на качество, надёжность и долгосрочное партнёрство.",
+  en: "VKUS India sources and supplies high-quality food products from India - with a focus on quality, reliability and long-term partnership.",
 };
 
 export const heroImage = {
@@ -34,8 +34,8 @@ export const about = {
     en: "Our company has earned a solid reputation for connecting producers and buyers across continents. We work closely with farmers, manufacturers, distributors and retailers to ensure the timely delivery of safe, high-quality food products that meet global standards.",
   } satisfies Localized,
   partnership: {
-    ru: "В Indo Russian Trade мы верим в развитие долгосрочных партнёрских отношений, основанных на доверии, прозрачности и взаимном росте. Независимо от того, хотите ли вы импортировать высококачественную продукцию или расширить свой экспортный охват, наша команда обеспечивает бесперебойную логистику, надлежащую документацию и бесперебойную трансграничную торговлю.",
-    en: "At Indo Russian Trade we believe in building long-term partnerships founded on trust, transparency and mutual growth. Whether you want to import high-quality products or expand your export reach, our dedicated team ensures smooth logistics, proper documentation and seamless cross-border trade.",
+    ru: "В компании «Вкусы Индии» мы верим в развитие долгосрочных партнёрских отношений, основанных на доверии, прозрачности и взаимном росте. Независимо от того, хотите ли вы импортировать высококачественную продукцию или расширить свой экспортный охват, наша команда обеспечивает бесперебойную логистику, надлежащую документацию и бесперебойную трансграничную торговлю.",
+    en: "At VKUS India we believe in building long-term partnerships founded on trust, transparency and mutual growth. Whether you want to import high-quality products or expand your export reach, our dedicated team ensures smooth logistics, proper documentation and seamless cross-border trade.",
   } satisfies Localized,
   closing: {
     ru: "Позвольте нам стать вашим проводником к качественному мировому снабжению продуктами питания и их дистрибуции.",

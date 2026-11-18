@@ -2,7 +2,7 @@ import { cacheLife } from "next/cache";
 import Image from "next/image";
 import Link from "next/link";
 
-import { company, mapLinks } from "@/content/company";
+import { company, mapLinks, offices, phoneGroups } from "@/content/company";
 import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/get-dictionary";
 import { href } from "@/i18n/routing";
@@ -69,14 +69,21 @@ export async function SiteFooter({ locale, dict }: SiteFooterProps) {
         <div className="pt-10 md:pt-0 lg:col-span-3">
           <h2 className={headingClass}>{dict.footer.contacts}</h2>
           <address className="mt-5 space-y-3.5 not-italic">
-            {company.phones.map((phone) => (
-              <a
-                key={phone.href}
-                href={phone.href}
-                className="flex items-center gap-3 transition-colors hover:text-leaf"
-              >
-                <IconPhone className="shrink-0 text-leaf" /> {phone.display}
-              </a>
+            {phoneGroups.map((group) => (
+              <div key={group.country.en} className="space-y-2">
+                <p className="text-xs font-medium tracking-[0.12em] text-paper/50 uppercase">
+                  {group.country[locale]}
+                </p>
+                {group.phones.map((phone) => (
+                  <a
+                    key={phone.href}
+                    href={phone.href}
+                    className="flex items-center gap-3 transition-colors hover:text-leaf"
+                  >
+                    <IconPhone className="shrink-0 text-leaf" /> {phone.display}
+                  </a>
+                ))}
+              </div>
             ))}
             <a
               href={company.whatsappUrl}
@@ -92,15 +99,21 @@ export async function SiteFooter({ locale, dict }: SiteFooterProps) {
             >
               <IconMail className="shrink-0 text-leaf" /> {company.email}
             </a>
-            <a
-              href={mapLinks(company.address.mapQuery).yandex}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex gap-3 text-paper/70 transition-colors hover:text-leaf"
-            >
-              <IconPin className="mt-1 shrink-0 text-leaf" />
-              <span>{company.address.full[locale]}</span>
-            </a>
+            {offices.map((office) => (
+              <a
+                key={office.mapQuery}
+                href={mapLinks(office.mapQuery)[office.map]}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex gap-3 text-paper/70 transition-colors hover:text-leaf"
+              >
+                <IconPin className="mt-1 shrink-0 text-leaf" />
+                <span>
+                  <span className="block text-paper">{office.country[locale]}</span>
+                  {office.full[locale]}
+                </span>
+              </a>
+            ))}
           </address>
         </div>
       </Container>

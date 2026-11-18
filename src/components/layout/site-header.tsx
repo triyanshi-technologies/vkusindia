@@ -1,14 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { company, mapLinks } from "@/content/company";
+import { company, phoneGroups } from "@/content/company";
 import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/get-dictionary";
 import { href } from "@/i18n/routing";
 import { getCategoriesWithProducts } from "@/lib/content";
 import { Container } from "@/components/ui/container";
 import { buttonClass } from "@/components/ui/button";
-import { IconArrowRight, IconMail, IconPhone, IconPin } from "@/components/ui/icons";
+import { IconArrowRight, IconMail, IconPhone } from "@/components/ui/icons";
 
 import { LanguageSwitcher } from "./language-switcher";
 import { MobileMenu } from "./mobile-menu";
@@ -121,27 +121,14 @@ export async function SiteHeader({ locale, dict }: SiteHeaderProps) {
   );
 }
 
-function TopBar({ locale, dict }: SiteHeaderProps) {
+function TopBar({ dict }: SiteHeaderProps) {
   return (
     <div className="hidden bg-ink text-[0.8125rem] text-paper/75 md:block">
       <Container className="flex h-10 items-center justify-between gap-3 xl:gap-6">
-        <p className="flex items-center gap-2 whitespace-nowrap">
-          <span className="hidden text-paper lg:inline">{dict.topBar.welcome}</span>
-          <span aria-hidden="true" className="hidden text-paper/30 lg:inline">
-            ·
-          </span>
-          <a
-            href={mapLinks(company.address.mapQuery).yandex}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 transition-colors hover:text-paper"
-          >
-            <IconPin className="text-leaf" />
-            {company.address.short[locale]}
-          </a>
-        </p>
+        <p className="whitespace-nowrap text-paper">{dict.topBar.welcome}</p>
         <ul className="flex items-center gap-3 whitespace-nowrap xl:gap-6">
-          {company.phones.map((phone) => (
+          {/* One number per country keeps the bar from crowding on tablets. */}
+          {phoneGroups.flatMap(({ phones }) => phones.slice(0, 1)).map((phone) => (
             <li key={phone.href}>
               <a
                 href={phone.href}

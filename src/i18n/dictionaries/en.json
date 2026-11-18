@@ -4,11 +4,11 @@
     "titleTemplate": "%s - VKUS India",
     "home": {
       "title": "VKUS India - natural chicory from India",
-      "description": "Indo Russian Trade supplies chicory from India: sun-dried and roasted cubes, granules, roasted and instant powder, and liquid extract. Moscow office. Send an enquiry for your volume in kilograms."
+      "description": "VKUS India supplies chicory from India: sun-dried and roasted cubes, granules, roasted and instant powder, and liquid extract. Moscow office. Send an enquiry for your volume in kilograms."
     },
     "about": {
       "title": "About the company",
-      "description": "Indo Russian Trade connects producers and buyers across continents: sourcing in India, quality to global standards, logistics and documentation for cross-border trade."
+      "description": "VKUS India connects producers and buyers across continents: sourcing in India, quality to global standards, logistics and documentation for cross-border trade."
     },
     "products": {
       "title": "Product catalogue",
@@ -16,7 +16,7 @@
     },
     "contact": {
       "title": "Contacts",
-      "description": "Moscow, 17B Butlerova St. Phone and WhatsApp +91 98250 77622, email info@vkusindia.com. Send a product enquiry or message."
+      "description": "Offices in Moscow and Rajkot. Phone and WhatsApp +91 98250 77622, email info@vkusindia.com. Send a product enquiry or message."
     },
     "privacy": {
       "title": "Privacy and cookie policy",
@@ -54,6 +54,7 @@
     "email": "Email",
     "phone": "Phone",
     "address": "Address",
+    "legalEntity": "Legal entity",
     "yandexMaps": "Yandex Maps",
     "googleMaps": "Google Maps",
     "backHome": "Back to home",
@@ -61,10 +62,10 @@
     "whatsappGreeting": "Hello! I am interested in: {product}"
   },
   "topBar": {
-    "welcome": "Welcome to Indo-Russian trade!"
+    "welcome": "Welcome to VKUS India!"
   },
   "home": {
-    "eyebrow": "Indo Russian Trade · Moscow",
+    "eyebrow": "VKUS India · Moscow",
     "titleLead": "Natural chicory",
     "titleAccent": "from India",
     "stats": {
@@ -103,7 +104,7 @@
   },
   "about": {
     "eyebrow": "About the company",
-    "title": "Indo Russian Trade",
+    "title": "VKUS India",
     "rangeTitle": "Our range includes",
     "teamTitle": "Contact persons",
     "legalTitle": "Company details"
