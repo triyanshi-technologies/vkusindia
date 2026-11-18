@@ -6,9 +6,10 @@ import { notFound } from "next/navigation";
 import { ContactBand } from "@/components/sections/contact-band";
 import { Principles } from "@/components/sections/principles";
 import { Container } from "@/components/ui/container";
-import { IconCheck, IconUser } from "@/components/ui/icons";
+import { ContactPeople } from "@/components/ui/contact-people";
+import { IconCheck } from "@/components/ui/icons";
 import { PageHeader } from "@/components/ui/page-header";
-import { company } from "@/content/company";
+import { company, offices } from "@/content/company";
 import { about, heroImage, welcome } from "@/content/pages";
 import { isLocale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/get-dictionary";
@@ -92,32 +93,24 @@ export default async function AboutPage({ params }: PageProps<"/[lang]/about">) 
 
             <div className="rounded-3xl border border-line p-7">
               <h2 className="font-serif text-xl text-ink">{dict.about.teamTitle}</h2>
-              <ul className="mt-5 space-y-4">
-                {company.people.map((person) => (
-                  <li key={person.name.en} className="flex items-center gap-4">
-                    <span className="grid size-11 shrink-0 place-items-center rounded-full bg-mist text-lg text-olive">
-                      <IconUser />
-                    </span>
-                    <span>
-                      <span className="block font-medium text-ink">{person.name[lang]}</span>
-                      <span className="block text-sm text-muted-strong">{person.role[lang]}</span>
-                    </span>
-                  </li>
-                ))}
-              </ul>
+              <ContactPeople locale={lang} className="mt-5" />
             </div>
 
             <div className="rounded-3xl border border-line p-7">
               <h2 className="font-serif text-xl text-ink">{dict.about.legalTitle}</h2>
               <dl className="mt-4 space-y-3 text-[0.9375rem]">
                 <div>
-                  <dt className="text-muted-strong">{company.tradeName}</dt>
+                  <dt className="text-muted-strong">{dict.common.legalEntity}</dt>
                   <dd className="text-ink">{company.legalName[lang]}</dd>
                 </div>
-                <div>
-                  <dt className="text-muted-strong">{dict.common.address}</dt>
-                  <dd className="text-ink">{company.address.full[lang]}</dd>
-                </div>
+                {offices.map((office) => (
+                  <div key={office.mapQuery}>
+                    <dt className="text-muted-strong">
+                      {dict.common.address} ({office.country[lang]})
+                    </dt>
+                    <dd className="text-ink">{office.full[lang]}</dd>
+                  </div>
+                ))}
               </dl>
             </div>
           </aside>

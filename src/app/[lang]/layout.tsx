@@ -65,7 +65,7 @@ export default async function LangLayout({ children, params }: LayoutProps<"/[la
         "@type": "Organization",
         "@id": `${SITE_URL}/#organization`,
         name: company.brand[lang],
-        alternateName: [company.tradeName, company.brand[lang === "ru" ? "en" : "ru"]],
+        alternateName: company.brand[lang === "ru" ? "en" : "ru"],
         legalName: company.legalName.ru,
         url: SITE_URL,
         logo: absoluteUrl("/images/brand/logo.jpeg"),
@@ -75,7 +75,6 @@ export default async function LangLayout({ children, params }: LayoutProps<"/[la
           "@type": "PostalAddress",
           streetAddress: company.address.street[lang],
           addressLocality: company.address.city[lang],
-          postalCode: company.address.postalCode,
           addressCountry: company.address.countryCode,
         },
         contactPoint: {

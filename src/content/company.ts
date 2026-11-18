@@ -2,9 +2,11 @@ import type { Localized } from "./types";
 
 const PRIMARY_PHONE = "+919825077622";
 
+const RUSSIA = { ru: "Россия", en: "Russia" } satisfies Localized;
+const INDIA = { ru: "Индия", en: "India" } satisfies Localized;
+
 export const company = {
   brand: { ru: "Вкусы Индии", en: "VKUS India" } satisfies Localized,
-  tradeName: "Indo Russian Trade",
   tagline: { ru: "Лучшее для вас", en: "The best for you" } satisfies Localized,
   legalName: {
     ru: "ООО «Индорашен трейд энд инвестмент форум»",
@@ -12,41 +14,72 @@ export const company = {
   } satisfies Localized,
 
   phones: [
-    { display: "+91 98250 77622", href: `tel:${PRIMARY_PHONE}`, whatsapp: true },
-    { display: "+91 88667 77622", href: "tel:+918866777622", whatsapp: false },
+    { display: "+91 98250 77622", href: `tel:${PRIMARY_PHONE}`, whatsapp: true, country: INDIA },
+    { display: "+91 88667 77622", href: "tel:+918866777622", whatsapp: false, country: INDIA },
+    { display: "+7 925 500 12 54", href: "tel:+79255001254", whatsapp: false, country: RUSSIA },
   ],
   whatsappUrl: `https://wa.me/${PRIMARY_PHONE.slice(1)}`,
 
   email: "info@vkusindia.com",
 
+  /** Registered (Moscow) office: legal details, privacy policy and structured data. */
   address: {
-    postalCode: "117342",
     city: { ru: "Москва", en: "Moscow" } satisfies Localized,
-    country: { ru: "Россия", en: "Russia" } satisfies Localized,
+    country: RUSSIA,
     countryCode: "RU",
-    short: { ru: "Москва, ул. Бутлерова, 17Б", en: "17B Butlerova St, Moscow" } satisfies Localized,
     full: {
-      ru: "117342, Россия, Москва, вн. тер. г. муниципальный округ Коньково, ул. Бутлерова, 17Б, помещение 58/11/2",
-      en: "Premises 58/11/2, 17B Butlerova St, Konkovo municipal district, Moscow, 117342, Russia",
+      ru: "Москва, Киевское шоссе 22-й км, 4с5кЕ, 12/22, 4 этаж",
+      en: "22nd km Kievskoye Highway, 4 bld. 5 block E, office 12/22, 4th floor, Moscow",
     } satisfies Localized,
     street: {
-      ru: "ул. Бутлерова, 17Б, помещение 58/11/2",
-      en: "17B Butlerova St, premises 58/11/2",
+      ru: "Киевское шоссе 22-й км, 4с5кЕ, 12/22, 4 этаж",
+      en: "22nd km Kievskoye Highway, 4 bld. 5 block E, office 12/22, 4th floor",
     } satisfies Localized,
-    mapQuery: "Москва, улица Бутлерова, 17Б",
+    mapQuery: "Москва, Киевское шоссе 22-й км, 4с5",
   },
 
   people: [
     {
-      name: { ru: "Елена Ульянова", en: "Elena Ulyanova" } satisfies Localized,
-      role: { ru: "Директор", en: "Director" } satisfies Localized,
+      country: RUSSIA,
+      members: [
+        {
+          name: { ru: "Елена Ульянова", en: "Elena Ulyanova" } satisfies Localized,
+          role: { ru: "Директор", en: "Director" } satisfies Localized,
+        },
+        { name: { ru: "Алагаппан", en: "Alagappan" } satisfies Localized },
+      ],
     },
     {
-      name: { ru: "Прабхакаран В.", en: "Prabhakaran V." } satisfies Localized,
-      role: { ru: "Директор по маркетингу", en: "Marketing Director" } satisfies Localized,
+      country: INDIA,
+      members: [
+        { name: { ru: "Бирджу Патель", en: "Birju Patel" } satisfies Localized },
+        { name: { ru: "Канхай Чавда", en: "Kanhai Chavda" } satisfies Localized },
+      ],
     },
   ],
 } as const;
+
+export type ContactPerson = { name: Localized; role?: Localized };
+
+/** Phone numbers grouped by country, India first. */
+export const phoneGroups = [INDIA, RUSSIA].map((country) => ({
+  country,
+  phones: company.phones.filter((phone) => phone.country === country),
+}));
+
+/** Offices in the order they are listed; `map` picks the service that knows the area best. */
+export const offices = [
+  { country: RUSSIA, full: company.address.full, mapQuery: company.address.mapQuery, map: "yandex" },
+  {
+    country: INDIA,
+    full: {
+      ru: "Madhuli Empire, 1-й этаж, Ройал-парк 6, Калавад-роуд, Раджкот, Гуджарат, Индия",
+      en: "Madhuli Empire, First Floor, 6 - Royal Park, Kalawad Road, Rajkot, Gujarat, India",
+    } satisfies Localized,
+    mapQuery: "Madhuli Empire, Royal Park, Kalawad Road, Rajkot, Gujarat, India",
+    map: "google",
+  },
+] as const;
 
 export function mapLinks(query: string) {
   const q = encodeURIComponent(query);
