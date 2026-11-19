@@ -11,7 +11,6 @@ import { Container } from "@/components/ui/container";
 import {
   IconChevronDown,
   IconMail,
-  IconPhone,
   IconPin,
   IconWhatsApp,
 } from "@/components/ui/icons";
@@ -48,10 +47,10 @@ export async function SiteFooter({ locale, dict }: SiteFooterProps) {
         <div className="pb-10 md:pb-0 lg:col-span-4">
           <Link href={href(locale)} className="inline-block">
             <Image
-              src={publicPath("/images/brand/logo-header.png")}
+              src={publicPath("/images/brand/logo-temp-square.png")}
               alt={company.brand[locale]}
-              width={888}
-              height={888}
+              width={887}
+              height={887}
               unoptimized
               className="h-24 w-auto rounded-full bg-paper lg:h-32"
             />
@@ -79,9 +78,11 @@ export async function SiteFooter({ locale, dict }: SiteFooterProps) {
                   <a
                     key={phone.href}
                     href={phone.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="flex items-center gap-3 transition-colors hover:text-leaf"
                   >
-                    <IconPhone className="shrink-0 text-leaf" /> {phone.display}
+                    <IconWhatsApp className="shrink-0 text-leaf" /> {phone.display}
                   </a>
                 ))}
               </div>
@@ -124,7 +125,6 @@ export async function SiteFooter({ locale, dict }: SiteFooterProps) {
           <p>
             © <CopyrightYear /> {company.brand[locale]}. {dict.footer.rights}
           </p>
-          <p>{company.legalName[locale]}</p>
         </Container>
       </div>
     </footer>

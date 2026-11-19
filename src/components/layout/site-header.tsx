@@ -9,7 +9,7 @@ import { getCategoriesWithProducts } from "@/lib/content";
 import { publicPath } from "@/lib/public-path";
 import { Container } from "@/components/ui/container";
 import { buttonClass } from "@/components/ui/button";
-import { IconArrowRight, IconMail, IconPhone } from "@/components/ui/icons";
+import { IconArrowRight, IconMail, IconWhatsApp } from "@/components/ui/icons";
 
 import { LanguageSwitcher } from "./language-switcher";
 import { MobileMenu } from "./mobile-menu";
@@ -52,10 +52,10 @@ export async function SiteHeader({ locale, dict }: SiteHeaderProps) {
         <Container className="flex h-[4.5rem] items-center gap-3 lg:gap-3 lg:h-20 xl:gap-6">
           <Link href={href(locale)} className="shrink-0" aria-label={company.brand[locale]}>
             <Image
-              src={publicPath("/images/brand/logo-header.png")}
+              src={publicPath("/images/brand/logo-temp.png")}
               alt={`${company.brand[locale]} - ${company.tagline[locale]}`}
-              width={888}
-              height={888}
+              width={1536}
+              height={1024}
               unoptimized
               preload
               className="h-14 w-auto lg:h-[4.5rem]"
@@ -134,9 +134,11 @@ function TopBar({ dict }: SiteHeaderProps) {
             <li key={phone.href}>
               <a
                 href={phone.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center gap-2 transition-colors hover:text-paper"
               >
-                <IconPhone className="text-leaf" />
+                <IconWhatsApp className="text-leaf" />
                 {phone.display}
               </a>
             </li>

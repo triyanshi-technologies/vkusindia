@@ -7,7 +7,6 @@ import { Container } from "@/components/ui/container";
 import {
   IconArrowUpRight,
   IconMail,
-  IconPhone,
   IconPin,
   IconWhatsApp,
 } from "@/components/ui/icons";
@@ -68,8 +67,13 @@ export default async function ContactPage({ params }: PageProps<"/[lang]/contact
                   <ul className="mt-2 space-y-3">
                     {group.phones.map((phone) => (
                       <li key={phone.href}>
-                        <a href={phone.href} className={linkClass}>
-                          <IconPhone className="text-olive" /> {phone.display}
+                        <a
+                          href={phone.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={linkClass}
+                        >
+                          <IconWhatsApp className="text-olive" /> {phone.display}
                         </a>
                       </li>
                     ))}

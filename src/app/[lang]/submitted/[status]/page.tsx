@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 
 import { buttonClass } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
-import { IconCheck, IconClose } from "@/components/ui/icons";
+import { IconCheck, IconClose, IconWhatsApp } from "@/components/ui/icons";
 import { company } from "@/content/company";
 import { isLocale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/get-dictionary";
@@ -59,8 +59,11 @@ export default async function SubmittedPage({ params }: PageProps<"/[lang]/submi
         <p className="mt-4 text-lg">
           <a
             href={company.phones[0].href}
-            className="text-ink underline underline-offset-4 hover:text-olive"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 text-ink underline underline-offset-4 hover:text-olive"
           >
+            <IconWhatsApp className="text-olive" />
             {company.phones[0].display}
           </a>{" "}
           ·{" "}

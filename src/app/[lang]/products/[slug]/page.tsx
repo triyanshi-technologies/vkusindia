@@ -16,7 +16,6 @@ import {
   IconArrowRight,
   IconChevronDown,
   IconMail,
-  IconPhone,
   IconWhatsApp,
 } from "@/components/ui/icons";
 import { company, whatsappLink } from "@/content/company";
@@ -198,8 +197,13 @@ export default async function ProductPage({ params }: Props) {
               <p className="mt-4 text-muted-strong">{dict.product.enquiryText}</p>
               <ul className="mt-8 space-y-3 text-[0.9375rem]">
                 <li>
-                  <a href={primaryPhone.href} className="flex items-center gap-3 hover:text-olive">
-                    <IconPhone className="text-olive" /> {primaryPhone.display}
+                  <a
+                    href={primaryPhone.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 hover:text-olive"
+                  >
+                    <IconWhatsApp className="text-olive" /> {primaryPhone.display}
                   </a>
                 </li>
                 <li>

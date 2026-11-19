@@ -8,16 +8,15 @@ const INDIA = { ru: "Индия", en: "India" } satisfies Localized;
 export const company = {
   brand: { ru: "Вкусы Индии", en: "VKUS India" } satisfies Localized,
   tagline: { ru: "Лучшее для вас", en: "The best for you" } satisfies Localized,
-  legalName: {
-    ru: "ООО «Индорашен трейд энд инвестмент форум»",
-    en: "Indo Russian Trade and Investment Forum LLC",
-  } satisfies Localized,
 
+  /** Every listed number opens a WhatsApp chat; only `callPhone` dials. */
   phones: [
-    { display: "+91 98250 77622", href: `tel:${PRIMARY_PHONE}`, whatsapp: true, country: INDIA },
-    { display: "+91 88667 77622", href: "tel:+918866777622", whatsapp: false, country: INDIA },
-    { display: "+7 925 500 12 54", href: "tel:+79255001254", whatsapp: false, country: RUSSIA },
+    { display: "+91 81977 77533", href: "https://wa.me/918197777533", country: INDIA },
+    { display: "+91 98250 77622", href: "https://wa.me/919825077622", country: INDIA },
+    { display: "+7 925 500 12 54", href: "https://wa.me/79255001254", country: RUSSIA },
   ],
+  /** Number behind the "call" buttons. */
+  callPhone: { display: "+91 98250 77622", href: `tel:${PRIMARY_PHONE}` },
   whatsappUrl: `https://wa.me/${PRIMARY_PHONE.slice(1)}`,
 
   email: "info@vkusindia.com",

@@ -3,7 +3,6 @@ import { IconPhone, IconWhatsApp } from "@/components/ui/icons";
 
 /** Persistent quick-contact buttons (the old site had the same WhatsApp + call shortcuts). */
 export function FloatingContacts({ labels }: { labels: { whatsapp: string; call: string } }) {
-  const [primaryPhone] = company.phones;
   const buttonClass =
     "grid size-13 place-items-center rounded-full text-2xl shadow-[0_10px_30px_-10px_rgb(34_34_34/0.45)] transition-transform duration-200 hover:-translate-y-0.5";
 
@@ -19,7 +18,7 @@ export function FloatingContacts({ labels }: { labels: { whatsapp: string; call:
         <IconWhatsApp />
       </a>
       <a
-        href={primaryPhone.href}
+        href={company.callPhone.href}
         aria-label={labels.call}
         className={`${buttonClass} bg-ink text-paper ring-1 ring-paper/25 hover:bg-olive`}
       >
