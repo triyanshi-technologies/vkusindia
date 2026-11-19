@@ -68,7 +68,12 @@ export default async function ContactPage({ params }: PageProps<"/[lang]/contact
                   <ul className="mt-2 space-y-3">
                     {group.phones.map((phone) => (
                       <li key={phone.href}>
-                        <a href={phone.href} className={linkClass}>
+                        <a
+                          href={phone.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={linkClass}
+                        >
                           <IconPhone className="text-olive" /> {phone.display}
                         </a>
                       </li>

@@ -10,7 +10,7 @@ import { IconArrowRight, IconPhone, IconWhatsApp } from "@/components/ui/icons";
 
 /** Closing call-to-action used at the bottom of most pages. */
 export function ContactBand({ locale, dict }: { locale: Locale; dict: Dictionary }) {
-  const [primaryPhone] = company.phones;
+  const { callPhone } = company;
 
   return (
     <section aria-labelledby="contact-band-title" className="section-b">
@@ -30,14 +30,14 @@ export function ContactBand({ locale, dict }: { locale: Locale; dict: Dictionary
 
           <div className="relative flex flex-col gap-3 lg:col-span-5">
             <a
-              href={primaryPhone.href}
+              href={callPhone.href}
               className="group flex items-center justify-between gap-4 rounded-2xl bg-paper px-5 py-4 text-ink transition-colors hover:bg-leaf"
             >
               <span>
                 <span className="block text-[0.8125rem] text-muted-strong group-hover:text-ink/70">
                   {dict.common.callUs}
                 </span>
-                <span className="font-serif text-xl">{primaryPhone.display}</span>
+                <span className="font-serif text-xl">{callPhone.display}</span>
               </span>
               <IconPhone className="text-xl text-olive group-hover:text-ink" />
             </a>

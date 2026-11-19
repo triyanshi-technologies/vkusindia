@@ -23,10 +23,10 @@ export const privacyPolicy: Localized<Policy> = {
       {
         heading: "1. Общие положения",
         paragraphs: [
-          "Настоящая политика обработки персональных данных составлена в соответствии с требованиями Федерального закона от 27.07.2006 № 152-ФЗ «О персональных данных» и определяет порядок обработки персональных данных и меры по обеспечению безопасности персональных данных, предпринимаемые ООО «Индорашен трейд энд инвестмент форум» (далее - Оператор).",
+          `Настоящая политика обработки персональных данных составлена в соответствии с требованиями Федерального закона от 27.07.2006 № 152-ФЗ «О персональных данных» и определяет порядок обработки персональных данных и меры по обеспечению безопасности персональных данных, предпринимаемые оператором веб-сайта ${SITE} (далее - Оператор).`,
           "1.1. Оператор ставит своей важнейшей целью и условием осуществления своей деятельности соблюдение прав и свобод человека и гражданина при обработке его персональных данных, в том числе защиты прав на неприкосновенность частной жизни, личную и семейную тайну.",
           `1.2. Настоящая политика Оператора в отношении обработки персональных данных (далее - Политика) применяется ко всей информации, которую Оператор может получить о посетителях веб-сайта ${SITE}.`,
-          `1.3. Сведения об Операторе: ${company.legalName.ru}, адрес: ${company.address.full.ru}, электронная почта: ${EMAIL}.`,
+          `1.3. Сведения об Операторе: адрес: ${company.address.full.ru}, электронная почта: ${EMAIL}.`,
         ],
       },
       {
@@ -106,10 +106,10 @@ export const privacyPolicy: Localized<Policy> = {
       {
         heading: "1. General provisions",
         paragraphs: [
-          "This personal data processing policy has been drawn up in accordance with Federal Law No. 152-FZ of 27 July 2006 “On Personal Data” and sets out the procedure for processing personal data and the measures taken to ensure its security by Indo Russian Trade and Investment Forum LLC (hereinafter, the Operator).",
+          `This personal data processing policy has been drawn up in accordance with Federal Law No. 152-FZ of 27 July 2006 “On Personal Data” and sets out the procedure for processing personal data and the measures taken to ensure its security by the operator of the website ${SITE} (hereinafter, the Operator).`,
           "1.1. The Operator’s primary goal and condition for carrying out its activities is to respect human and civil rights and freedoms when processing personal data, including the protection of the rights to privacy and personal and family secrets.",
           `1.2. This Operator policy on personal data processing (hereinafter, the Policy) applies to all information the Operator may obtain about visitors to the website ${SITE}.`,
-          `1.3. Operator details: ${company.legalName.en}, address: ${company.address.full.en}, email: ${EMAIL}.`,
+          `1.3. Operator details: address: ${company.address.full.en}, email: ${EMAIL}.`,
         ],
       },
       {

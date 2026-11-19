@@ -9,7 +9,7 @@ import { Container } from "@/components/ui/container";
 import { ContactPeople } from "@/components/ui/contact-people";
 import { IconCheck } from "@/components/ui/icons";
 import { PageHeader } from "@/components/ui/page-header";
-import { company, offices } from "@/content/company";
+import { offices } from "@/content/company";
 import { about, heroImage, welcome } from "@/content/pages";
 import { isLocale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/get-dictionary";
@@ -97,10 +97,6 @@ export default async function AboutPage({ params }: PageProps<"/[lang]/about">) 
             <div className="rounded-3xl border border-line p-7">
               <h2 className="font-serif text-xl text-ink">{dict.about.legalTitle}</h2>
               <dl className="mt-4 space-y-3 text-[0.9375rem]">
-                <div>
-                  <dt className="text-muted-strong">{dict.common.legalEntity}</dt>
-                  <dd className="text-ink">{company.legalName[lang]}</dd>
-                </div>
                 {offices.map((office) => (
                   <div key={office.mapQuery}>
                     <dt className="text-muted-strong">

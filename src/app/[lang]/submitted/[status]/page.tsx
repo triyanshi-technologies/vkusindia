@@ -59,6 +59,8 @@ export default async function SubmittedPage({ params }: PageProps<"/[lang]/submi
         <p className="mt-4 text-lg">
           <a
             href={company.phones[0].href}
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-ink underline underline-offset-4 hover:text-olive"
           >
             {company.phones[0].display}

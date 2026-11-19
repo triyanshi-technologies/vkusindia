@@ -66,7 +66,6 @@ export default async function LangLayout({ children, params }: LayoutProps<"/[la
         "@id": `${SITE_URL}/#organization`,
         name: company.brand[lang],
         alternateName: company.brand[lang === "ru" ? "en" : "ru"],
-        legalName: company.legalName.ru,
         url: SITE_URL,
         logo: absoluteUrl("/images/brand/logo-header.png"),
         email: company.email,

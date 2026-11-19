@@ -159,7 +159,12 @@ export function MobileMenu({
           </nav>
 
           <div className="space-y-3 text-[0.9375rem]">
-            <a href={contact.phoneHref} className="flex items-center gap-3">
+            <a
+              href={contact.phoneHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3"
+            >
               <IconPhone className="text-olive" /> {contact.phone}
             </a>
             <a href={`mailto:${contact.email}`} className="flex items-center gap-3">

@@ -78,6 +78,8 @@ export async function SiteFooter({ locale, dict }: SiteFooterProps) {
                   <a
                     key={phone.href}
                     href={phone.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="flex items-center gap-3 transition-colors hover:text-leaf"
                   >
                     <IconPhone className="shrink-0 text-leaf" /> {phone.display}
@@ -123,7 +125,6 @@ export async function SiteFooter({ locale, dict }: SiteFooterProps) {
           <p>
             © <CopyrightYear /> {company.brand[locale]}. {dict.footer.rights}
           </p>
-          <p>{company.legalName[locale]}</p>
         </Container>
       </div>
     </footer>
