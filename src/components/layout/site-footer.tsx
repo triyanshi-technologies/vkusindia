@@ -48,11 +48,11 @@ export async function SiteFooter({ locale, dict }: SiteFooterProps) {
         <div className="pb-10 md:pb-0 lg:col-span-4">
           <Link href={href(locale)} className="inline-block">
             <Image
-              src="/images/brand/logo.jpeg"
+              src="/images/brand/logo-header.png"
               alt={company.brand[locale]}
-              width={236}
-              height={105}
-              className="h-14 w-auto rounded-xl"
+              width={888}
+              height={888}
+              className="h-24 w-auto rounded-full bg-paper lg:h-32"
             />
           </Link>
           <p className="mt-6 max-w-xs text-paper/70">{dict.footer.about}</p>
