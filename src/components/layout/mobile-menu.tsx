@@ -10,7 +10,6 @@ import {
   IconClose,
   IconMail,
   IconMenu,
-  IconPhone,
   IconWhatsApp,
 } from "@/components/ui/icons";
 
@@ -165,7 +164,7 @@ export function MobileMenu({
               rel="noopener noreferrer"
               className="flex items-center gap-3"
             >
-              <IconPhone className="text-olive" /> {contact.phone}
+              <IconWhatsApp className="text-olive" /> {contact.phone}
             </a>
             <a href={`mailto:${contact.email}`} className="flex items-center gap-3">
               <IconMail className="text-olive" /> {contact.email}

@@ -16,7 +16,6 @@ import {
   IconArrowRight,
   IconChevronDown,
   IconMail,
-  IconPhone,
   IconWhatsApp,
 } from "@/components/ui/icons";
 import { company, whatsappLink } from "@/content/company";
@@ -205,7 +204,7 @@ export default async function ProductPage({ params }: Props) {
                     rel="noopener noreferrer"
                     className="flex items-center gap-3 hover:text-olive"
                   >
-                    <IconPhone className="text-olive" /> {primaryPhone.display}
+                    <IconWhatsApp className="text-olive" /> {primaryPhone.display}
                   </a>
                 </li>
                 <li>

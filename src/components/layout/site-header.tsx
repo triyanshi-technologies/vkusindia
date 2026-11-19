@@ -8,7 +8,7 @@ import { href } from "@/i18n/routing";
 import { getCategoriesWithProducts } from "@/lib/content";
 import { Container } from "@/components/ui/container";
 import { buttonClass } from "@/components/ui/button";
-import { IconArrowRight, IconMail, IconPhone } from "@/components/ui/icons";
+import { IconArrowRight, IconMail, IconWhatsApp } from "@/components/ui/icons";
 
 import { LanguageSwitcher } from "./language-switcher";
 import { MobileMenu } from "./mobile-menu";
@@ -136,7 +136,7 @@ function TopBar({ dict }: SiteHeaderProps) {
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 transition-colors hover:text-paper"
               >
-                <IconPhone className="text-leaf" />
+                <IconWhatsApp className="text-leaf" />
                 {phone.display}
               </a>
             </li>

@@ -7,7 +7,6 @@ import { Container } from "@/components/ui/container";
 import {
   IconArrowUpRight,
   IconMail,
-  IconPhone,
   IconPin,
   IconWhatsApp,
 } from "@/components/ui/icons";
@@ -74,7 +73,7 @@ export default async function ContactPage({ params }: PageProps<"/[lang]/contact
                           rel="noopener noreferrer"
                           className={linkClass}
                         >
-                          <IconPhone className="text-olive" /> {phone.display}
+                          <IconWhatsApp className="text-olive" /> {phone.display}
                         </a>
                       </li>
                     ))}

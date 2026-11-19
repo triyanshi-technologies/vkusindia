@@ -11,7 +11,6 @@ import { Container } from "@/components/ui/container";
 import {
   IconChevronDown,
   IconMail,
-  IconPhone,
   IconPin,
   IconWhatsApp,
 } from "@/components/ui/icons";
@@ -82,7 +81,7 @@ export async function SiteFooter({ locale, dict }: SiteFooterProps) {
                     rel="noopener noreferrer"
                     className="flex items-center gap-3 transition-colors hover:text-leaf"
                   >
-                    <IconPhone className="shrink-0 text-leaf" /> {phone.display}
+                    <IconWhatsApp className="shrink-0 text-leaf" /> {phone.display}
                   </a>
                 ))}
               </div>
