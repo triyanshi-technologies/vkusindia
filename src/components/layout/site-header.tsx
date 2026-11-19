@@ -52,13 +52,13 @@ export async function SiteHeader({ locale, dict }: SiteHeaderProps) {
         <Container className="flex h-[4.5rem] items-center gap-3 lg:gap-3 lg:h-20 xl:gap-6">
           <Link href={href(locale)} className="shrink-0" aria-label={company.brand[locale]}>
             <Image
-              src={publicPath("/images/brand/logo.jpeg")}
+              src={publicPath("/images/brand/logo-header.png")}
               alt={`${company.brand[locale]} - ${company.tagline[locale]}`}
-              width={236}
-              height={105}
+              width={888}
+              height={888}
               unoptimized
               preload
-              className="h-11 w-auto rounded-xl lg:h-[3.25rem]"
+              className="h-14 w-auto lg:h-[4.5rem]"
             />
           </Link>
 
